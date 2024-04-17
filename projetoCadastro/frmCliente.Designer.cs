@@ -30,14 +30,14 @@
         {
             this.panelBotoes = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.inputCodigo = new System.Windows.Forms.TextBox();
@@ -70,14 +70,14 @@
             // panelBotoes
             // 
             this.panelBotoes.Controls.Add(this.panelMain);
-            this.panelBotoes.Controls.Add(this.button10);
-            this.panelBotoes.Controls.Add(this.button9);
-            this.panelBotoes.Controls.Add(this.button8);
-            this.panelBotoes.Controls.Add(this.button7);
-            this.panelBotoes.Controls.Add(this.button6);
-            this.panelBotoes.Controls.Add(this.button5);
-            this.panelBotoes.Controls.Add(this.button4);
-            this.panelBotoes.Controls.Add(this.button3);
+            this.panelBotoes.Controls.Add(this.btnSair);
+            this.panelBotoes.Controls.Add(this.btnImprimir);
+            this.panelBotoes.Controls.Add(this.btnPesquisar);
+            this.panelBotoes.Controls.Add(this.btnCancelar);
+            this.panelBotoes.Controls.Add(this.btnSalvar);
+            this.panelBotoes.Controls.Add(this.btnExcluir);
+            this.panelBotoes.Controls.Add(this.btnAlterar);
+            this.panelBotoes.Controls.Add(this.btnNovo);
             this.panelBotoes.Controls.Add(this.btnProximo);
             this.panelBotoes.Controls.Add(this.btnAnterior);
             this.panelBotoes.Location = new System.Drawing.Point(12, 338);
@@ -93,77 +93,78 @@
             this.panelMain.Size = new System.Drawing.Size(776, 320);
             this.panelMain.TabIndex = 15;
             // 
-            // button10
+            // btnSair
             // 
-            this.button10.Location = new System.Drawing.Point(557, 53);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 39);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Sair";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnSair.Location = new System.Drawing.Point(557, 53);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(100, 39);
+            this.btnSair.TabIndex = 14;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // button9
+            // btnImprimir
             // 
-            this.button9.Location = new System.Drawing.Point(451, 52);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 39);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Imprimir";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnImprimir.Location = new System.Drawing.Point(451, 52);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(100, 39);
+            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnPesquisar
             // 
-            this.button8.Location = new System.Drawing.Point(345, 52);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 39);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Pesquisar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Location = new System.Drawing.Point(345, 52);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 39);
+            this.btnPesquisar.TabIndex = 12;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnCancelar
             // 
-            this.button7.Location = new System.Drawing.Point(239, 52);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 39);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Cancelar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(239, 52);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 39);
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnSalvar
             // 
-            this.button6.Location = new System.Drawing.Point(133, 53);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 39);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Salvar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(133, 53);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 39);
+            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnExcluir
             // 
-            this.button5.Location = new System.Drawing.Point(557, 8);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 39);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Excluir";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnExcluir.Location = new System.Drawing.Point(557, 8);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(100, 39);
+            this.btnExcluir.TabIndex = 9;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnAlterar
             // 
-            this.button4.Location = new System.Drawing.Point(451, 8);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 39);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Alterar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAlterar.Location = new System.Drawing.Point(451, 8);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(100, 39);
+            this.btnAlterar.TabIndex = 8;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnNovo
             // 
-            this.button3.Location = new System.Drawing.Point(345, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 39);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Novo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNovo.Location = new System.Drawing.Point(345, 8);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(100, 39);
+            this.btnNovo.TabIndex = 7;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
             // 
             // btnProximo
             // 
@@ -397,7 +398,7 @@
             this.Controls.Add(this.panelFrmCliente);
             this.Controls.Add(this.panelBotoes);
             this.Name = "frmCliente";
-            this.Text = "frmCliente";
+            this.Text = "CLIENTE";
             this.panelBotoes.ResumeLayout(false);
             this.panelFrmCliente.ResumeLayout(false);
             this.panelFrmCliente.PerformLayout();
@@ -408,14 +409,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panelBotoes;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Panel panelMain;
