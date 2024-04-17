@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +42,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.labelMsg = new System.Windows.Forms.ToolStripStatusLabel();
             this.displayMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.displayData = new System.Windows.Forms.ToolStripStatusLabel();
+            this.labelData = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerSegundo = new System.Windows.Forms.Timer(this.components);
             this.displayHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.displayData = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +136,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labelMsg,
             this.displayMessage,
+            this.toolStripStatusLabel1,
+            this.labelData,
             this.displayData,
+            this.lblHora,
             this.displayHora});
             this.statusStrip1.Location = new System.Drawing.Point(0, 372);
             this.statusStrip1.Name = "statusStrip1";
@@ -149,20 +157,44 @@
             // displayMessage
             // 
             this.displayMessage.Name = "displayMessage";
-            this.displayMessage.Size = new System.Drawing.Size(138, 17);
-            this.displayMessage.Text = "MESSAGEPLACEHOLDER";
+            this.displayMessage.Size = new System.Drawing.Size(110, 17);
+            this.displayMessage.Text = " SISTEMA INICIADO";
             // 
-            // displayData
+            // labelData
             // 
-            this.displayData.Name = "displayData";
-            this.displayData.Size = new System.Drawing.Size(31, 17);
-            this.displayData.Text = "Data";
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(34, 17);
+            this.labelData.Text = "Data:";
+            // 
+            // lblHora
+            // 
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(36, 17);
+            this.lblHora.Text = "Hora:";
+            // 
+            // timerSegundo
+            // 
+            this.timerSegundo.Enabled = true;
+            this.timerSegundo.Interval = 1000;
+            this.timerSegundo.Tick += new System.EventHandler(this.TimerSegundo_Tick);
             // 
             // displayHora
             // 
             this.displayHora.Name = "displayHora";
-            this.displayHora.Size = new System.Drawing.Size(33, 17);
-            this.displayHora.Text = "Hora";
+            this.displayHora.Size = new System.Drawing.Size(16, 17);
+            this.displayHora.Text = "...";
+            // 
+            // displayData
+            // 
+            this.displayData.Name = "displayData";
+            this.displayData.Size = new System.Drawing.Size(16, 17);
+            this.displayData.Text = "...";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(70, 17);
+            this.toolStripStatusLabel1.Text = "                     ";
             // 
             // frmMain
             // 
@@ -199,9 +231,13 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel labelMsg;
-        private System.Windows.Forms.ToolStripStatusLabel displayData;
-        private System.Windows.Forms.ToolStripStatusLabel displayHora;
+        private System.Windows.Forms.ToolStripStatusLabel labelData;
+        private System.Windows.Forms.ToolStripStatusLabel lblHora;
         private System.Windows.Forms.ToolStripStatusLabel displayMessage;
+        private System.Windows.Forms.Timer timerSegundo;
+        private System.Windows.Forms.ToolStripStatusLabel displayHora;
+        private System.Windows.Forms.ToolStripStatusLabel displayData;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

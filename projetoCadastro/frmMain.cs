@@ -40,5 +40,12 @@ namespace projetoCadastro
             frmFornecedor userFrm = new frmFornecedor();
             userFrm.ShowDialog();
         }
+
+        private void TimerSegundo_Tick(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            displayHora.Text = now.ToString("HH:mm:ss");
+            displayData.Text = now.ToString("yyy-MM-dd");
+        }
     }
 }
