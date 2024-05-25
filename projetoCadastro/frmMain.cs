@@ -43,9 +43,19 @@ namespace projetoCadastro
 
         private void TimerSegundo_Tick(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
+            UpdateDateTime();
+        }
+
+        private void UpdateDateTime()
+        {
+            var now = DateTime.Now;
             displayHora.Text = now.ToString("HH:mm:ss");
             displayData.Text = now.ToString("yyy-MM-dd");
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            UpdateDateTime();
         }
     }
 }

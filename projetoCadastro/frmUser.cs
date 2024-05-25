@@ -21,5 +21,6 @@ namespace projetoCadastro
         {
             this.Close();
         }
+
     }
 }
