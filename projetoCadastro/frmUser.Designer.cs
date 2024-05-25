@@ -89,6 +89,7 @@
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.Size = new System.Drawing.Size(132, 26);
             this.inputSenha.TabIndex = 4;
+            this.inputSenha.UseSystemPasswordChar = true;
             // 
             // lblLogin
             // 

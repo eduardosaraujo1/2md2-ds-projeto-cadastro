@@ -157,7 +157,7 @@
             // displayMessage
             // 
             this.displayMessage.Name = "displayMessage";
-            this.displayMessage.Size = new System.Drawing.Size(156, 20);
+            this.displayMessage.Size = new System.Drawing.Size(475, 20);
             this.displayMessage.Spring = true;
             this.displayMessage.Text = "Menu principal";
             this.displayMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
