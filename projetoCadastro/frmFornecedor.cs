@@ -22,9 +22,5 @@ namespace projetoCadastro
             this.Close();
         }
 
-        private void inputTelefone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

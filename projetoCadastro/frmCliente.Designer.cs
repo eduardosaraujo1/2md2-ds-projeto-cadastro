@@ -71,10 +71,10 @@
             // btnSair
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSair.Location = new System.Drawing.Point(684, 58);
+            this.btnSair.Location = new System.Drawing.Point(596, 58);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(153, 47);
+            this.btnSair.Size = new System.Drawing.Size(131, 47);
             this.btnSair.TabIndex = 21;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@
             // btnImprimir
             // 
             this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImprimir.Location = new System.Drawing.Point(524, 58);
+            this.btnImprimir.Location = new System.Drawing.Point(458, 58);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(152, 47);
+            this.btnImprimir.Size = new System.Drawing.Size(130, 47);
             this.btnImprimir.TabIndex = 19;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             // btnPesquisar
             // 
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPesquisar.Location = new System.Drawing.Point(364, 58);
+            this.btnPesquisar.Location = new System.Drawing.Point(320, 58);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(152, 47);
+            this.btnPesquisar.Size = new System.Drawing.Size(130, 47);
             this.btnPesquisar.TabIndex = 17;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -105,10 +105,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.Location = new System.Drawing.Point(204, 58);
+            this.btnCancelar.Location = new System.Drawing.Point(182, 58);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(152, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(130, 47);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(44, 58);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(152, 47);
+            this.btnSalvar.Size = new System.Drawing.Size(130, 47);
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -127,10 +127,10 @@
             // btnExcluir
             // 
             this.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExcluir.Location = new System.Drawing.Point(684, 4);
+            this.btnExcluir.Location = new System.Drawing.Point(596, 4);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(153, 46);
+            this.btnExcluir.Size = new System.Drawing.Size(131, 46);
             this.btnExcluir.TabIndex = 20;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -138,10 +138,10 @@
             // btnAlterar
             // 
             this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAlterar.Location = new System.Drawing.Point(524, 4);
+            this.btnAlterar.Location = new System.Drawing.Point(458, 4);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(152, 46);
+            this.btnAlterar.Size = new System.Drawing.Size(130, 46);
             this.btnAlterar.TabIndex = 18;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -149,10 +149,10 @@
             // btnNovo
             // 
             this.btnNovo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNovo.Location = new System.Drawing.Point(364, 4);
+            this.btnNovo.Location = new System.Drawing.Point(320, 4);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(152, 46);
+            this.btnNovo.Size = new System.Drawing.Size(130, 46);
             this.btnNovo.TabIndex = 16;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -160,10 +160,10 @@
             // btnProximo
             // 
             this.btnProximo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProximo.Location = new System.Drawing.Point(204, 4);
+            this.btnProximo.Location = new System.Drawing.Point(182, 4);
             this.btnProximo.Margin = new System.Windows.Forms.Padding(4);
             this.btnProximo.Name = "btnProximo";
-            this.btnProximo.Size = new System.Drawing.Size(152, 46);
+            this.btnProximo.Size = new System.Drawing.Size(130, 46);
             this.btnProximo.TabIndex = 14;
             this.btnProximo.Text = "Proximo";
             this.btnProximo.UseVisualStyleBackColor = true;
@@ -174,10 +174,9 @@
             this.btnAnterior.Location = new System.Drawing.Point(44, 4);
             this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(152, 46);
+            this.btnAnterior.Size = new System.Drawing.Size(130, 46);
             this.btnAnterior.TabIndex = 12;
             this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
             // 
             // inputCodigo
             // 
@@ -185,7 +184,7 @@
             this.inputCodigo.Location = new System.Drawing.Point(92, 6);
             this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(206, 27);
+            this.inputCodigo.Size = new System.Drawing.Size(169, 27);
             this.inputCodigo.TabIndex = 1;
             // 
             // label4
@@ -207,7 +206,7 @@
             this.inputNome.Location = new System.Drawing.Point(92, 45);
             this.inputNome.Margin = new System.Windows.Forms.Padding(4);
             this.inputNome.Name = "inputNome";
-            this.inputNome.Size = new System.Drawing.Size(501, 27);
+            this.inputNome.Size = new System.Drawing.Size(427, 27);
             this.inputNome.TabIndex = 2;
             // 
             // label3
@@ -226,7 +225,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(345, 246);
+            this.label11.Location = new System.Drawing.Point(308, 246);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 20);
@@ -237,17 +236,17 @@
             // inputRG
             // 
             this.inputRG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputRG.Location = new System.Drawing.Point(387, 242);
+            this.inputRG.Location = new System.Drawing.Point(350, 242);
             this.inputRG.Margin = new System.Windows.Forms.Padding(4);
             this.inputRG.Name = "inputRG";
-            this.inputRG.Size = new System.Drawing.Size(206, 27);
+            this.inputRG.Size = new System.Drawing.Size(169, 27);
             this.inputRG.TabIndex = 11;
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(306, 165);
+            this.label10.Location = new System.Drawing.Point(269, 165);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 20);
@@ -259,10 +258,10 @@
             // 
             this.inputTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelFields.SetColumnSpan(this.inputTelefone, 2);
-            this.inputTelefone.Location = new System.Drawing.Point(387, 162);
+            this.inputTelefone.Location = new System.Drawing.Point(350, 162);
             this.inputTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.inputTelefone.Name = "inputTelefone";
-            this.inputTelefone.Size = new System.Drawing.Size(275, 27);
+            this.inputTelefone.Size = new System.Drawing.Size(238, 27);
             this.inputTelefone.TabIndex = 8;
             // 
             // label9
@@ -283,7 +282,7 @@
             this.inputCPF.Location = new System.Drawing.Point(92, 242);
             this.inputCPF.Margin = new System.Windows.Forms.Padding(4);
             this.inputCPF.Name = "inputCPF";
-            this.inputCPF.Size = new System.Drawing.Size(206, 27);
+            this.inputCPF.Size = new System.Drawing.Size(169, 27);
             this.inputCPF.TabIndex = 10;
             // 
             // label8
@@ -305,14 +304,14 @@
             this.inputEmail.Location = new System.Drawing.Point(92, 201);
             this.inputEmail.Margin = new System.Windows.Forms.Padding(4);
             this.inputEmail.Name = "inputEmail";
-            this.inputEmail.Size = new System.Drawing.Size(501, 27);
+            this.inputEmail.Size = new System.Drawing.Size(427, 27);
             this.inputEmail.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(601, 126);
+            this.label7.Location = new System.Drawing.Point(527, 126);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 20);
@@ -323,10 +322,10 @@
             // inputEstado
             // 
             this.inputEstado.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.inputEstado.Location = new System.Drawing.Point(670, 123);
+            this.inputEstado.Location = new System.Drawing.Point(596, 123);
             this.inputEstado.Margin = new System.Windows.Forms.Padding(4);
             this.inputEstado.Name = "inputEstado";
-            this.inputEstado.Size = new System.Drawing.Size(189, 27);
+            this.inputEstado.Size = new System.Drawing.Size(171, 27);
             this.inputEstado.TabIndex = 6;
             // 
             // label6
@@ -347,14 +346,14 @@
             this.inputCEP.Location = new System.Drawing.Point(92, 162);
             this.inputCEP.Margin = new System.Windows.Forms.Padding(4);
             this.inputCEP.Name = "inputCEP";
-            this.inputCEP.Size = new System.Drawing.Size(206, 27);
+            this.inputCEP.Size = new System.Drawing.Size(169, 27);
             this.inputCEP.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(318, 126);
+            this.label5.Location = new System.Drawing.Point(281, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 20);
@@ -365,10 +364,10 @@
             // inputCidade
             // 
             this.inputCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputCidade.Location = new System.Drawing.Point(387, 123);
+            this.inputCidade.Location = new System.Drawing.Point(350, 123);
             this.inputCidade.Margin = new System.Windows.Forms.Padding(4);
             this.inputCidade.Name = "inputCidade";
-            this.inputCidade.Size = new System.Drawing.Size(206, 27);
+            this.inputCidade.Size = new System.Drawing.Size(169, 27);
             this.inputCidade.TabIndex = 5;
             // 
             // label2
@@ -389,7 +388,7 @@
             this.inputBairro.Location = new System.Drawing.Point(92, 123);
             this.inputBairro.Margin = new System.Windows.Forms.Padding(4);
             this.inputBairro.Name = "inputBairro";
-            this.inputBairro.Size = new System.Drawing.Size(206, 27);
+            this.inputBairro.Size = new System.Drawing.Size(169, 27);
             this.inputBairro.TabIndex = 4;
             // 
             // label1
@@ -411,7 +410,7 @@
             this.inputEndereco.Location = new System.Drawing.Point(92, 84);
             this.inputEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.inputEndereco.Name = "inputEndereco";
-            this.inputEndereco.Size = new System.Drawing.Size(785, 27);
+            this.inputEndereco.Size = new System.Drawing.Size(675, 27);
             this.inputEndereco.TabIndex = 3;
             // 
             // tableLayoutPanelFields
@@ -458,7 +457,7 @@
             this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanelFields.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanelFields.Size = new System.Drawing.Size(881, 278);
+            this.tableLayoutPanelFields.Size = new System.Drawing.Size(771, 278);
             this.tableLayoutPanelFields.TabIndex = 23;
             // 
             // tableLayoutPanelBtns
@@ -481,13 +480,13 @@
             this.tableLayoutPanelBtns.Controls.Add(this.btnNovo, 2, 0);
             this.tableLayoutPanelBtns.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanelBtns.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanelBtns.Location = new System.Drawing.Point(0, 406);
+            this.tableLayoutPanelBtns.Location = new System.Drawing.Point(0, 275);
             this.tableLayoutPanelBtns.Name = "tableLayoutPanelBtns";
             this.tableLayoutPanelBtns.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
             this.tableLayoutPanelBtns.RowCount = 2;
             this.tableLayoutPanelBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelBtns.Size = new System.Drawing.Size(881, 109);
+            this.tableLayoutPanelBtns.Size = new System.Drawing.Size(771, 109);
             this.tableLayoutPanelBtns.TabIndex = 24;
             // 
             // panelMain
@@ -496,19 +495,17 @@
             this.panelMain.Controls.Add(this.tableLayoutPanelBtns);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.MinimumSize = new System.Drawing.Size(881, 515);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(881, 515);
+            this.panelMain.Size = new System.Drawing.Size(771, 384);
             this.panelMain.TabIndex = 25;
             // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 515);
+            this.ClientSize = new System.Drawing.Size(771, 384);
             this.Controls.Add(this.panelMain);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(899, 562);
             this.Name = "frmCliente";
             this.Text = "CLIENTE";
             this.tableLayoutPanelFields.ResumeLayout(false);
