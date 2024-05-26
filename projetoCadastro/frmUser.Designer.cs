@@ -63,7 +63,7 @@
             this.panelFrmUser.Controls.Add(this.lblCodigo);
             this.panelFrmUser.Controls.Add(this.inputCodigo);
             this.panelFrmUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFrmUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelFrmUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelFrmUser.Location = new System.Drawing.Point(0, 0);
             this.panelFrmUser.Margin = new System.Windows.Forms.Padding(4);
             this.panelFrmUser.Name = "panelFrmUser";
@@ -87,7 +87,7 @@
             this.inputSenha.Location = new System.Drawing.Point(80, 113);
             this.inputSenha.Margin = new System.Windows.Forms.Padding(4);
             this.inputSenha.Name = "inputSenha";
-            this.inputSenha.Size = new System.Drawing.Size(271, 26);
+            this.inputSenha.Size = new System.Drawing.Size(271, 27);
             this.inputSenha.TabIndex = 4;
             this.inputSenha.UseSystemPasswordChar = true;
             // 
@@ -108,7 +108,7 @@
             this.inputLogin.Location = new System.Drawing.Point(80, 79);
             this.inputLogin.Margin = new System.Windows.Forms.Padding(4);
             this.inputLogin.Name = "inputLogin";
-            this.inputLogin.Size = new System.Drawing.Size(271, 26);
+            this.inputLogin.Size = new System.Drawing.Size(271, 27);
             this.inputLogin.TabIndex = 3;
             // 
             // lblNome
@@ -128,7 +128,7 @@
             this.inputNome.Location = new System.Drawing.Point(80, 44);
             this.inputNome.Margin = new System.Windows.Forms.Padding(4);
             this.inputNome.Name = "inputNome";
-            this.inputNome.Size = new System.Drawing.Size(483, 26);
+            this.inputNome.Size = new System.Drawing.Size(483, 27);
             this.inputNome.TabIndex = 2;
             // 
             // lblCodigo
@@ -148,7 +148,7 @@
             this.inputCodigo.Location = new System.Drawing.Point(80, 10);
             this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(61, 26);
+            this.inputCodigo.Size = new System.Drawing.Size(61, 27);
             this.inputCodigo.TabIndex = 1;
             // 
             // btnAnterior
@@ -290,6 +290,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnNovo, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnAlterar, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 217);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
