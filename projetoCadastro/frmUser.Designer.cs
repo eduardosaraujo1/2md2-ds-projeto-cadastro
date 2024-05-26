@@ -87,7 +87,7 @@
             this.inputSenha.Location = new System.Drawing.Point(80, 113);
             this.inputSenha.Margin = new System.Windows.Forms.Padding(4);
             this.inputSenha.Name = "inputSenha";
-            this.inputSenha.Size = new System.Drawing.Size(132, 26);
+            this.inputSenha.Size = new System.Drawing.Size(271, 26);
             this.inputSenha.TabIndex = 4;
             this.inputSenha.UseSystemPasswordChar = true;
             // 
@@ -108,7 +108,7 @@
             this.inputLogin.Location = new System.Drawing.Point(80, 79);
             this.inputLogin.Margin = new System.Windows.Forms.Padding(4);
             this.inputLogin.Name = "inputLogin";
-            this.inputLogin.Size = new System.Drawing.Size(132, 26);
+            this.inputLogin.Size = new System.Drawing.Size(271, 26);
             this.inputLogin.TabIndex = 3;
             // 
             // lblNome
@@ -128,7 +128,7 @@
             this.inputNome.Location = new System.Drawing.Point(80, 44);
             this.inputNome.Margin = new System.Windows.Forms.Padding(4);
             this.inputNome.Name = "inputNome";
-            this.inputNome.Size = new System.Drawing.Size(427, 26);
+            this.inputNome.Size = new System.Drawing.Size(483, 26);
             this.inputNome.TabIndex = 2;
             // 
             // lblCodigo
@@ -148,7 +148,7 @@
             this.inputCodigo.Location = new System.Drawing.Point(80, 10);
             this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(106, 26);
+            this.inputCodigo.Size = new System.Drawing.Size(61, 26);
             this.inputCodigo.TabIndex = 1;
             // 
             // btnAnterior
