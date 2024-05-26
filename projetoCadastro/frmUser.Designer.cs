@@ -161,6 +161,7 @@
             this.btnAnterior.TabIndex = 5;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSalvar
             // 
@@ -172,6 +173,7 @@
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnProximo
             // 
@@ -183,6 +185,7 @@
             this.btnProximo.TabIndex = 6;
             this.btnProximo.Text = "Proximo";
             this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnCancelar
             // 
@@ -194,6 +197,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSair
             // 
@@ -228,6 +232,7 @@
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnExcluir
             // 
@@ -250,6 +255,7 @@
             this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnNovo
             // 
@@ -261,6 +267,7 @@
             this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -301,6 +308,7 @@
             this.MinimumSize = new System.Drawing.Size(625, 365);
             this.Name = "frmUser";
             this.Text = "USUÁRIO";
+            this.Load += new System.EventHandler(this.frmUser_Load);
             this.panelFrmUser.ResumeLayout(false);
             this.panelFrmUser.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

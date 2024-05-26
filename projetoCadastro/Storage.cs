@@ -9,12 +9,14 @@ namespace projetoCadastro
 {
     public static class Storage
     {
-        public struct CadUsuario
+        public struct Usuario
         {
-            string codigo;
-            string nome;
-            string login;
-            string senha;
+            public int? codigo;
+            public string nome;
+            public string login;
+            public string senha;
         }
+
+        public static Usuario[] usuarios = new Usuario[100];
     }
 }
