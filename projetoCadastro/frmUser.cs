@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System; using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -19,7 +18,7 @@ namespace projetoCadastro
         // o termo Pointer é usado em C, mas para apontar uma posição na memória
         private Storage.Usuario[] usuarios = Storage.usuarios;
         private int pointerUsuario = -1; // pointer inicial é -1 pois não temos nenhum usuário para "apontar" ainda
-        public char modoForm;
+        public ModoForm modoForm;
         public frmUser()
         {
             InitializeComponent();
@@ -30,48 +29,49 @@ namespace projetoCadastro
             return (pointerUsuario + 1);
         }
 
-        private void DefinirModoForm(char modo)
+        private void DefinirModoForm(ModoForm modo)
         {
             this.modoForm = modo;
-            if (modo == 'V')
+            switch (modo)
             {
-                // modo visualização
-                inputCodigo.Enabled = false;
-                inputNome.Enabled = false;
-                inputLogin.Enabled = false;
-                inputSenha.Enabled = false;
-                btnAnterior.Enabled = true;
-                btnProximo.Enabled = true;
-                btnSalvar.Enabled = false;
-                btnCancelar.Enabled = false;
-                btnNovo.Enabled = true;
-                btnPesquisar.Enabled = true;
-                btnAlterar.Enabled = true;
-                btnImprimir.Enabled = true;
-                btnExcluir.Enabled = true;
-                btnSair.Enabled = true;
-            } 
-            else if (modo == 'A' || modo == 'C')
-            {
-                // modo alteração (ou cadastro)
-                inputCodigo.Enabled = false;
-                inputNome.Enabled = true;
-                inputLogin.Enabled = true;
-                inputSenha.Enabled = true;
-                btnAnterior.Enabled = false;
-                btnProximo.Enabled = false;
-                btnSalvar.Enabled = true;
-                btnCancelar.Enabled = true;
-                btnNovo.Enabled = false;
-                btnPesquisar.Enabled = false;
-                btnAlterar.Enabled = false;
-                btnImprimir.Enabled = false;
-                btnExcluir.Enabled = false;
-                btnSair.Enabled = false;
-            }
-            else if (modo == 'P')
-            {
-                // modo pesquisa (wip)
+                case ModoForm.Visualizacao:
+                    // modo visualização
+                    inputCodigo.Enabled = false;
+                    inputNome.Enabled = false;
+                    inputLogin.Enabled = false;
+                    inputSenha.Enabled = false;
+                    btnAnterior.Enabled = true;
+                    btnProximo.Enabled = true;
+                    btnSalvar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnNovo.Enabled = true;
+                    btnPesquisar.Enabled = true;
+                    btnAlterar.Enabled = true;
+                    btnImprimir.Enabled = true;
+                    btnExcluir.Enabled = true;
+                    btnSair.Enabled = true;
+                    break;
+                case ModoForm.Alteracao:
+                case ModoForm.Cadastro:
+                    // modo alteração (ou cadastro)
+                    inputCodigo.Enabled = false;
+                    inputNome.Enabled = true;
+                    inputLogin.Enabled = true;
+                    inputSenha.Enabled = true;
+                    btnAnterior.Enabled = false;
+                    btnProximo.Enabled = false;
+                    btnSalvar.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    btnNovo.Enabled = false;
+                    btnPesquisar.Enabled = false;
+                    btnAlterar.Enabled = false;
+                    btnImprimir.Enabled = false;
+                    btnExcluir.Enabled = false;
+                    btnSair.Enabled = false;
+                    break;
+                case ModoForm.Pesquisa:
+                    // modo pesquisa (wip)
+                    break;
             }
         }
 
@@ -118,7 +118,7 @@ namespace projetoCadastro
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-            DefinirModoForm('V');
+            DefinirModoForm(ModoForm.Visualizacao);
             // verificar se o usuário de código 1 (pointer 0) já foi cadastrado, se sim apontar para ele
             if (PointerValido(0))
             {
@@ -155,7 +155,7 @@ namespace projetoCadastro
             pointerUsuario++;
             LimparForm();
             inputCodigo.Text = GetCodigo().ToString();
-            DefinirModoForm('C');
+            DefinirModoForm(ModoForm.Cadastro);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -171,7 +171,7 @@ namespace projetoCadastro
             usuarios[pointerUsuario].login = inputLogin.Text;
             usuarios[pointerUsuario].senha = inputSenha.Text;
             
-            DefinirModoForm('V');
+            DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
         }
 
@@ -183,11 +183,11 @@ namespace projetoCadastro
             Remover permissão do usuário para alterar os campos
             Exibir os dados do usuário atual (anterior)
             */
-            if (modoForm == 'C')
+            if (modoForm == ModoForm.Cadastro)
             {
                 pointerUsuario--;
             }
-            DefinirModoForm('V');
+            DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
         }
 
@@ -203,7 +203,7 @@ namespace projetoCadastro
             if (PointerValido(pointerUsuario))
             {
                 ExibirDados();
-                DefinirModoForm('A');
+                DefinirModoForm(ModoForm.Alteracao);
             } else
             {
                 MessageBox.Show(
@@ -251,6 +251,14 @@ namespace projetoCadastro
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Console.Write("Entrando em modo debugger");
+        }
+
+        public enum ModoForm
+        {
+            Cadastro = 0,
+            Alteracao = 1,
+            Visualizacao = 2,
+            Pesquisa = 3
         }
     }
 }
