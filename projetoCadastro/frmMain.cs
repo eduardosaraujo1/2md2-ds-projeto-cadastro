@@ -57,5 +57,7 @@ namespace projetoCadastro
         {
             UpdateDateTime();
         }
+        // TODO: COPIAR O DESIGN DO frmUser PARA OS OUTROS FORMS
+        // TODO: IMPLEMENTAR LÓGICA DO frmUser PARA OS OUTROS FORMS
     }
 }

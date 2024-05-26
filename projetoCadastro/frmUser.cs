@@ -269,7 +269,7 @@ namespace projetoCadastro
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            Console.Write("Entrando em modo debugger");
+            // TODO: Não sei como essa funcionalidade deveria funcionar
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -307,6 +307,11 @@ namespace projetoCadastro
             Alteracao = 1,
             Visualizacao = 2,
             Pesquisa = 3
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            // TODO: Aprender como funciona o Print Dialog para a função de imprimir
         }
     }
 }
