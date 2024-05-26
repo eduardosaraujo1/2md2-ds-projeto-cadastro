@@ -15,7 +15,7 @@ Orientadores: Oswaldo Luiz e Joelma Lucia
 2. Botão Salvar: Salvar alterações/cadastro de novo usuário (disponível apenas em modo cadastro/edição)
 3. Botão Cancelar: Cancela alterações/cadastro de novo usuário (disponível apenas em modo cadastro/edição)
 4. Botão Novo: Libera tela para cadastrar um novo usuário, já definindo qual o código
-5. Botão Pesquisar: Libera o textbox de código para se digitar um código e localizar usuário dessa forma
+5. Botão Pesquisar: Libera o textbox de código para se digitar um código e localizar usuário dessa forma (apenas teoria, não é certo se essa é a implementação intencionada)
 6. Botão Alterar: Edita usuário exibido na tela
 7. Botão Imprimir: Imprimir dados do usuário exibido na tela
 8. Botão Excluir: Excluir usuário exibido na tela (recomendado prompt de confirmação)

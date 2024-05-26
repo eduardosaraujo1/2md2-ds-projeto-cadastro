@@ -1,7 +1,9 @@
-﻿using System; using System.Collections.Generic;
+﻿using System; 
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -14,29 +16,35 @@ namespace projetoCadastro
 {
     public partial class frmUser : Form
     {
-        // note: "pointer" significa o index do array de usuários, pois ele aponta (point) qual é o usuário atual
-        // o termo Pointer é usado em C, mas para apontar uma posição na memória
+        // note: "pointer" significa o index da posição descrita no nome
+        // exemplo: pointerUsuario é o index da posição do usuário sendo visualizado atualmente
+        // exemplo: pointerPosicaoVaziaArray é o index da posição onde se encontra o primeiro espaço vazio no array
+        // o termo vem da ideia de apontar (point) para a posição do array desejada
+        // o termo é usado em C para apontar uma posição na memória RAM
         private Storage.Usuario[] usuarios = Storage.usuarios;
         private int pointerUsuario = -1; // pointer inicial é -1 pois não temos nenhum usuário para "apontar" ainda
-        private int posicaoCadastroUsuario = 0;
-        public ModoForm modoForm;
+        private int pointerPosicaoVaziaArray = -1; // por padrão é indefinido (-1 pois fazer int? traria complicações); será calculado runtime
+        public ModoForm modoForm; // acompanha se estamos visualizando, alterando, cadastrando ou pesquisando
         public frmUser()
         {
             InitializeComponent();
         }
 
-        private void CalcularPosicaoCadastroUsuario()
+        private void EncontrarPosicaoVaziaArray()
         {
+            pointerPosicaoVaziaArray = -1;
             int usuariosLength = usuarios.Length;
-            int pos;
-            for (pos = 0; pos < usuariosLength; pos++)
+            for (int pos = 0; pos < usuariosLength; pos++)
             {
                 if (usuarios[pos].codigo is null)
                 {
-                    posicaoCadastroUsuario = pos;
-                    break;
+                    pointerPosicaoVaziaArray = pos;
+                    return;
                 }
             }
+            // se essa parte do código for executada, significa que o array está cheio
+            // nesse caso, a posicaoCadastroUsuario estará uma unidade fora do array
+            pointerPosicaoVaziaArray = usuariosLength;
         }
 
         private void DefinirModoForm(ModoForm modo)
@@ -91,14 +99,22 @@ namespace projetoCadastro
             return pointer >= 0 && pointer < usuarios.Length;
         }
 
-        private bool PointerUsuarioNulo(int pointer) {
+        private bool UsuarioPointerNulo(int pointer) {
             // método determina se o usuário apontado pelo pointer está cadastrado
             return usuarios[pointer].codigo is null;
         }
 
         private bool PointerValido(int pointer)
         {
-            return PointerDentroDoArray(pointer) && !PointerUsuarioNulo(pointer);
+            return PointerDentroDoArray(pointer) && !UsuarioPointerNulo(pointer);
+        }
+
+        private void LimparForm()
+        {
+            inputCodigo.Text = "";
+            inputNome.Text = "";
+            inputLogin.Text = "";
+            inputSenha.Text = "";
         }
 
         private void ExibirDados()
@@ -118,24 +134,12 @@ namespace projetoCadastro
             }
         }
 
-        private void LimparForm()
-        {
-            inputCodigo.Text = "";
-            inputNome.Text = "";
-            inputLogin.Text = "";
-            inputSenha.Text = "";
-        }
-
         private void frmUser_Load(object sender, EventArgs e)
         {
-            // verificar se o usuário de código 1 (pointer 0) já foi cadastrado, se sim apontar para ele
-            if (PointerValido(0))
-            {
-                pointerUsuario = 0;
-                ExibirDados();
-            }
-            CalcularPosicaoCadastroUsuario();
+            EncontrarPosicaoVaziaArray();
+            pointerUsuario = pointerPosicaoVaziaArray - 1; // aponta para posição de ultimo usuário cadastrado
             DefinirModoForm(ModoForm.Visualizacao);
+            ExibirDados();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -147,25 +151,25 @@ namespace projetoCadastro
         {
             /*
             CADASTRO DE USUÁRIO
-            Verificar se tem espaço para um usuário novo
-            Apontar para o novo slot onde o usuário será cadastrado (pointerUsuario++)
+            Verificar se tem espaço para um usuário novo, mensagem de erros e não tem
+            Apontar para o novo slot onde o usuário será cadastrado
             Limpar form de quaisquer outros dados que estavam lá previamente
-            Exibir código do usuário novo
+            Exibir código do usuário novo (note que codigo = pointer + 1)
             Liberar usuário para digitar informações do usuário
             */
-            if (posicaoCadastroUsuario >= usuarios.Length) 
+            if (pointerPosicaoVaziaArray >= usuarios.Length) 
             {
                 MessageBox.Show(
                     "Não há espaço suficiente para um novo usuário.\nContate o administrador do sistema",
-                    "Erro Sem espaço",
+                    "Sem espaço",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
-            pointerUsuario = posicaoCadastroUsuario;
+            pointerUsuario = pointerPosicaoVaziaArray;
             LimparForm();
-            inputCodigo.Text = (posicaoCadastroUsuario + 1).ToString();
+            inputCodigo.Text = (pointerPosicaoVaziaArray + 1).ToString();
             DefinirModoForm(ModoForm.Cadastro);
         }
 
@@ -183,12 +187,24 @@ namespace projetoCadastro
             usuarios[pointerUsuario].login = inputLogin.Text;
             usuarios[pointerUsuario].senha = inputSenha.Text;
 
-            // seria melhor executar o método para calcular a posicaoCadastroUsuario novamente
-            // isso é uma pequena vulnerabilidade, e é um exemplo perfeito do porquê cada parte do código deve funcionar da forma mais independente possível
-            // estou prestes a implementar mecanica de deletar usuários, e se eu quisesse que espaços vazios fossem preenchidos por novos cadastros, essa linha geraria erros
-            // o calculo inicial indicaria o ponto no meio do array e quando essa variavel incrementasse começaria a sobreescrever usuários
-            // por isso, é recomendado que cada parte do código funcione de forma mais independente possível
-            posicaoCadastroUsuario++;
+            // isso é um exemplo do porque o conceito de "programação funcional" não utiliza estados:
+            /*
+            "Programação funcional é o processo de construir software através de composição de funções puras, 
+            evitando compartilhamento de estados, dados mutáveis e efeitos colaterais."
+            https://www.alura.com.br/artigos/programacao-funcional-o-que-e
+            */
+            // essa função está dependente do estado prévio da variavel pointerPosicaoVaziaArray
+            // a funcionalidade excluirUsuario poderia, erroniamente, gerar um espaço nulo no meio do array, colocando a posicao vazia no meio do array
+            // o calculo estaria correto, ele faz o trabalho dele, encontrar a primeira posição vazia disponivel
+            // se estivessemos recaclulando a posição vazia do array sempre, apesar do custo computacional, não haveria problema
+            // agora, cegamente incrementando o valor em 1 com o pointer no meio do array, o "espaço vazio" apontaria para um espaço preenchido
+            // isso, por sua vez, causaria efeitos colaterais na função de novo usuário, que colocaria um novo usuário onde ja tinha um usuário
+            // dessa forma, sobreescrevemos os dados desse usuário, uh oh... efeito colateral abre espaço para problemas
+            // o problema não foi apenas o erro de excluirUsuario, qualquer função poderia cometer o mesmo erro
+            // o problema foi permitir que o erro afetasse as outras funções, que se originou daqui
+            // por hora, manterei essa implementação, mas caso a função excluirUsuario troque de requisitos implementarei a linha comentada abaixo
+            // EncontrarPosicaoVaziaArray();
+            pointerPosicaoVaziaArray++;
             
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
@@ -198,12 +214,13 @@ namespace projetoCadastro
         {
             /*
             CANCELAR CADASTRO OU ALTERAÇÃO
-            Se o modo for Cadastro, reduza o pointer em 1 para voltar ao usuário anterior
+            Se o modo for Cadastro, apontar para o usuário anterior, já que estamos apontando pro usuário que estava sendo cadastrado e não será mais
             Remover permissão do usuário para alterar os campos
             Exibir os dados do usuário atual (anterior)
             */
             if (modoForm == ModoForm.Cadastro)
             {
+                // não apontar mais para o usuário que não será cadastrado
                 pointerUsuario--;
             }
             DefinirModoForm(ModoForm.Visualizacao);
@@ -227,7 +244,7 @@ namespace projetoCadastro
             {
                 MessageBox.Show(
                     "Você não selecionou nenhum usuário para alterar.",
-                    "Erro usuário não encontrado",
+                    "Usuário não encontrado",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                     );
@@ -281,7 +298,7 @@ namespace projetoCadastro
 
             Note que apagar um usuário vai gerar espaços vazios.
             Espaços vazios no meio do array não serão encontrados, mas serão editaveis por meio do botão Alterar
-            Isso é comportamento intencional
+            Isso é o comportamento intencional, seguindo o exemplo do professor
             */
             string usuario = usuarios[pointerUsuario].login;
             DialogResult confirm = MessageBox.Show(
