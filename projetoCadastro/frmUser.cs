@@ -184,7 +184,10 @@ namespace projetoCadastro
             usuarios[pointerUsuario].senha = inputSenha.Text;
 
             // seria melhor executar o método para calcular a posicaoCadastroUsuario novamente
-            // mas por motivos de eficiencia, deixarei essa pequena brecha para erros em aberto
+            // isso é uma pequena vulnerabilidade, e é um exemplo perfeito do porquê cada parte do código deve funcionar da forma mais independente possível
+            // estou prestes a implementar mecanica de deletar usuários, e se eu quisesse que espaços vazios fossem preenchidos por novos cadastros, essa linha geraria erros
+            // o calculo inicial indicaria o ponto no meio do array e quando essa variavel incrementasse começaria a sobreescrever usuários
+            // por isso, é recomendado que cada parte do código funcione de forma mais independente possível
             posicaoCadastroUsuario++;
             
             DefinirModoForm(ModoForm.Visualizacao);
@@ -277,8 +280,25 @@ namespace projetoCadastro
             Se usuário confirma, remover os dados do usuário do array
 
             Note que apagar um usuário vai gerar espaços vazios.
-            Espaços vazios no meio do array não serão encontrados pelo algoritimo atual de cadastrar novo usuário, que 
+            Espaços vazios no meio do array não serão encontrados, mas serão editaveis por meio do botão Alterar
+            Isso é comportamento intencional
             */
+            string usuario = usuarios[pointerUsuario].login;
+            DialogResult confirm = MessageBox.Show(
+                $"Tem certeza de que deseja apagar o usuário '{usuario}'? Essa ação não pode ser desfeita.'",
+                "Confirmar exclusão",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question
+                );
+
+            if (confirm != DialogResult.Yes) {
+                return;
+            }
+
+            usuarios[pointerUsuario].nome = "";
+            usuarios[pointerUsuario].login = "";
+            usuarios[pointerUsuario].senha = "";
+            ExibirDados();
         }
 
         public enum ModoForm
