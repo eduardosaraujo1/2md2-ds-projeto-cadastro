@@ -93,20 +93,15 @@ namespace projetoCadastro
             }
         }
 
-        private bool PointerDentroDoArray(int pointer)
+        private bool PointerDentroArray(int pointer)
         {
             // método determina se o valor do pointer é um index valido para o array
             return pointer >= 0 && pointer < usuarios.Length;
         }
 
-        private bool UsuarioPointerNulo(int pointer) {
+        private bool PointerApontaUsuarioCadastrado(int pointer) {
             // método determina se o usuário apontado pelo pointer está cadastrado
-            return usuarios[pointer].codigo is null;
-        }
-
-        private bool PointerValido(int pointer)
-        {
-            return PointerDentroDoArray(pointer) && !UsuarioPointerNulo(pointer);
+            return PointerDentroArray(pointer) && !(usuarios[pointer].codigo is null);
         }
 
         private void LimparForm()
@@ -120,7 +115,7 @@ namespace projetoCadastro
         private void ExibirDados()
         {
             // não é possivel exibir dados se eles forem nulos, por isso o vetor não pode apontar para nulo
-            if (PointerValido(pointerUsuario))
+            if (PointerApontaUsuarioCadastrado(pointerUsuario))
             {
                 Storage.Usuario usuario = usuarios[pointerUsuario];
                 inputCodigo.Text = (pointerUsuario + 1).ToString();
@@ -236,7 +231,7 @@ namespace projetoCadastro
             Libere para o usuário editar, esperando opção Salvar ou Cancelar
             Se não, avisar usuário que ele não selecionou nenhum usuário
             */
-            if (PointerValido(pointerUsuario))
+            if (PointerApontaUsuarioCadastrado(pointerUsuario))
             {
                 ExibirDados();
                 DefinirModoForm(ModoForm.Alteracao);
@@ -261,7 +256,7 @@ namespace projetoCadastro
             */
 
             int novoPointer = pointerUsuario + 1;
-            if (PointerValido(novoPointer))
+            if (PointerApontaUsuarioCadastrado(novoPointer))
             {
                 pointerUsuario = novoPointer;
             }
@@ -277,7 +272,7 @@ namespace projetoCadastro
             Exibir dados do novo usuário
             */
             int novoPointer = pointerUsuario - 1;
-            if (PointerValido(novoPointer))
+            if (PointerApontaUsuarioCadastrado(novoPointer))
             {
                 pointerUsuario = novoPointer;
             }
@@ -286,7 +281,7 @@ namespace projetoCadastro
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            // TODO: Não sei como essa funcionalidade deveria funcionar
+            // TODO: Não sei como essa funcionalidade deveria funcionar, tive uma teoria mas prefiro não arriscar estar errado
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -318,17 +313,18 @@ namespace projetoCadastro
             ExibirDados();
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            // TODO: Aprender como funciona o Print Dialog para a função de imprimir
+            Debugger.Break();
+        }
+
         public enum ModoForm
         {
             Cadastro = 0,
             Alteracao = 1,
             Visualizacao = 2,
             Pesquisa = 3
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            // TODO: Aprender como funciona o Print Dialog para a função de imprimir
         }
     }
 }
