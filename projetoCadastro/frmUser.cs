@@ -18,15 +18,25 @@ namespace projetoCadastro
         // o termo Pointer é usado em C, mas para apontar uma posição na memória
         private Storage.Usuario[] usuarios = Storage.usuarios;
         private int pointerUsuario = -1; // pointer inicial é -1 pois não temos nenhum usuário para "apontar" ainda
+        private int posicaoCadastroUsuario = 0;
         public ModoForm modoForm;
         public frmUser()
         {
             InitializeComponent();
         }
 
-        private int GetCodigo()
+        private void CalcularPosicaoCadastroUsuario()
         {
-            return (pointerUsuario + 1);
+            int usuariosLength = usuarios.Length;
+            int pos;
+            for (pos = 0; pos < usuariosLength; pos++)
+            {
+                if (usuarios[pos].codigo is null)
+                {
+                    posicaoCadastroUsuario = pos;
+                    break;
+                }
+            }
         }
 
         private void DefinirModoForm(ModoForm modo)
@@ -118,13 +128,14 @@ namespace projetoCadastro
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-            DefinirModoForm(ModoForm.Visualizacao);
             // verificar se o usuário de código 1 (pointer 0) já foi cadastrado, se sim apontar para ele
             if (PointerValido(0))
             {
                 pointerUsuario = 0;
                 ExibirDados();
             }
+            CalcularPosicaoCadastroUsuario();
+            DefinirModoForm(ModoForm.Visualizacao);
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -135,26 +146,26 @@ namespace projetoCadastro
         private void btnNovo_Click(object sender, EventArgs e)
         {
             /*
-            CADASTRO DE USUÁRIO NOVO
+            CADASTRO DE USUÁRIO
             Verificar se tem espaço para um usuário novo
             Apontar para o novo slot onde o usuário será cadastrado (pointerUsuario++)
             Limpar form de quaisquer outros dados que estavam lá previamente
             Exibir código do usuário novo
             Liberar usuário para digitar informações do usuário
             */
-            if (pointerUsuario >= usuarios.Length) 
+            if (posicaoCadastroUsuario >= usuarios.Length) 
             {
                 MessageBox.Show(
                     "Não há espaço suficiente para um novo usuário.\nContate o administrador do sistema",
-                    "Sem espaço",
+                    "Erro Sem espaço",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
-            pointerUsuario++;
+            pointerUsuario = posicaoCadastroUsuario;
             LimparForm();
-            inputCodigo.Text = GetCodigo().ToString();
+            inputCodigo.Text = (posicaoCadastroUsuario + 1).ToString();
             DefinirModoForm(ModoForm.Cadastro);
         }
 
@@ -166,10 +177,15 @@ namespace projetoCadastro
             Remover permissão do usuário para alterar os campos
             Exibir os dados do usuário atual (recém-cadastrado)
             */
-            usuarios[pointerUsuario].codigo = GetCodigo();
+
+            usuarios[pointerUsuario].codigo = pointerUsuario + 1;
             usuarios[pointerUsuario].nome = inputNome.Text;
             usuarios[pointerUsuario].login = inputLogin.Text;
             usuarios[pointerUsuario].senha = inputSenha.Text;
+
+            // seria melhor executar o método para calcular a posicaoCadastroUsuario novamente
+            // mas por motivos de eficiencia, deixarei essa pequena brecha para erros em aberto
+            posicaoCadastroUsuario++;
             
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
@@ -251,6 +267,18 @@ namespace projetoCadastro
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             Console.Write("Entrando em modo debugger");
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            /*
+            EXCLUIR USUÁRIO 
+            Exibir prompt de confirmação para deletar o usuário de código n
+            Se usuário confirma, remover os dados do usuário do array
+
+            Note que apagar um usuário vai gerar espaços vazios.
+            Espaços vazios no meio do array não serão encontrados pelo algoritimo atual de cadastrar novo usuário, que 
+            */
         }
 
         public enum ModoForm
