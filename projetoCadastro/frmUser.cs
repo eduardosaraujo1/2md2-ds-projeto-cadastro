@@ -47,6 +47,28 @@ namespace projetoCadastro
             pointerPosicaoVaziaArray = usuariosLength;
         }
 
+        private bool PointerDentroArray(int pointer)
+        {
+            // método determina se o valor do pointer é um index valido para o array
+            return pointer >= 0 && pointer < usuarios.Length;
+        }
+
+        private bool PointerApontaUsuarioCadastrado(int pointer) {
+            // método determina se o usuário apontado pelo pointer está cadastrado
+            return PointerDentroArray(pointer) && !(usuarios[pointer].codigo is null);
+        }
+        
+        private void DefinirModoTextBoxes(bool enabled)
+        {
+            foreach(Control control in panelFrmUser.Controls) {
+                if (control is TextBox)
+                {
+                    TextBox tb = control as TextBox;
+                    tb.Enabled = enabled;
+                }
+            }
+        }
+
         private void DefinirModoForm(ModoForm modo)
         {
             this.modoForm = modo;
@@ -54,10 +76,8 @@ namespace projetoCadastro
             {
                 case ModoForm.Visualizacao:
                     // modo visualização
+                    DefinirModoTextBoxes(enabled: false);
                     inputCodigo.Enabled = false;
-                    inputNome.Enabled = false;
-                    inputLogin.Enabled = false;
-                    inputSenha.Enabled = false;
                     btnAnterior.Enabled = true;
                     btnProximo.Enabled = true;
                     btnSalvar.Enabled = false;
@@ -72,6 +92,7 @@ namespace projetoCadastro
                 case ModoForm.Alteracao:
                 case ModoForm.Cadastro:
                     // modo alteração (ou cadastro)
+                    DefinirModoTextBoxes(enabled: true);
                     inputCodigo.Enabled = false;
                     inputNome.Enabled = true;
                     inputLogin.Enabled = true;
@@ -93,23 +114,15 @@ namespace projetoCadastro
             }
         }
 
-        private bool PointerDentroArray(int pointer)
-        {
-            // método determina se o valor do pointer é um index valido para o array
-            return pointer >= 0 && pointer < usuarios.Length;
-        }
-
-        private bool PointerApontaUsuarioCadastrado(int pointer) {
-            // método determina se o usuário apontado pelo pointer está cadastrado
-            return PointerDentroArray(pointer) && !(usuarios[pointer].codigo is null);
-        }
-
         private void LimparForm()
         {
-            inputCodigo.Text = "";
-            inputNome.Text = "";
-            inputLogin.Text = "";
-            inputSenha.Text = "";
+            foreach(Control control in panelFrmUser.Controls) {
+                if (control is TextBox)
+                {
+                    TextBox tb = control as TextBox;
+                    tb.Text = "";
+                }
+            }
         }
 
         private void ExibirDados()
@@ -198,8 +211,11 @@ namespace projetoCadastro
             // o problema não foi apenas o erro de excluirUsuario, qualquer função poderia cometer o mesmo erro
             // o problema foi permitir que o erro afetasse as outras funções, que se originou daqui
             // por hora, manterei essa implementação, mas caso a função excluirUsuario troque de requisitos implementarei a linha comentada abaixo
-            // EncontrarPosicaoVaziaArray();
-            pointerPosicaoVaziaArray++;
+            if (modoForm == ModoForm.Cadastro)
+            {
+                // EncontrarPosicaoVaziaArray();
+                pointerPosicaoVaziaArray++;
+            }
             
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
