@@ -26,8 +26,8 @@ namespace projetoCadastro
         private void EncontrarPosicaoVaziaArray()
         {
             pointerPosicaoVaziaArray = -1;
-            int usuariosLength = clientes.Length;
-            for (int pos = 0; pos < usuariosLength; pos++)
+            int clientesLength = clientes.Length;
+            for (int pos = 0; pos < clientesLength; pos++)
             {
                 if (clientes[pos].codigo is null)
                 {
@@ -35,7 +35,7 @@ namespace projetoCadastro
                     return;
                 }
             }
-            pointerPosicaoVaziaArray = usuariosLength;
+            pointerPosicaoVaziaArray = clientesLength;
         }
 
         private bool PointerDentroArray(int pointer)
@@ -44,8 +44,8 @@ namespace projetoCadastro
             return pointer >= 0 && pointer < clientes.Length;
         }
 
-        private bool PointerApontaUsuarioCadastrado(int pointer) {
-            // método determina se o usuário apontado pelo pointer está cadastrado
+        private bool PointerApontaClienteCadastrado(int pointer) {
+            // método determina se o cliente apontado pelo pointer está cadastrado
             return PointerDentroArray(pointer) && !(clientes[pointer].codigo is null);
         }
         
@@ -115,7 +115,7 @@ namespace projetoCadastro
         }
         private void ExibirDados()
         {
-            if (PointerApontaUsuarioCadastrado(pointerCliente))
+            if (PointerApontaClienteCadastrado(pointerCliente))
             {
                 Storage.Cliente cliente = clientes[pointerCliente];
                 inputCodigo.Text = (pointerCliente + 1).ToString();
@@ -151,7 +151,7 @@ namespace projetoCadastro
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             int novoPointer = pointerCliente - 1;
-            if (PointerApontaUsuarioCadastrado(novoPointer))
+            if (PointerApontaClienteCadastrado(novoPointer))
             {
                 pointerCliente = novoPointer;
             }
@@ -161,7 +161,7 @@ namespace projetoCadastro
         private void btnProximo_Click(object sender, EventArgs e)
         {
             int novoPointer = pointerCliente + 1;
-            if (PointerApontaUsuarioCadastrado(novoPointer))
+            if (PointerApontaClienteCadastrado(novoPointer))
             {
                 pointerCliente = novoPointer;
             }
@@ -227,7 +227,7 @@ namespace projetoCadastro
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (PointerApontaUsuarioCadastrado(pointerCliente))
+            if (PointerApontaClienteCadastrado(pointerCliente))
             {
                 ExibirDados();
                 DefinirModoForm(ModoForm.Alteracao);
@@ -235,7 +235,7 @@ namespace projetoCadastro
             {
                 MessageBox.Show(
                     "Você não selecionou nenhum cliente para alterar.",
-                    "Usuário não encontrado",
+                    "Cliente não encontrado",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                     );
