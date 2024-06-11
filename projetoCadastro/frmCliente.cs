@@ -17,7 +17,6 @@ namespace projetoCadastro
     {
         // grande parte dos comentários de cada funcionalidade está em frmUser, veja a implementação lá para detalhes
         public IEntidade[] cadastros { get; set; } = Storage.clientes;
-
         private LogicaCadastro logica;
 
         public frmCliente()
@@ -103,18 +102,36 @@ namespace projetoCadastro
             inputRG.Text = cliente.rg ?? "";
         }
 
+        public void BloquearDigitacao() {
+            logica.DefinirModoTextBoxes(false);
+            inputCodigo.Enabled = false;
+            btnAnterior.Enabled = true;
+            btnProximo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnNovo.Enabled = true;
+            btnPesquisar.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnImprimir.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnSair.Enabled = true;
+        }
+        public void PermitirDigitacao() {
+            logica.DefinirModoTextBoxes(true);
+            inputCodigo.Enabled = false;
+            btnAnterior.Enabled = false;
+            btnProximo.Enabled = false;
+            btnSalvar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnNovo.Enabled = false;
+            btnPesquisar.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnImprimir.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnSair.Enabled = false;
+        }
+
         // necessário inicializar para implementação da interface
-        public Button btnProximoGet { get { return btnProximo; } }
-        public TextBox inputCodigoGet { get { return inputCodigo; } }
-        public Button btnAnteriorGet { get {return btnAnterior;}  }
-        public Button btnSalvarGet {get {return btnSalvar;} }
-        public Button btnCancelarGet {get {return btnCancelar;} }
-        public Button btnNovoGet {get {return btnNovo;} }
-        public Button btnPesquisarGet {get {return btnPesquisar;} }
-        public Button btnAlterarGet {get {return btnAlterar;} }
-        public Button btnImprimirGet {get {return btnImprimir;} }
-        public Button btnExcluirGet {get {return btnExcluir;} }
-        public Button btnSairGet {get {return btnSair;} }
-        public Panel panelCamposGet { get {return panelCampos;} }
+        public Panel getPanelCampos { get { return panelCampos; } }
     }
 }

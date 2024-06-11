@@ -69,7 +69,6 @@
             this.panelCampos.Name = "panelCampos";
             this.panelCampos.Size = new System.Drawing.Size(607, 318);
             this.panelCampos.TabIndex = 3;
-            this.panelCampos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFrmUser_Paint);
             // 
             // lblSenha
             // 
@@ -222,7 +221,6 @@
             this.btnImprimir.TabIndex = 12;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnPesquisar
             // 
@@ -234,7 +232,6 @@
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnExcluir
             // 

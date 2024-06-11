@@ -53,7 +53,7 @@ namespace projetoCadastro
         public void LimparForm()
         {
             // Limpa todas as textboxes do form
-            foreach(Control control in formulario.panelCamposGet.Controls) {
+            foreach(Control control in formulario.getPanelCampos.Controls) {
                 if (control is TextBox)
                 {
                     control.Text = "";
@@ -61,9 +61,9 @@ namespace projetoCadastro
             }
         }
 
-        private void DefinirModoTextBoxes(bool enabled, Panel panel)
+        public void DefinirModoTextBoxes(bool enabled)
         {
-            foreach(Control control in panel.Controls) {
+            foreach(Control control in formulario.getPanelCampos.Controls) {
                 if (control is TextBox)
                 {
                     control.Enabled = enabled;
@@ -78,34 +78,12 @@ namespace projetoCadastro
             {
                 case ModoForm.Visualizacao:
                     // modo visualização
-                    DefinirModoTextBoxes(false, formulario.panelCamposGet);
-                    formulario.inputCodigoGet.Enabled = false;
-                    formulario.btnAnteriorGet.Enabled = true;
-                    formulario.btnProximoGet.Enabled = true;
-                    formulario.btnSalvarGet.Enabled = false;
-                    formulario.btnCancelarGet.Enabled = false;
-                    formulario.btnNovoGet.Enabled = true;
-                    formulario.btnPesquisarGet.Enabled = true;
-                    formulario.btnAlterarGet.Enabled = true;
-                    formulario.btnImprimirGet.Enabled = true;
-                    formulario.btnExcluirGet.Enabled = true;
-                    formulario.btnSairGet.Enabled = true;
+                    formulario.BloquearDigitacao();
                     break;
                 case ModoForm.Alteracao:
                 case ModoForm.Cadastro:
                     // modo alteração (ou cadastro)
-                    DefinirModoTextBoxes(true, formulario.panelCamposGet);
-                    formulario.inputCodigoGet.Enabled = false;
-                    formulario.btnAnteriorGet.Enabled = false;
-                    formulario.btnProximoGet.Enabled = false;
-                    formulario.btnSalvarGet.Enabled = true;
-                    formulario.btnCancelarGet.Enabled = true;
-                    formulario.btnNovoGet.Enabled = false;
-                    formulario.btnPesquisarGet.Enabled = false;
-                    formulario.btnAlterarGet.Enabled = false;
-                    formulario.btnImprimirGet.Enabled = false;
-                    formulario.btnExcluirGet.Enabled = false;
-                    formulario.btnSairGet.Enabled = false;
+                    formulario.PermitirDigitacao();
                     break;
             }
         }
@@ -163,10 +141,25 @@ namespace projetoCadastro
             }
 
             LimparForm();
-            formulario.inputCodigoGet.Text = (pointerPosicaoVaziaArray + 1).ToString();
+            TextBox inputCodigo = ObterInputCodigo();
+            inputCodigo.Text = (pointerPosicaoVaziaArray + 1).ToString();
 
             pointerEntidade = pointerPosicaoVaziaArray;
             DefinirModoForm(ModoForm.Cadastro);
+
+            TextBox ObterInputCodigo()
+            {
+                Panel panel = formulario.getPanelCampos;
+                Control[] controles = panel.Controls.Find("inputCodigo", true);
+                if (controles.Length > 0)
+                {
+                    return controles[0] as TextBox;
+                }
+                else
+                {
+                    throw new Exception("TextBox de nome \"inputCodigo\" não foi encontrada");
+                }
+            }
         }
 
         public void AlteracaoCadastro()
