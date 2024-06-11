@@ -41,7 +41,7 @@
             this.panelFrmCliente = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelInputs = new System.Windows.Forms.TableLayoutPanel();
+            this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
             this.inputInscrEstadual = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.inputContato = new System.Windows.Forms.TextBox();
@@ -71,7 +71,7 @@
             this.panelFrmCliente.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tableLayoutPanelButtons.SuspendLayout();
-            this.tableLayoutPanelInputs.SuspendLayout();
+            this.panelCampos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSair
@@ -206,7 +206,7 @@
             // panelMain
             // 
             this.panelMain.Controls.Add(this.tableLayoutPanelButtons);
-            this.panelMain.Controls.Add(this.tableLayoutPanelInputs);
+            this.panelMain.Controls.Add(this.panelCampos);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
@@ -242,64 +242,64 @@
             this.tableLayoutPanelButtons.Size = new System.Drawing.Size(804, 123);
             this.tableLayoutPanelButtons.TabIndex = 2;
             // 
-            // tableLayoutPanelInputs
+            // panelCampos
             // 
-            this.tableLayoutPanelInputs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelCampos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.ColumnCount = 6;
-            this.tableLayoutPanelInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelInputs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelInputs.Controls.Add(this.inputInscrEstadual, 3, 5);
-            this.tableLayoutPanelInputs.Controls.Add(this.label11, 2, 5);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputContato, 1, 3);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputEmail, 1, 4);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputCNPJ, 1, 5);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputRazaoSocial, 1, 2);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputCodigo, 1, 0);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputNomeFantasia, 1, 1);
-            this.tableLayoutPanelInputs.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanelInputs.Controls.Add(this.label12, 0, 3);
-            this.tableLayoutPanelInputs.Controls.Add(this.label13, 0, 2);
-            this.tableLayoutPanelInputs.Controls.Add(this.label6, 0, 8);
-            this.tableLayoutPanelInputs.Controls.Add(this.label1, 0, 6);
-            this.tableLayoutPanelInputs.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputEstado, 5, 7);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputEndereco, 1, 6);
-            this.tableLayoutPanelInputs.Controls.Add(this.label7, 4, 7);
-            this.tableLayoutPanelInputs.Controls.Add(this.label8, 0, 4);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputTelefone, 3, 8);
-            this.tableLayoutPanelInputs.Controls.Add(this.label10, 2, 8);
-            this.tableLayoutPanelInputs.Controls.Add(this.label9, 0, 5);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputBairro, 1, 7);
-            this.tableLayoutPanelInputs.Controls.Add(this.label2, 2, 7);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputCidade, 3, 7);
-            this.tableLayoutPanelInputs.Controls.Add(this.inputCEP, 1, 8);
-            this.tableLayoutPanelInputs.Controls.Add(this.label5, 0, 7);
-            this.tableLayoutPanelInputs.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelInputs.Name = "tableLayoutPanelInputs";
-            this.tableLayoutPanelInputs.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tableLayoutPanelInputs.RowCount = 9;
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanelInputs.Size = new System.Drawing.Size(804, 333);
-            this.tableLayoutPanelInputs.TabIndex = 1;
+            this.panelCampos.ColumnCount = 6;
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.panelCampos.Controls.Add(this.inputInscrEstadual, 3, 5);
+            this.panelCampos.Controls.Add(this.label11, 2, 5);
+            this.panelCampos.Controls.Add(this.inputContato, 1, 3);
+            this.panelCampos.Controls.Add(this.inputEmail, 1, 4);
+            this.panelCampos.Controls.Add(this.inputCNPJ, 1, 5);
+            this.panelCampos.Controls.Add(this.inputRazaoSocial, 1, 2);
+            this.panelCampos.Controls.Add(this.inputCodigo, 1, 0);
+            this.panelCampos.Controls.Add(this.inputNomeFantasia, 1, 1);
+            this.panelCampos.Controls.Add(this.label4, 0, 0);
+            this.panelCampos.Controls.Add(this.label12, 0, 3);
+            this.panelCampos.Controls.Add(this.label13, 0, 2);
+            this.panelCampos.Controls.Add(this.label6, 0, 8);
+            this.panelCampos.Controls.Add(this.label1, 0, 6);
+            this.panelCampos.Controls.Add(this.label3, 0, 1);
+            this.panelCampos.Controls.Add(this.inputEstado, 5, 7);
+            this.panelCampos.Controls.Add(this.inputEndereco, 1, 6);
+            this.panelCampos.Controls.Add(this.label7, 4, 7);
+            this.panelCampos.Controls.Add(this.label8, 0, 4);
+            this.panelCampos.Controls.Add(this.inputTelefone, 3, 8);
+            this.panelCampos.Controls.Add(this.label10, 2, 8);
+            this.panelCampos.Controls.Add(this.label9, 0, 5);
+            this.panelCampos.Controls.Add(this.inputBairro, 1, 7);
+            this.panelCampos.Controls.Add(this.label2, 2, 7);
+            this.panelCampos.Controls.Add(this.inputCidade, 3, 7);
+            this.panelCampos.Controls.Add(this.inputCEP, 1, 8);
+            this.panelCampos.Controls.Add(this.label5, 0, 7);
+            this.panelCampos.Location = new System.Drawing.Point(0, 0);
+            this.panelCampos.Name = "panelCampos";
+            this.panelCampos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelCampos.RowCount = 9;
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.panelCampos.Size = new System.Drawing.Size(804, 333);
+            this.panelCampos.TabIndex = 1;
             // 
             // inputInscrEstadual
             // 
             this.inputInscrEstadual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputInscrEstadual, 2);
+            this.panelCampos.SetColumnSpan(this.inputInscrEstadual, 2);
             this.inputInscrEstadual.Location = new System.Drawing.Point(421, 189);
             this.inputInscrEstadual.Margin = new System.Windows.Forms.Padding(4);
             this.inputInscrEstadual.Name = "inputInscrEstadual";
@@ -321,7 +321,7 @@
             // 
             this.inputContato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputContato, 2);
+            this.panelCampos.SetColumnSpan(this.inputContato, 2);
             this.inputContato.Location = new System.Drawing.Point(134, 115);
             this.inputContato.Margin = new System.Windows.Forms.Padding(4, 4, 40, 4);
             this.inputContato.Name = "inputContato";
@@ -332,7 +332,7 @@
             // 
             this.inputEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputEmail, 4);
+            this.panelCampos.SetColumnSpan(this.inputEmail, 4);
             this.inputEmail.Location = new System.Drawing.Point(134, 152);
             this.inputEmail.Margin = new System.Windows.Forms.Padding(4);
             this.inputEmail.Name = "inputEmail";
@@ -353,7 +353,7 @@
             // 
             this.inputRazaoSocial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputRazaoSocial, 2);
+            this.panelCampos.SetColumnSpan(this.inputRazaoSocial, 2);
             this.inputRazaoSocial.Location = new System.Drawing.Point(134, 78);
             this.inputRazaoSocial.Margin = new System.Windows.Forms.Padding(4);
             this.inputRazaoSocial.Name = "inputRazaoSocial";
@@ -374,7 +374,7 @@
             // 
             this.inputNomeFantasia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputNomeFantasia, 3);
+            this.panelCampos.SetColumnSpan(this.inputNomeFantasia, 3);
             this.inputNomeFantasia.Location = new System.Drawing.Point(134, 41);
             this.inputNomeFantasia.Margin = new System.Windows.Forms.Padding(4);
             this.inputNomeFantasia.Name = "inputNomeFantasia";
@@ -463,7 +463,7 @@
             // 
             this.inputEndereco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputEndereco, 5);
+            this.panelCampos.SetColumnSpan(this.inputEndereco, 5);
             this.inputEndereco.Location = new System.Drawing.Point(134, 226);
             this.inputEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.inputEndereco.Name = "inputEndereco";
@@ -497,7 +497,7 @@
             // 
             this.inputTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelInputs.SetColumnSpan(this.inputTelefone, 2);
+            this.panelCampos.SetColumnSpan(this.inputTelefone, 2);
             this.inputTelefone.Location = new System.Drawing.Point(421, 300);
             this.inputTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.inputTelefone.Name = "inputTelefone";
@@ -595,8 +595,8 @@
             this.panelFrmCliente.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.tableLayoutPanelButtons.ResumeLayout(false);
-            this.tableLayoutPanelInputs.ResumeLayout(false);
-            this.tableLayoutPanelInputs.PerformLayout();
+            this.panelCampos.ResumeLayout(false);
+            this.panelCampos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -641,6 +641,6 @@
         private System.Windows.Forms.TextBox inputCodigo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelButtons;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelInputs;
+        private System.Windows.Forms.TableLayoutPanel panelCampos;
     }
 }

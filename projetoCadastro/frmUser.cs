@@ -21,7 +21,7 @@ namespace projetoCadastro
         // exemplo: pointerPosicaoVaziaArray é o index da posição onde se encontra o primeiro espaço vazio no array
         // o termo vem da ideia de apontar (point) para a posição do array desejada
         // o termo é usado em C para apontar uma posição na memória RAM
-        private Storage.Usuario[] usuarios = Storage.usuarios;
+        private Usuario[] usuarios = Storage.usuarios;
         private int pointerUsuario = -1; // pointer inicial é -1 pois não temos nenhum usuário para "apontar" ainda
         private int pointerPosicaoVaziaArray = -1; // por padrão é indefinido (-1 pois fazer int? traria complicações); será calculado runtime
         public ModoForm modoForm; // acompanha se estamos visualizando, alterando, cadastrando ou pesquisando
@@ -60,7 +60,7 @@ namespace projetoCadastro
         
         private void DefinirModoTextBoxes(bool enabled)
         {
-            foreach(Control control in panelFrmUser.Controls) {
+            foreach(Control control in panelCampos.Controls) {
                 if (control is TextBox)
                 {
                     TextBox tb = control as TextBox;
@@ -116,7 +116,7 @@ namespace projetoCadastro
 
         private void LimparForm()
         {
-            foreach(Control control in panelFrmUser.Controls) {
+            foreach(Control control in panelCampos.Controls) {
                 if (control is TextBox)
                 {
                     TextBox tb = control as TextBox;
@@ -130,7 +130,7 @@ namespace projetoCadastro
             // não é possivel exibir dados se eles forem nulos, por isso o vetor não pode apontar para nulo
             if (PointerApontaUsuarioCadastrado(pointerUsuario))
             {
-                Storage.Usuario usuario = usuarios[pointerUsuario];
+                Usuario usuario = usuarios[pointerUsuario];
                 inputCodigo.Text = (pointerUsuario + 1).ToString();
                 inputNome.Text = usuario.nome ?? "";
                 inputLogin.Text = usuario.login ?? "";
@@ -341,6 +341,11 @@ namespace projetoCadastro
             Alteracao = 1,
             Visualizacao = 2,
             Pesquisa = 3
+        }
+
+        private void panelFrmUser_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelFrmUser = new System.Windows.Forms.Panel();
+            this.panelCampos = new System.Windows.Forms.Panel();
             this.lblSenha = new System.Windows.Forms.Label();
             this.inputSenha = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -48,27 +48,28 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelFrmUser.SuspendLayout();
+            this.panelCampos.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelFrmUser
+            // panelCampos
             // 
-            this.panelFrmUser.Controls.Add(this.lblSenha);
-            this.panelFrmUser.Controls.Add(this.inputSenha);
-            this.panelFrmUser.Controls.Add(this.lblLogin);
-            this.panelFrmUser.Controls.Add(this.inputLogin);
-            this.panelFrmUser.Controls.Add(this.lblNome);
-            this.panelFrmUser.Controls.Add(this.inputNome);
-            this.panelFrmUser.Controls.Add(this.lblCodigo);
-            this.panelFrmUser.Controls.Add(this.inputCodigo);
-            this.panelFrmUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFrmUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelFrmUser.Location = new System.Drawing.Point(0, 0);
-            this.panelFrmUser.Margin = new System.Windows.Forms.Padding(4);
-            this.panelFrmUser.Name = "panelFrmUser";
-            this.panelFrmUser.Size = new System.Drawing.Size(607, 318);
-            this.panelFrmUser.TabIndex = 3;
+            this.panelCampos.Controls.Add(this.lblSenha);
+            this.panelCampos.Controls.Add(this.inputSenha);
+            this.panelCampos.Controls.Add(this.lblLogin);
+            this.panelCampos.Controls.Add(this.inputLogin);
+            this.panelCampos.Controls.Add(this.lblNome);
+            this.panelCampos.Controls.Add(this.inputNome);
+            this.panelCampos.Controls.Add(this.lblCodigo);
+            this.panelCampos.Controls.Add(this.inputCodigo);
+            this.panelCampos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCampos.Location = new System.Drawing.Point(0, 0);
+            this.panelCampos.Margin = new System.Windows.Forms.Padding(4);
+            this.panelCampos.Name = "panelCampos";
+            this.panelCampos.Size = new System.Drawing.Size(607, 318);
+            this.panelCampos.TabIndex = 3;
+            this.panelCampos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFrmUser_Paint);
             // 
             // lblSenha
             // 
@@ -306,21 +307,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 318);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panelFrmUser);
+            this.Controls.Add(this.panelCampos);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(625, 365);
             this.Name = "frmUser";
             this.Text = "USUÁRIO";
             this.Load += new System.EventHandler(this.frmUser_Load);
-            this.panelFrmUser.ResumeLayout(false);
-            this.panelFrmUser.PerformLayout();
+            this.panelCampos.ResumeLayout(false);
+            this.panelCampos.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelFrmUser;
+        private System.Windows.Forms.Panel panelCampos;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox inputSenha;
         private System.Windows.Forms.Label lblLogin;

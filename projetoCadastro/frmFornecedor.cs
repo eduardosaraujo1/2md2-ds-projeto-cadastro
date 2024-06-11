@@ -14,7 +14,7 @@ namespace projetoCadastro
 {
     public partial class frmFornecedor : Form
     {
-        private Storage.Fornecedor[] fornecedores = Storage.fornecedores;
+        private Fornecedor[] fornecedores = Storage.fornecedores;
         private int pointerFornecedor = -1;
         private int pointerPosicaoVaziaArray = -1;
         public ModoForm modoForm;
@@ -57,7 +57,7 @@ namespace projetoCadastro
         private void LimparForm()
         {
             // Limpa todas as textboxes do form
-            foreach(Control control in tableLayoutPanelInputs.Controls) {
+            foreach(Control control in panelCampos.Controls) {
                 if (control is TextBox)
                 {
                     TextBox tb = control as TextBox;
@@ -68,7 +68,7 @@ namespace projetoCadastro
 
         private void DefinirModoTextBoxes(bool enabled)
         {
-            foreach(Control control in tableLayoutPanelInputs.Controls) {
+            foreach(Control control in panelCampos.Controls) {
                 if (control is TextBox)
                 {
                     TextBox tb = control as TextBox;
@@ -122,7 +122,7 @@ namespace projetoCadastro
         {
             if (PointerApontaFornecedorCadastrado(pointerFornecedor))
             {
-                Storage.Fornecedor fornecedor = fornecedores[pointerFornecedor];
+                Fornecedor fornecedor = fornecedores[pointerFornecedor];
                 inputCodigo.Text = (pointerFornecedor + 1).ToString();
                 inputNomeFantasia.Text = fornecedor.nomeFantasia ?? "";
                 inputRazaoSocial.Text = fornecedor.razaoSocial ?? "";
