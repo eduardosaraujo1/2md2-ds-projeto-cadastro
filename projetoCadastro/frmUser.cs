@@ -65,6 +65,34 @@ namespace projetoCadastro
         {
             logica.SalvarCadastro();
         }
+
+        public LogicaCadastro.BotoesForm GetBotoesForm()
+        {
+            return new LogicaCadastro.BotoesForm
+            {
+                btnAnterior = btnAnterior,
+                btnProximo = btnProximo,
+                btnSalvar = btnSalvar,
+                btnCancelar = btnCancelar,
+                btnNovo = btnNovo,
+                btnPesquisar = btnPesquisar,
+                btnAlterar = btnAlterar,
+                btnImprimir = btnImprimir,
+                btnExcluir = btnExcluir,
+                btnSair = btnSair
+            };
+        }
+
+        public Panel GetPanelCampos()
+        {
+            return panelCampos;
+        }
+
+        public TextBox GetInputCodigo()
+        {
+            return inputCodigo;
+        }
+
         public IEntidade FormGerarEntidade()
         {
             Usuario usuario = new Usuario
@@ -86,36 +114,5 @@ namespace projetoCadastro
             inputLogin.Text = usuario.login ?? "";
             inputSenha.Text = usuario.senha ?? "";
         }
-
-        public void BloquearDigitacao() {
-            logica.DefinirModoTextBoxes(false);
-            inputCodigo.Enabled = false;
-            btnAnterior.Enabled = true;
-            btnProximo.Enabled = true;
-            btnSalvar.Enabled = false;
-            btnCancelar.Enabled = false;
-            btnNovo.Enabled = true;
-            btnPesquisar.Enabled = true;
-            btnAlterar.Enabled = true;
-            btnImprimir.Enabled = true;
-            btnExcluir.Enabled = true;
-            btnSair.Enabled = true;
-        }
-        public void PermitirDigitacao() {
-            logica.DefinirModoTextBoxes(true);
-            inputCodigo.Enabled = false;
-            btnAnterior.Enabled = false;
-            btnProximo.Enabled = false;
-            btnSalvar.Enabled = true;
-            btnCancelar.Enabled = true;
-            btnNovo.Enabled = false;
-            btnPesquisar.Enabled = false;
-            btnAlterar.Enabled = false;
-            btnImprimir.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnSair.Enabled = false;
-        }
-
-        public Panel getPanelCampos { get { return panelCampos; } } // obter acesso ao panel de inputs a partir da classe LogicaCadastro
     }
 }

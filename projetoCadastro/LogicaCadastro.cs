@@ -10,12 +10,12 @@ namespace projetoCadastro
     public interface IFormCadastro
     {
         IEntidade[] cadastros { get; set; }
-        Panel getPanelCampos { get; }
 
-        void RenderizarDados();
         IEntidade FormGerarEntidade();
-        void BloquearDigitacao();
-        void PermitirDigitacao();
+        void RenderizarDados();
+        Panel GetPanelCampos();
+        LogicaCadastro.BotoesForm GetBotoesForm();
+        TextBox GetInputCodigo();
         
     }
     public class LogicaCadastro
@@ -29,10 +29,12 @@ namespace projetoCadastro
         public ModoForm modoForm { get; set; }
         public int pointerEntidade = -1;
         public int pointerPosicaoVaziaArray = -1;
+        
         public LogicaCadastro(IFormCadastro formulario) 
         {
             this.formulario = formulario;
         }
+
         private int EncontrarPosicaoVaziaArray(IEntidade[] array)
         {
             int arrayLength = array.Length;
@@ -63,7 +65,7 @@ namespace projetoCadastro
         public void LimparForm()
         {
             // Limpa todas as textboxes do form
-            foreach(Control control in formulario.getPanelCampos.Controls) {
+            foreach(Control control in formulario.GetPanelCampos().Controls) {
                 if (control is TextBox)
                 {
                     control.Text = "";
@@ -73,12 +75,41 @@ namespace projetoCadastro
 
         public void DefinirModoTextBoxes(bool enabled)
         {
-            foreach(Control control in formulario.getPanelCampos.Controls) {
+            foreach(Control control in formulario.GetPanelCampos().Controls) {
                 if (control is TextBox)
                 {
                     control.Enabled = enabled;
                 }
             }
+        }
+        private void BloquearDigitacao() {
+            DefinirModoTextBoxes(false);
+            formulario.GetInputCodigo().Enabled = false;
+
+            BotoesForm botoes = formulario.GetBotoesForm();
+            botoes.btnAnterior.Enabled = true;
+            botoes.btnProximo.Enabled = true;
+            botoes.btnSalvar.Enabled = false;
+            botoes.btnCancelar.Enabled = false;
+            botoes.btnNovo.Enabled = true;
+            botoes.btnAlterar.Enabled = true;
+            botoes.btnExcluir.Enabled = true;
+            botoes.btnSair.Enabled = true;
+        }
+
+        private void PermitirDigitacao() {
+            DefinirModoTextBoxes(true);
+            formulario.GetInputCodigo().Enabled = false;
+
+            BotoesForm botoes = formulario.GetBotoesForm();
+            botoes.btnAnterior.Enabled = false;
+            botoes.btnProximo.Enabled = false;
+            botoes.btnSalvar.Enabled = true;
+            botoes.btnCancelar.Enabled = true;
+            botoes.btnNovo.Enabled = false;
+            botoes.btnAlterar.Enabled = false;
+            botoes.btnExcluir.Enabled = false;
+            botoes.btnSair.Enabled = false;
         }
 
         public void DefinirModoForm(ModoForm modo)
@@ -88,12 +119,12 @@ namespace projetoCadastro
             {
                 case ModoForm.Visualizacao:
                     // modo visualização
-                    formulario.BloquearDigitacao();
+                    BloquearDigitacao();
                     break;
                 case ModoForm.Alteracao:
                 case ModoForm.Cadastro:
                     // modo alteração (ou cadastro)
-                    formulario.PermitirDigitacao();
+                    PermitirDigitacao();
                     break;
             }
         }
@@ -151,25 +182,11 @@ namespace projetoCadastro
             }
 
             LimparForm();
-            TextBox inputCodigo = ObterInputCodigo();
+            TextBox inputCodigo = formulario.GetInputCodigo();
             inputCodigo.Text = (pointerPosicaoVaziaArray + 1).ToString();
 
             pointerEntidade = pointerPosicaoVaziaArray;
             DefinirModoForm(ModoForm.Cadastro);
-
-            TextBox ObterInputCodigo()
-            {
-                Panel panel = formulario.getPanelCampos;
-                Control[] controles = panel.Controls.Find("inputCodigo", true);
-                if (controles.Length > 0)
-                {
-                    return controles[0] as TextBox;
-                }
-                else
-                {
-                    throw new Exception("TextBox de nome \"inputCodigo\" não foi encontrada");
-                }
-            }
         }
 
         public void AlteracaoCadastro()
@@ -239,6 +256,20 @@ namespace projetoCadastro
         {
             Anterior = -1,
             Proximo = 1
+        }
+
+        public struct BotoesForm
+        {
+            public Button btnAnterior;
+            public Button btnProximo;
+            public Button btnSalvar;
+            public Button btnCancelar;
+            public Button btnNovo;
+            public Button btnPesquisar;
+            public Button btnAlterar;
+            public Button btnImprimir;
+            public Button btnExcluir;
+            public Button btnSair;
         }
     }
 }

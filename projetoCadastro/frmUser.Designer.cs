@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelCampos = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.inputSenha = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             // 
             // panelCampos
             // 
+            this.panelCampos.Controls.Add(this.label14);
             this.panelCampos.Controls.Add(this.lblSenha);
             this.panelCampos.Controls.Add(this.inputSenha);
             this.panelCampos.Controls.Add(this.lblLogin);
@@ -70,10 +72,20 @@
             this.panelCampos.Size = new System.Drawing.Size(607, 318);
             this.panelCampos.TabIndex = 3;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(2, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(212, 31);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Cadastro Usuário";
+            // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(11, 117);
+            this.lblSenha.Location = new System.Drawing.Point(11, 156);
             this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(56, 20);
@@ -84,7 +96,7 @@
             // 
             this.inputSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputSenha.Location = new System.Drawing.Point(80, 113);
+            this.inputSenha.Location = new System.Drawing.Point(80, 152);
             this.inputSenha.Margin = new System.Windows.Forms.Padding(4);
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.Size = new System.Drawing.Size(271, 27);
@@ -94,7 +106,7 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(19, 82);
+            this.lblLogin.Location = new System.Drawing.Point(19, 121);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(50, 20);
@@ -105,7 +117,7 @@
             // 
             this.inputLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputLogin.Location = new System.Drawing.Point(80, 79);
+            this.inputLogin.Location = new System.Drawing.Point(80, 118);
             this.inputLogin.Margin = new System.Windows.Forms.Padding(4);
             this.inputLogin.Name = "inputLogin";
             this.inputLogin.Size = new System.Drawing.Size(271, 27);
@@ -114,7 +126,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(13, 48);
+            this.lblNome.Location = new System.Drawing.Point(13, 87);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(53, 20);
@@ -125,7 +137,7 @@
             // 
             this.inputNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputNome.Location = new System.Drawing.Point(80, 44);
+            this.inputNome.Location = new System.Drawing.Point(80, 83);
             this.inputNome.Margin = new System.Windows.Forms.Padding(4);
             this.inputNome.Name = "inputNome";
             this.inputNome.Size = new System.Drawing.Size(483, 27);
@@ -134,7 +146,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(4, 14);
+            this.lblCodigo.Location = new System.Drawing.Point(4, 53);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(61, 20);
@@ -145,7 +157,8 @@
             // 
             this.inputCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputCodigo.Location = new System.Drawing.Point(80, 10);
+            this.inputCodigo.Enabled = false;
+            this.inputCodigo.Location = new System.Drawing.Point(80, 49);
             this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
             this.inputCodigo.Size = new System.Drawing.Size(61, 27);
@@ -214,6 +227,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnImprimir.Enabled = false;
             this.btnImprimir.Location = new System.Drawing.Point(359, 54);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
@@ -225,6 +239,7 @@
             // btnPesquisar
             // 
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPesquisar.Enabled = false;
             this.btnPesquisar.Location = new System.Drawing.Point(254, 54);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -308,7 +323,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(625, 365);
             this.Name = "frmUser";
-            this.Text = "USUÁRIO";
+            this.Text = "Cadastro Usuário";
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.panelCampos.ResumeLayout(false);
             this.panelCampos.PerformLayout();
@@ -338,5 +353,6 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -5,6 +5,11 @@ Compomente Currícular: Desenvolvimento de Sistemas
 Bimestre: 2º Bimestre
 Orientadores: Oswaldo Luiz e Joelma Lucia
 
+# Tela Inicial
+
+-   Possui uma toolbar para as telas de cadastro, relatórios, e sair
+-   O conteúdo é uma tabela com quantos cadastros estão contidos de Usuários, Fornecedores e Clientes
+
 # Requisitos telas cadastro
 
 -   Dados de cada cadastro
