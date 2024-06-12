@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.btnSair = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -64,6 +65,8 @@
             this.tableLayoutPanelBtns = new System.Windows.Forms.TableLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.panelCampos.SuspendLayout();
             this.tableLayoutPanelBtns.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -83,7 +86,6 @@
             // btnImprimir
             // 
             this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImprimir.Enabled = false;
             this.btnImprimir.Location = new System.Drawing.Point(357, 53);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(102, 44);
@@ -94,7 +96,6 @@
             // btnPesquisar
             // 
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPesquisar.Enabled = false;
             this.btnPesquisar.Location = new System.Drawing.Point(249, 53);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(102, 44);
@@ -428,7 +429,7 @@
             this.panelCampos.Controls.Add(this.label6, 0, 4);
             this.panelCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCampos.Location = new System.Drawing.Point(0, 39);
-            this.panelCampos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCampos.Margin = new System.Windows.Forms.Padding(2);
             this.panelCampos.Name = "panelCampos";
             this.panelCampos.RowCount = 7;
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -462,7 +463,7 @@
             this.tableLayoutPanelBtns.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanelBtns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanelBtns.Location = new System.Drawing.Point(0, 276);
-            this.tableLayoutPanelBtns.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelBtns.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelBtns.Name = "tableLayoutPanelBtns";
             this.tableLayoutPanelBtns.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             this.tableLayoutPanelBtns.RowCount = 2;
@@ -478,7 +479,7 @@
             this.panelMain.Controls.Add(this.tableLayoutPanelBtns);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(604, 376);
             this.panelMain.TabIndex = 25;
@@ -493,6 +494,21 @@
             this.label14.Size = new System.Drawing.Size(170, 26);
             this.label14.TabIndex = 25;
             this.label14.Text = "Cadastro Cliente";
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
             // frmCliente
             // 
@@ -550,5 +566,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBtns;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Drawing.Printing.PrintDocument printDocument;
     }
 }

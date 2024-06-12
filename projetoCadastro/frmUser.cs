@@ -71,6 +71,11 @@ namespace projetoCadastro
             logica.PesquisarUsuarioClick();
         }
 
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // getters
         public LogicaCadastro.BotoesForm GetBotoesForm()
         {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
             this.panelCamposContainer = new System.Windows.Forms.Panel();
             this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
             this.inputCodigo = new System.Windows.Forms.TextBox();
@@ -50,6 +51,8 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.panelCamposContainer.SuspendLayout();
             this.panelCampos.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -63,7 +66,7 @@
             this.panelCamposContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCamposContainer.Location = new System.Drawing.Point(0, 0);
             this.panelCamposContainer.Name = "panelCamposContainer";
-            this.panelCamposContainer.Size = new System.Drawing.Size(603, 370);
+            this.panelCamposContainer.Size = new System.Drawing.Size(604, 376);
             this.panelCamposContainer.TabIndex = 3;
             // 
             // panelCampos
@@ -89,7 +92,7 @@
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelCampos.Size = new System.Drawing.Size(593, 106);
+            this.panelCampos.Size = new System.Drawing.Size(594, 106);
             this.panelCampos.TabIndex = 9;
             // 
             // inputCodigo
@@ -107,7 +110,7 @@
             this.inputSenha.Location = new System.Drawing.Point(61, 81);
             this.inputSenha.Margin = new System.Windows.Forms.Padding(3, 3, 120, 3);
             this.inputSenha.Name = "inputSenha";
-            this.inputSenha.Size = new System.Drawing.Size(412, 23);
+            this.inputSenha.Size = new System.Drawing.Size(413, 23);
             this.inputSenha.TabIndex = 4;
             this.inputSenha.UseSystemPasswordChar = true;
             // 
@@ -128,7 +131,7 @@
             this.inputLogin.Location = new System.Drawing.Point(61, 55);
             this.inputLogin.Margin = new System.Windows.Forms.Padding(3, 3, 160, 3);
             this.inputLogin.Name = "inputLogin";
-            this.inputLogin.Size = new System.Drawing.Size(372, 23);
+            this.inputLogin.Size = new System.Drawing.Size(373, 23);
             this.inputLogin.TabIndex = 3;
             // 
             // lblSenha
@@ -157,7 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputNome.Location = new System.Drawing.Point(61, 29);
             this.inputNome.Name = "inputNome";
-            this.inputNome.Size = new System.Drawing.Size(529, 23);
+            this.inputNome.Size = new System.Drawing.Size(530, 23);
             this.inputNome.TabIndex = 2;
             // 
             // lblLogin
@@ -230,7 +233,7 @@
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSair.Location = new System.Drawing.Point(465, 53);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(105, 44);
+            this.btnSair.Size = new System.Drawing.Size(106, 44);
             this.btnSair.TabIndex = 14;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -246,6 +249,7 @@
             this.btnImprimir.TabIndex = 12;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // btnPesquisar
             // 
@@ -264,7 +268,7 @@
             this.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExcluir.Location = new System.Drawing.Point(465, 3);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(105, 44);
+            this.btnExcluir.Size = new System.Drawing.Size(106, 44);
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -312,21 +316,32 @@
             this.tableLayoutPanel1.Controls.Add(this.btnAlterar, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 270);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 276);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(603, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(604, 100);
             this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
             // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 370);
+            this.ClientSize = new System.Drawing.Size(604, 376);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelCamposContainer);
             this.MinimumSize = new System.Drawing.Size(473, 304);
@@ -365,5 +380,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TableLayoutPanel panelCampos;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Drawing.Printing.PrintDocument printDocument;
     }
 }

@@ -144,6 +144,33 @@ namespace projetoCadastro
             }
         }
 
+        public int? PesquisarEntidadePorNome(string nome)
+        {
+            int arrayLength = formulario.cadastros.Length;
+            for (int pointer = 0; pointer < arrayLength; pointer++)
+            {
+                if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
+                {
+                    return pointer;
+                }
+            }
+            return null;
+        }
+
+        public void PesquisarEntidadeEExibir(string searchQuery)
+        {
+            int? pointerCadastro = PesquisarEntidadePorNome(searchQuery);
+            if (pointerCadastro is null)
+            {
+                MessageBox.Show("Cadastro não encontrado.");
+            }
+            else
+            {
+                pointerEntidade = (int)pointerCadastro;
+                ExibirDados();
+            }
+        }
+
         public void OnFormLoad()
         {
             pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
@@ -261,33 +288,6 @@ namespace projetoCadastro
         {
             frmPesquisa searchBox = new frmPesquisa(this);
             searchBox.ShowDialog();
-        }
-
-        public int? PesquisarEntidadePorNome(string nome)
-        {
-            int arrayLength = formulario.cadastros.Length;
-            for (int pointer=0; pointer < arrayLength;pointer++)
-            {
-                if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
-                {
-                    return pointer;
-                }
-            }
-            return null;
-        }
-
-        public void PesquisarEntidadeEExibir(string searchQuery)
-        {
-            int? pointerCadastro = PesquisarEntidadePorNome(searchQuery);
-            if (pointerCadastro is null)
-            {
-                MessageBox.Show("Cadastro não encontrado.");
-            }
-            else
-            {
-                pointerEntidade = (int)pointerCadastro;
-                ExibirDados();
-            }
         }
 
         public enum ModoForm
