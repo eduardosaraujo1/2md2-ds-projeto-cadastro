@@ -133,5 +133,24 @@ namespace projetoCadastro
             inputCEP.Text = fornecedor.cep ?? "";
             inputTelefone.Text = fornecedor.telefone ?? "";
         }
+        public bool ValidarCamposEntidade(IEntidade entidade)
+        {
+            Fornecedor fornecedor = entidade as Fornecedor;
+            if (IsNullOrEmpty(fornecedor.nomeFantasia)) return false;
+            if (IsNullOrEmpty(fornecedor.razaoSocial)) return false;
+            if (IsNullOrEmpty(fornecedor.contato)) return false;
+            if (IsNullOrEmpty(fornecedor.email)) return false;
+            if (IsNullOrEmpty(fornecedor.cnpj)) return false;
+            if (IsNullOrEmpty(fornecedor.inscrEstadual)) return false;
+            if (IsNullOrEmpty(fornecedor.endereco)) return false;
+            if (IsNullOrEmpty(fornecedor.cidade)) return false;
+            if (IsNullOrEmpty(fornecedor.bairro)) return false;
+            if (IsNullOrEmpty(fornecedor.estado)) return false;
+            if (IsNullOrEmpty(fornecedor.cep)) return false;
+            if (IsNullOrEmpty(fornecedor.telefone)) return false;
+            return true;
+
+            bool IsNullOrEmpty(string s) => String.IsNullOrEmpty(s.Trim());
+        }
     }
 }

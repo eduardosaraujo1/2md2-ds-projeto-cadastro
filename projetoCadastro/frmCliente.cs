@@ -128,5 +128,23 @@ namespace projetoCadastro
             inputCPF.Text = cliente.cpf ?? "";
             inputRG.Text = cliente.rg ?? "";
         }
+
+        public bool ValidarCamposEntidade(IEntidade entidade)
+        {
+            Cliente cliente = entidade as Cliente;
+            if (IsNullOrEmpty(cliente.nome)) return false;
+            if (IsNullOrEmpty(cliente.endereco)) return false;
+            if (IsNullOrEmpty(cliente.bairro)) return false;
+            if (IsNullOrEmpty(cliente.cidade)) return false;
+            if (IsNullOrEmpty(cliente.estado)) return false;
+            if (IsNullOrEmpty(cliente.cep)) return false;
+            if (IsNullOrEmpty(cliente.telefone)) return false;
+            if (IsNullOrEmpty(cliente.email)) return false;
+            if (IsNullOrEmpty(cliente.cpf)) return false;
+            if (IsNullOrEmpty(cliente.rg)) return false;
+            return true;
+
+            bool IsNullOrEmpty(string s) => String.IsNullOrEmpty(s.Trim());
+        }
     }
 }

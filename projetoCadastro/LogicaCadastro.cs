@@ -16,7 +16,7 @@ namespace projetoCadastro
         Panel GetPanelCampos();
         LogicaCadastro.BotoesForm GetBotoesForm();
         TextBox GetInputCodigo();
-        
+        bool ValidarCamposEntidade(IEntidade entidade);
     }
     public class LogicaCadastro
     {
@@ -206,16 +206,30 @@ namespace projetoCadastro
             }
         }
 
+        private bool ValidarEntidade(IEntidade entidade)
+        {
+            if (entidade == null) return false;
+            if (!formulario.ValidarCamposEntidade(entidade)) return false;
+            return true;
+        }
+
         public void SalvarCadastro()
         {
             IEntidade cadastro = formulario.FormGerarEntidade();
-            formulario.cadastros[pointerEntidade] = cadastro;
-
-            if (modoForm == ModoForm.Cadastro)
+            if (!ValidarEntidade(cadastro))
             {
-                pointerPosicaoVaziaArray++;
+                MessageBox.Show(
+                    "Um ou mais campos estão em branco.",
+                    "Erro campo em branco",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
             }
 
+            formulario.cadastros[pointerEntidade] = cadastro;
+
+            pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
         }

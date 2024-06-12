@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
             this.panelCampos = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -161,7 +162,7 @@
             this.inputCodigo.Location = new System.Drawing.Point(80, 49);
             this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(258, 27);
+            this.inputCodigo.Size = new System.Drawing.Size(100, 27);
             this.inputCodigo.TabIndex = 1;
             // 
             // btnAnterior
@@ -320,6 +321,7 @@
             this.ClientSize = new System.Drawing.Size(804, 455);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelCampos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(625, 365);
             this.Name = "frmUser";
