@@ -13,11 +13,13 @@ namespace projetoCadastro
 
         IEntidade FormGerarEntidade();
         void RenderizarDados();
+        bool ValidarCamposEntidade(IEntidade entidade);
+        bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade);
+
         Panel GetPanelCampos();
         LogicaCadastro.BotoesForm GetBotoesForm();
         TextBox GetInputCodigo();
-        bool ValidarCamposEntidade(IEntidade entidade);
-        
+
     }
     public class LogicaCadastro
     {
@@ -95,6 +97,7 @@ namespace projetoCadastro
             botoes.btnNovo.Enabled = true;
             botoes.btnAlterar.Enabled = true;
             botoes.btnExcluir.Enabled = true;
+            botoes.btnPesquisar.Enabled = true;
             botoes.btnSair.Enabled = true;
         }
 
@@ -111,6 +114,7 @@ namespace projetoCadastro
             botoes.btnAlterar.Enabled = false;
             botoes.btnExcluir.Enabled = false;
             botoes.btnSair.Enabled = false;
+            botoes.btnPesquisar.Enabled = false;
         }
 
         public void DefinirModoForm(ModoForm modo)
@@ -142,17 +146,17 @@ namespace projetoCadastro
 
         public void OnFormLoad()
         {
-            pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros); 
+            pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
             pointerEntidade = pointerPosicaoVaziaArray - 1;
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
         }
 
-        public void NavegarCadastros(int indexDiff)
+        public void NavegarCadastros(int navIncrement)
         {
             // para funcionalidade btnAnterior, indexDiff = -1
             // para funcionalidade btnProximo, indexDiff = 1
-            int novoPointer = pointerEntidade + indexDiff;
+            int novoPointer = pointerEntidade + navIncrement;
             if (PointerApontaClienteCadastrado(novoPointer))
             {
                 pointerEntidade = novoPointer;
@@ -252,18 +256,46 @@ namespace projetoCadastro
             cadastro.LimparDados(removerCodigo: false);
             ExibirDados();
         }
+
+        public void PesquisarUsuarioClick()
+        {
+            frmPesquisa searchBox = new frmPesquisa(this);
+            searchBox.ShowDialog();
+        }
+
+        public int? PesquisarEntidadePorNome(string nome)
+        {
+            int arrayLength = formulario.cadastros.Length;
+            for (int pointer=0; pointer < arrayLength;pointer++)
+            {
+                if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
+                {
+                    return pointer;
+                }
+            }
+            return null;
+        }
+
+        public void PesquisarEntidadeEExibir(string searchQuery)
+        {
+            int? pointerCadastro = PesquisarEntidadePorNome(searchQuery);
+            if (pointerCadastro is null)
+            {
+                MessageBox.Show("Cadastro não encontrado.");
+            }
+            else
+            {
+                pointerEntidade = (int)pointerCadastro;
+                ExibirDados();
+            }
+        }
+
         public enum ModoForm
         {
             Cadastro = 0,
             Alteracao = 1,
             Visualizacao = 2,
             Pesquisa = 3
-        }
-
-        public enum DirecaoNavegacao
-        {
-            Anterior = -1,
-            Proximo = 1
         }
 
         public struct BotoesForm

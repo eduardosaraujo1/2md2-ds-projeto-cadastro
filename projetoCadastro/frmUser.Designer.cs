@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.panelCamposContainer = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblSenha = new System.Windows.Forms.Label();
+            this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
+            this.inputCodigo = new System.Windows.Forms.TextBox();
             this.inputSenha = new System.Windows.Forms.TextBox();
-            this.lblLogin = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.inputLogin = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.inputNome = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.inputCodigo = new System.Windows.Forms.TextBox();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
@@ -49,10 +50,9 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
             this.panelCamposContainer.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panelCampos.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCamposContainer
@@ -66,16 +66,70 @@
             this.panelCamposContainer.Size = new System.Drawing.Size(603, 370);
             this.panelCamposContainer.TabIndex = 3;
             // 
-            // label14
+            // panelCampos
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(8, 7);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(176, 26);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Cadastro Usuário";
+            this.panelCampos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCampos.ColumnCount = 2;
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelCampos.Controls.Add(this.inputCodigo, 1, 0);
+            this.panelCampos.Controls.Add(this.inputSenha, 1, 3);
+            this.panelCampos.Controls.Add(this.lblCodigo, 0, 0);
+            this.panelCampos.Controls.Add(this.inputLogin, 1, 2);
+            this.panelCampos.Controls.Add(this.lblSenha, 0, 3);
+            this.panelCampos.Controls.Add(this.lblNome, 0, 1);
+            this.panelCampos.Controls.Add(this.inputNome, 1, 1);
+            this.panelCampos.Controls.Add(this.lblLogin, 0, 2);
+            this.panelCampos.Location = new System.Drawing.Point(7, 36);
+            this.panelCampos.MinimumSize = new System.Drawing.Size(314, 106);
+            this.panelCampos.Name = "panelCampos";
+            this.panelCampos.RowCount = 4;
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.Size = new System.Drawing.Size(593, 106);
+            this.panelCampos.TabIndex = 9;
+            // 
+            // inputCodigo
+            // 
+            this.inputCodigo.Enabled = false;
+            this.inputCodigo.Location = new System.Drawing.Point(61, 3);
+            this.inputCodigo.Name = "inputCodigo";
+            this.inputCodigo.Size = new System.Drawing.Size(90, 23);
+            this.inputCodigo.TabIndex = 1;
+            // 
+            // inputSenha
+            // 
+            this.inputSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputSenha.Location = new System.Drawing.Point(61, 81);
+            this.inputSenha.Margin = new System.Windows.Forms.Padding(3, 3, 120, 3);
+            this.inputSenha.Name = "inputSenha";
+            this.inputSenha.Size = new System.Drawing.Size(412, 23);
+            this.inputSenha.TabIndex = 4;
+            this.inputSenha.UseSystemPasswordChar = true;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(3, 4);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(52, 17);
+            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.Text = "Código";
+            // 
+            // inputLogin
+            // 
+            this.inputLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputLogin.Location = new System.Drawing.Point(61, 55);
+            this.inputLogin.Margin = new System.Windows.Forms.Padding(3, 3, 160, 3);
+            this.inputLogin.Name = "inputLogin";
+            this.inputLogin.Size = new System.Drawing.Size(372, 23);
+            this.inputLogin.TabIndex = 3;
             // 
             // lblSenha
             // 
@@ -86,37 +140,6 @@
             this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 7;
             this.lblSenha.Text = "Senha";
-            // 
-            // inputSenha
-            // 
-            this.inputSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputSenha.Location = new System.Drawing.Point(61, 81);
-            this.inputSenha.Margin = new System.Windows.Forms.Padding(3, 3, 120, 3);
-            this.inputSenha.Name = "inputSenha";
-            this.inputSenha.Size = new System.Drawing.Size(133, 23);
-            this.inputSenha.TabIndex = 4;
-            this.inputSenha.UseSystemPasswordChar = true;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(12, 56);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(43, 17);
-            this.lblLogin.TabIndex = 5;
-            this.lblLogin.Text = "Login";
-            // 
-            // inputLogin
-            // 
-            this.inputLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputLogin.Location = new System.Drawing.Point(61, 55);
-            this.inputLogin.Margin = new System.Windows.Forms.Padding(3, 3, 160, 3);
-            this.inputLogin.Name = "inputLogin";
-            this.inputLogin.Size = new System.Drawing.Size(93, 23);
-            this.inputLogin.TabIndex = 3;
             // 
             // lblNome
             // 
@@ -134,26 +157,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputNome.Location = new System.Drawing.Point(61, 29);
             this.inputNome.Name = "inputNome";
-            this.inputNome.Size = new System.Drawing.Size(250, 23);
+            this.inputNome.Size = new System.Drawing.Size(529, 23);
             this.inputNome.TabIndex = 2;
             // 
-            // lblCodigo
+            // lblLogin
             // 
-            this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(3, 4);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(52, 17);
-            this.lblCodigo.TabIndex = 0;
-            this.lblCodigo.Text = "Código";
+            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(12, 56);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(43, 17);
+            this.lblLogin.TabIndex = 5;
+            this.lblLogin.Text = "Login";
             // 
-            // inputCodigo
+            // label14
             // 
-            this.inputCodigo.Enabled = false;
-            this.inputCodigo.Location = new System.Drawing.Point(61, 3);
-            this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(90, 23);
-            this.inputCodigo.TabIndex = 1;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(8, 7);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(176, 26);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Cadastro Usuário";
             // 
             // btnAnterior
             // 
@@ -231,6 +257,7 @@
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // btnExcluir
             // 
@@ -286,7 +313,7 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 270);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             this.tableLayoutPanel1.RowCount = 2;
@@ -294,32 +321,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(603, 100);
             this.tableLayoutPanel1.TabIndex = 15;
-            // 
-            // panelCampos
-            // 
-            this.panelCampos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCampos.ColumnCount = 2;
-            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelCampos.Controls.Add(this.inputCodigo, 1, 0);
-            this.panelCampos.Controls.Add(this.inputSenha, 1, 3);
-            this.panelCampos.Controls.Add(this.lblCodigo, 0, 0);
-            this.panelCampos.Controls.Add(this.inputLogin, 1, 2);
-            this.panelCampos.Controls.Add(this.lblSenha, 0, 3);
-            this.panelCampos.Controls.Add(this.lblNome, 0, 1);
-            this.panelCampos.Controls.Add(this.inputNome, 1, 1);
-            this.panelCampos.Controls.Add(this.lblLogin, 0, 2);
-            this.panelCampos.Location = new System.Drawing.Point(7, 36);
-            this.panelCampos.MinimumSize = new System.Drawing.Size(314, 106);
-            this.panelCampos.Name = "panelCampos";
-            this.panelCampos.RowCount = 4;
-            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelCampos.Size = new System.Drawing.Size(314, 106);
-            this.panelCampos.TabIndex = 9;
             // 
             // frmUser
             // 
@@ -334,9 +335,9 @@
             this.Load += new System.EventHandler(this.frmUser_Load);
             this.panelCamposContainer.ResumeLayout(false);
             this.panelCamposContainer.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.panelCampos.ResumeLayout(false);
             this.panelCampos.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

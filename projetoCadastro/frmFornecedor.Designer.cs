@@ -107,6 +107,7 @@
             this.btnPesquisar.TabIndex = 19;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // btnCancelar
             // 
@@ -201,7 +202,7 @@
             this.panelMain.Controls.Add(this.panelCampos);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(604, 376);
             this.panelMain.TabIndex = 29;
@@ -238,7 +239,7 @@
             this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanelButtons.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanelButtons.Location = new System.Drawing.Point(0, 276);
-            this.tableLayoutPanelButtons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanelButtons.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
             this.tableLayoutPanelButtons.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             this.tableLayoutPanelButtons.RowCount = 2;
@@ -283,7 +284,7 @@
             this.panelCampos.Controls.Add(this.inputCEP, 1, 8);
             this.panelCampos.Controls.Add(this.label5, 0, 7);
             this.panelCampos.Location = new System.Drawing.Point(0, 41);
-            this.panelCampos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCampos.Margin = new System.Windows.Forms.Padding(2);
             this.panelCampos.Name = "panelCampos";
             this.panelCampos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panelCampos.RowCount = 9;

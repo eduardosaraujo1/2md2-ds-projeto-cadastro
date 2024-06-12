@@ -35,12 +35,12 @@ namespace projetoCadastro
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Anterior);
+            logica.NavegarCadastros(-1);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Proximo);
+            logica.NavegarCadastros(1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -64,6 +64,11 @@ namespace projetoCadastro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             logica.SalvarCadastro();
+        }
+
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            logica.PesquisarUsuarioClick();
         }
 
         // getters
@@ -139,6 +144,13 @@ namespace projetoCadastro
             return true;
 
             bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
+        }
+
+        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
+        {
+            Cliente usuario = entidade as Cliente;
+            string nmUsuario = usuario.nome.ToLower();
+            return nmUsuario.Contains(searchQuery);
         }
     }
 }
