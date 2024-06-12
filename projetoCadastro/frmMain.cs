@@ -33,7 +33,7 @@ namespace projetoCadastro
             SetarMensagemSistema(inicioMensagem);
             T frm = new T();
             frm.ShowDialog();
-            RenderizarFormContagemEntidades();
+            UpdateTabelaForms();
             SetarMensagemSistema(finalMensagem);
         }
 
@@ -77,17 +77,44 @@ namespace projetoCadastro
             return count;
         }
 
-        private void RenderizarFormContagemEntidades()
+        private IEntidade ObterEntidadeRecemCadastrada(IEntidade[] array)
         {
+            // if isNullOrEmpty
+            if (array == null || array.Length == 0)
+            {
+                return null;
+            }
+
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                if (array[i] != null)
+                {
+                    return array[i];
+                }
+            }
+            return null;
+        }
+
+        private void UpdateTabelaForms()
+        {
+            // Quantidade
             qtClientes.Text = ContarEntidadesArray(Storage.clientes).ToString();
             qtFornecedores.Text = ContarEntidadesArray(Storage.fornecedores).ToString();
             qtUsuarios.Text = ContarEntidadesArray(Storage.usuarios).ToString();
+
+            // Mais recente
+            Cliente recenteCliente = ObterEntidadeRecemCadastrada(Storage.clientes) as Cliente;
+            clienteRecente.Text = recenteCliente?.nome ?? "N/A";
+            Fornecedor recenteFornecedor = ObterEntidadeRecemCadastrada(Storage.fornecedores) as Fornecedor;
+            fornecedorRecente.Text = recenteFornecedor?.nomeFantasia ?? "N/A";
+            Usuario recenteUsuario = ObterEntidadeRecemCadastrada(Storage.usuarios) as Usuario;
+            userRecente.Text = recenteUsuario?.nome ?? "N/A";
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateDateTime();
-            RenderizarFormContagemEntidades();
+            UpdateTabelaForms();
         }
     }
 }

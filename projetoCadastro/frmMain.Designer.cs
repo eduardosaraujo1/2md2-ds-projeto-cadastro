@@ -58,6 +58,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.qtFornecedores = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.userRecente = new System.Windows.Forms.Label();
+            this.clienteRecente = new System.Windows.Forms.Label();
+            this.fornecedorRecente = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panelContainer.SuspendLayout();
@@ -74,7 +77,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(573, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(659, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,21 +94,21 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.UsuárioToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.ClienteToolStripMenuItem_Click);
             // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.FornecedorToolStripMenuItem_Click);
             // 
@@ -122,19 +125,19 @@
             // usuárioToolStripMenuItem1
             // 
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
             // 
             // clienteToolStripMenuItem1
             // 
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             // 
             // sairToolStripMenuItem
@@ -154,10 +157,10 @@
             this.displayData,
             this.lblHora,
             this.displayHora});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 278);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 339);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(573, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(659, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -170,7 +173,7 @@
             // displayMessage
             // 
             this.displayMessage.Name = "displayMessage";
-            this.displayMessage.Size = new System.Drawing.Size(553, 20);
+            this.displayMessage.Size = new System.Drawing.Size(462, 20);
             this.displayMessage.Spring = true;
             this.displayMessage.Text = "Tela Principal";
             this.displayMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,22 +210,22 @@
             // 
             this.panelContainer.BackColor = System.Drawing.SystemColors.Control;
             this.panelContainer.Controls.Add(this.tableLayoutPanel1);
-            this.panelContainer.Controls.Add(this.label1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 30);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(573, 248);
+            this.panelContainer.Size = new System.Drawing.Size(659, 309);
             this.panelContainer.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.fornecedorRecente, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.clienteRecente, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.qtClientes, 1, 2);
@@ -231,15 +234,20 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.qtFornecedores, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 54);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.userRecente, 2, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(251, 127);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(251, 127);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(659, 309);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label3
@@ -247,7 +255,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(134, 5);
+            this.label3.Location = new System.Drawing.Point(120, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 22);
             this.label3.TabIndex = 9;
@@ -258,7 +266,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 5);
+            this.label2.Location = new System.Drawing.Point(22, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 22);
             this.label2.TabIndex = 8;
@@ -268,8 +276,7 @@
             // 
             this.qtClientes.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.qtClientes.AutoSize = true;
-            this.qtClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtClientes.Location = new System.Drawing.Point(231, 69);
+            this.qtClientes.Location = new System.Drawing.Point(217, 182);
             this.qtClientes.Name = "qtClientes";
             this.qtClientes.Size = new System.Drawing.Size(16, 18);
             this.qtClientes.TabIndex = 7;
@@ -279,8 +286,7 @@
             // 
             this.qtUsuarios.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.qtUsuarios.AutoSize = true;
-            this.qtUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtUsuarios.Location = new System.Drawing.Point(231, 38);
+            this.qtUsuarios.Location = new System.Drawing.Point(217, 109);
             this.qtUsuarios.Name = "qtUsuarios";
             this.qtUsuarios.Size = new System.Drawing.Size(16, 18);
             this.qtUsuarios.TabIndex = 5;
@@ -290,8 +296,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 101);
+            this.label8.Location = new System.Drawing.Point(12, 255);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 18);
             this.label8.TabIndex = 6;
@@ -301,8 +306,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(44, 69);
+            this.label6.Location = new System.Drawing.Point(52, 182);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 4;
@@ -312,8 +316,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 38);
+            this.label4.Location = new System.Drawing.Point(45, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 18);
             this.label4.TabIndex = 2;
@@ -323,8 +326,7 @@
             // 
             this.qtFornecedores.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.qtFornecedores.AutoSize = true;
-            this.qtFornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtFornecedores.Location = new System.Drawing.Point(231, 101);
+            this.qtFornecedores.Location = new System.Drawing.Point(217, 255);
             this.qtFornecedores.Name = "qtFornecedores";
             this.qtFornecedores.Size = new System.Drawing.Size(16, 18);
             this.qtFornecedores.TabIndex = 3;
@@ -332,20 +334,51 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 13);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(476, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "STATUS";
+            this.label1.Size = new System.Drawing.Size(171, 22);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Cadastro Recente";
+            // 
+            // userRecente
+            // 
+            this.userRecente.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.userRecente.AutoSize = true;
+            this.userRecente.Location = new System.Drawing.Point(615, 109);
+            this.userRecente.Name = "userRecente";
+            this.userRecente.Size = new System.Drawing.Size(32, 18);
+            this.userRecente.TabIndex = 11;
+            this.userRecente.Text = "N/A";
+            // 
+            // clienteRecente
+            // 
+            this.clienteRecente.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.clienteRecente.AutoSize = true;
+            this.clienteRecente.Location = new System.Drawing.Point(615, 182);
+            this.clienteRecente.Name = "clienteRecente";
+            this.clienteRecente.Size = new System.Drawing.Size(32, 18);
+            this.clienteRecente.TabIndex = 12;
+            this.clienteRecente.Text = "N/A";
+            // 
+            // fornecedorRecente
+            // 
+            this.fornecedorRecente.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.fornecedorRecente.AutoSize = true;
+            this.fornecedorRecente.Location = new System.Drawing.Point(615, 255);
+            this.fornecedorRecente.Name = "fornecedorRecente";
+            this.fornecedorRecente.Size = new System.Drawing.Size(32, 18);
+            this.fornecedorRecente.TabIndex = 13;
+            this.fornecedorRecente.Text = "N/A";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(573, 304);
+            this.ClientSize = new System.Drawing.Size(659, 365);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -361,7 +394,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panelContainer.ResumeLayout(false);
-            this.panelContainer.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -390,7 +422,6 @@
         private System.Windows.Forms.ToolStripStatusLabel displayHora;
         private System.Windows.Forms.ToolStripStatusLabel displayData;
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label qtClientes;
         private System.Windows.Forms.Label label8;
@@ -400,6 +431,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label fornecedorRecente;
+        private System.Windows.Forms.Label clienteRecente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userRecente;
     }
 }
 

@@ -490,7 +490,7 @@
             this.tableLayoutPanelBtns.Controls.Add(this.btnNovo, 2, 0);
             this.tableLayoutPanelBtns.Controls.Add(this.btnSalvar, 1, 0);
             this.tableLayoutPanelBtns.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanelBtns.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanelBtns.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanelBtns.Location = new System.Drawing.Point(0, 332);
             this.tableLayoutPanelBtns.Name = "tableLayoutPanelBtns";
             this.tableLayoutPanelBtns.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
