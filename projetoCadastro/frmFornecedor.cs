@@ -68,7 +68,7 @@ namespace projetoCadastro
             logica.SalvarCadastro();
         }
 
-        public IEntidade PassarDadosParaIEntidade()
+        public IEntidade FormGerarEntidade()
         {
             Fornecedor fornecedor = new Fornecedor
             {

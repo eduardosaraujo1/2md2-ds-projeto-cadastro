@@ -7,6 +7,17 @@ using System.Windows.Forms;
 
 namespace projetoCadastro
 {
+    public interface IFormCadastro
+    {
+        IEntidade[] cadastros { get; set; }
+        Panel getPanelCampos { get; }
+
+        void RenderizarDados();
+        IEntidade FormGerarEntidade();
+        void BloquearDigitacao();
+        void PermitirDigitacao();
+        
+    }
     public class LogicaCadastro
     {
         // note: "pointer" significa o index da posição descrita no nome
@@ -14,11 +25,10 @@ namespace projetoCadastro
         // exemplo: pointerPosicaoVaziaArray é o index da posição onde se encontra o primeiro espaço vazio no array
         // o termo vem da ideia de apontar (point) para a posição do array desejada
         // o termo é usado em C para apontar uma posição na memória
+        private readonly IFormCadastro formulario;
+        public ModoForm modoForm { get; set; }
         public int pointerEntidade = -1;
         public int pointerPosicaoVaziaArray = -1;
-        public LogicaCadastro.ModoForm modoForm { get; set; }
-
-        IFormCadastro formulario;
         public LogicaCadastro(IFormCadastro formulario) 
         {
             this.formulario = formulario;
@@ -36,7 +46,7 @@ namespace projetoCadastro
             return arrayLength; // Se o array está cheio, a posição "vazia" está fora do array
         }
 
-        public bool PointerDentroArray(int pointer)
+        private bool PointerDentroArray(int pointer)
         {
             // método determina se o valor do pointer é um index valido para o array
             IEntidade[] array = formulario.cadastros;
@@ -181,7 +191,7 @@ namespace projetoCadastro
 
         public void SalvarCadastro()
         {
-            IEntidade cadastro = formulario.PassarDadosParaIEntidade();
+            IEntidade cadastro = formulario.FormGerarEntidade();
             formulario.cadastros[pointerEntidade] = cadastro;
 
             if (modoForm == ModoForm.Cadastro)

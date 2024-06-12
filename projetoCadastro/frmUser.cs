@@ -65,7 +65,7 @@ namespace projetoCadastro
         {
             logica.SalvarCadastro();
         }
-        public IEntidade PassarDadosParaIEntidade()
+        public IEntidade FormGerarEntidade()
         {
             Usuario usuario = new Usuario
             {
