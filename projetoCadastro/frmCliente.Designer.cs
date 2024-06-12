@@ -72,10 +72,10 @@
             // btnSair
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSair.Location = new System.Drawing.Point(620, 58);
+            this.btnSair.Location = new System.Drawing.Point(620, 65);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(140, 47);
+            this.btnSair.Size = new System.Drawing.Size(140, 54);
             this.btnSair.TabIndex = 21;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -85,10 +85,10 @@
             // 
             this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnImprimir.Enabled = false;
-            this.btnImprimir.Location = new System.Drawing.Point(476, 58);
+            this.btnImprimir.Location = new System.Drawing.Point(476, 65);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(136, 47);
+            this.btnImprimir.Size = new System.Drawing.Size(136, 54);
             this.btnImprimir.TabIndex = 19;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // 
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPesquisar.Enabled = false;
-            this.btnPesquisar.Location = new System.Drawing.Point(332, 58);
+            this.btnPesquisar.Location = new System.Drawing.Point(332, 65);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(136, 47);
+            this.btnPesquisar.Size = new System.Drawing.Size(136, 54);
             this.btnPesquisar.TabIndex = 17;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -108,10 +108,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.Location = new System.Drawing.Point(188, 58);
+            this.btnCancelar.Location = new System.Drawing.Point(188, 65);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(136, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(136, 54);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(188, 4);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(136, 46);
+            this.btnSalvar.Size = new System.Drawing.Size(136, 53);
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(620, 4);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(140, 46);
+            this.btnExcluir.Size = new System.Drawing.Size(140, 53);
             this.btnExcluir.TabIndex = 20;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(476, 4);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(136, 46);
+            this.btnAlterar.Size = new System.Drawing.Size(136, 53);
             this.btnAlterar.TabIndex = 18;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.btnNovo.Location = new System.Drawing.Point(332, 4);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(136, 46);
+            this.btnNovo.Size = new System.Drawing.Size(136, 53);
             this.btnNovo.TabIndex = 16;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@
             // btnProximo
             // 
             this.btnProximo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProximo.Location = new System.Drawing.Point(44, 58);
+            this.btnProximo.Location = new System.Drawing.Point(44, 65);
             this.btnProximo.Margin = new System.Windows.Forms.Padding(4);
             this.btnProximo.Name = "btnProximo";
-            this.btnProximo.Size = new System.Drawing.Size(136, 47);
+            this.btnProximo.Size = new System.Drawing.Size(136, 54);
             this.btnProximo.TabIndex = 14;
             this.btnProximo.Text = "Proximo";
             this.btnProximo.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.btnAnterior.Location = new System.Drawing.Point(44, 4);
             this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(136, 46);
+            this.btnAnterior.Size = new System.Drawing.Size(136, 53);
             this.btnAnterior.TabIndex = 12;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
@@ -192,7 +192,7 @@
             // 
             this.inputCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.inputCodigo.Enabled = false;
-            this.inputCodigo.Location = new System.Drawing.Point(92, 7);
+            this.inputCodigo.Location = new System.Drawing.Point(92, 6);
             this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
             this.inputCodigo.Size = new System.Drawing.Size(180, 27);
@@ -202,7 +202,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 11);
+            this.label4.Location = new System.Drawing.Point(23, 10);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 20);
@@ -214,7 +214,7 @@
             // 
             this.inputNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputNome, 3);
-            this.inputNome.Location = new System.Drawing.Point(92, 49);
+            this.inputNome.Location = new System.Drawing.Point(92, 46);
             this.inputNome.Margin = new System.Windows.Forms.Padding(4);
             this.inputNome.Name = "inputNome";
             this.inputNome.Size = new System.Drawing.Size(449, 27);
@@ -224,7 +224,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 53);
+            this.label3.Location = new System.Drawing.Point(31, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 20);
@@ -236,7 +236,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(319, 263);
+            this.label11.Location = new System.Drawing.Point(319, 250);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 20);
@@ -247,7 +247,7 @@
             // inputRG
             // 
             this.inputRG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputRG.Location = new System.Drawing.Point(361, 260);
+            this.inputRG.Location = new System.Drawing.Point(361, 247);
             this.inputRG.Margin = new System.Windows.Forms.Padding(4);
             this.inputRG.Name = "inputRG";
             this.inputRG.Size = new System.Drawing.Size(180, 27);
@@ -257,7 +257,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(280, 179);
+            this.label10.Location = new System.Drawing.Point(280, 170);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 20);
@@ -269,7 +269,7 @@
             // 
             this.inputTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputTelefone, 2);
-            this.inputTelefone.Location = new System.Drawing.Point(361, 175);
+            this.inputTelefone.Location = new System.Drawing.Point(361, 166);
             this.inputTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.inputTelefone.Name = "inputTelefone";
             this.inputTelefone.Size = new System.Drawing.Size(249, 27);
@@ -279,7 +279,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(42, 263);
+            this.label9.Location = new System.Drawing.Point(42, 250);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 20);
@@ -290,7 +290,7 @@
             // inputCPF
             // 
             this.inputCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputCPF.Location = new System.Drawing.Point(92, 260);
+            this.inputCPF.Location = new System.Drawing.Point(92, 247);
             this.inputCPF.Margin = new System.Windows.Forms.Padding(4);
             this.inputCPF.Name = "inputCPF";
             this.inputCPF.Size = new System.Drawing.Size(180, 27);
@@ -300,7 +300,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 221);
+            this.label8.Location = new System.Drawing.Point(33, 210);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 20);
@@ -312,7 +312,7 @@
             // 
             this.inputEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputEmail, 3);
-            this.inputEmail.Location = new System.Drawing.Point(92, 217);
+            this.inputEmail.Location = new System.Drawing.Point(92, 206);
             this.inputEmail.Margin = new System.Windows.Forms.Padding(4);
             this.inputEmail.Name = "inputEmail";
             this.inputEmail.Size = new System.Drawing.Size(449, 27);
@@ -322,7 +322,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(549, 137);
+            this.label7.Location = new System.Drawing.Point(549, 130);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 20);
@@ -333,7 +333,7 @@
             // inputEstado
             // 
             this.inputEstado.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.inputEstado.Location = new System.Drawing.Point(618, 133);
+            this.inputEstado.Location = new System.Drawing.Point(618, 126);
             this.inputEstado.Margin = new System.Windows.Forms.Padding(4);
             this.inputEstado.Name = "inputEstado";
             this.inputEstado.Size = new System.Drawing.Size(171, 27);
@@ -343,7 +343,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 179);
+            this.label6.Location = new System.Drawing.Point(41, 170);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 20);
@@ -354,7 +354,7 @@
             // inputCEP
             // 
             this.inputCEP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputCEP.Location = new System.Drawing.Point(92, 175);
+            this.inputCEP.Location = new System.Drawing.Point(92, 166);
             this.inputCEP.Margin = new System.Windows.Forms.Padding(4);
             this.inputCEP.Name = "inputCEP";
             this.inputCEP.Size = new System.Drawing.Size(180, 27);
@@ -364,7 +364,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 137);
+            this.label5.Location = new System.Drawing.Point(292, 130);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 20);
@@ -375,7 +375,7 @@
             // inputCidade
             // 
             this.inputCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputCidade.Location = new System.Drawing.Point(361, 133);
+            this.inputCidade.Location = new System.Drawing.Point(361, 126);
             this.inputCidade.Margin = new System.Windows.Forms.Padding(4);
             this.inputCidade.Name = "inputCidade";
             this.inputCidade.Size = new System.Drawing.Size(180, 27);
@@ -385,7 +385,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 137);
+            this.label2.Location = new System.Drawing.Point(29, 130);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
@@ -396,7 +396,7 @@
             // inputBairro
             // 
             this.inputBairro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputBairro.Location = new System.Drawing.Point(92, 133);
+            this.inputBairro.Location = new System.Drawing.Point(92, 126);
             this.inputBairro.Margin = new System.Windows.Forms.Padding(4);
             this.inputBairro.Name = "inputBairro";
             this.inputBairro.Size = new System.Drawing.Size(180, 27);
@@ -406,7 +406,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 95);
+            this.label1.Location = new System.Drawing.Point(4, 90);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
@@ -418,7 +418,7 @@
             // 
             this.inputEndereco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputEndereco, 5);
-            this.inputEndereco.Location = new System.Drawing.Point(92, 91);
+            this.inputEndereco.Location = new System.Drawing.Point(92, 86);
             this.inputEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.inputEndereco.Name = "inputEndereco";
             this.inputEndereco.Size = new System.Drawing.Size(708, 27);
@@ -468,7 +468,7 @@
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.panelCampos.Size = new System.Drawing.Size(804, 295);
+            this.panelCampos.Size = new System.Drawing.Size(804, 281);
             this.panelCampos.TabIndex = 23;
             // 
             // tableLayoutPanelBtns
@@ -491,13 +491,13 @@
             this.tableLayoutPanelBtns.Controls.Add(this.btnSalvar, 1, 0);
             this.tableLayoutPanelBtns.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanelBtns.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanelBtns.Location = new System.Drawing.Point(0, 346);
+            this.tableLayoutPanelBtns.Location = new System.Drawing.Point(0, 332);
             this.tableLayoutPanelBtns.Name = "tableLayoutPanelBtns";
             this.tableLayoutPanelBtns.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
             this.tableLayoutPanelBtns.RowCount = 2;
             this.tableLayoutPanelBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelBtns.Size = new System.Drawing.Size(804, 109);
+            this.tableLayoutPanelBtns.Size = new System.Drawing.Size(804, 123);
             this.tableLayoutPanelBtns.TabIndex = 24;
             // 
             // panelMain
