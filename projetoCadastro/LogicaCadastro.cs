@@ -16,6 +16,7 @@ namespace projetoCadastro
         Panel GetPanelCampos();
         LogicaCadastro.BotoesForm GetBotoesForm();
         TextBox GetInputCodigo();
+        bool ValidarCamposEntidade(IEntidade entidade);
         
     }
     public class LogicaCadastro
@@ -209,12 +210,19 @@ namespace projetoCadastro
         public void SalvarCadastro()
         {
             IEntidade cadastro = formulario.FormGerarEntidade();
-            formulario.cadastros[pointerEntidade] = cadastro;
-
-            if (modoForm == ModoForm.Cadastro)
+            if (!formulario.ValidarCamposEntidade(cadastro))
             {
-                pointerPosicaoVaziaArray++;
+                MessageBox.Show(
+                    "Um ou mais campos obrigatórios estão nulos",
+                    "Erro campo nulo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
             }
+
+            formulario.cadastros[pointerEntidade] = cadastro;
+            pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
 
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();

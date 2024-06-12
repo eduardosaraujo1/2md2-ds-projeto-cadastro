@@ -66,6 +66,7 @@ namespace projetoCadastro
             logica.SalvarCadastro();
         }
 
+        // getters
         public LogicaCadastro.BotoesForm GetBotoesForm()
         {
             return new LogicaCadastro.BotoesForm
@@ -93,6 +94,7 @@ namespace projetoCadastro
             return inputCodigo;
         }
 
+        // unique logic
         public IEntidade FormGerarEntidade()
         {
             Usuario usuario = new Usuario
@@ -113,6 +115,15 @@ namespace projetoCadastro
             inputNome.Text = usuario.nome ?? "";
             inputLogin.Text = usuario.login ?? "";
             inputSenha.Text = usuario.senha ?? "";
+        }
+        public bool ValidarCamposEntidade(IEntidade entidade)
+        {
+            Usuario usuario = entidade as Usuario;
+            if (IsNullOrEmpty(usuario.codigo.ToString())) return false;
+            if (IsNullOrEmpty(usuario.nome)) return false;
+            return true;
+
+            bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
         }
     }
 }

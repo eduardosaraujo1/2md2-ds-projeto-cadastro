@@ -84,6 +84,7 @@ namespace projetoCadastro
             };
         }
 
+        // getters
         public Panel GetPanelCampos()
         {
             return panelCampos;
@@ -94,6 +95,7 @@ namespace projetoCadastro
             return inputCodigo;
         }
 
+        // unique logic
         public IEntidade FormGerarEntidade()
         {
             Fornecedor fornecedor = new Fornecedor
@@ -132,6 +134,16 @@ namespace projetoCadastro
             inputEstado.Text = fornecedor.estado ?? "";
             inputCEP.Text = fornecedor.cep ?? "";
             inputTelefone.Text = fornecedor.telefone ?? "";
+        }
+
+        public bool ValidarCamposEntidade(IEntidade entidade)
+        {
+            Fornecedor fornecedor = entidade as Fornecedor;
+            if (IsNullOrEmpty(fornecedor.codigo.ToString())) return false;
+            if (IsNullOrEmpty(fornecedor.nomeFantasia)) return false;
+            return true;
+
+            bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
         }
     }
 }
