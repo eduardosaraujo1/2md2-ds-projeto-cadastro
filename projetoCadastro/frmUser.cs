@@ -86,7 +86,7 @@ namespace projetoCadastro
 
         public Panel GetPanelCampos()
         {
-            return panelCampos;
+            return panelCamposContainer;
         }
 
         public TextBox GetInputCodigo()

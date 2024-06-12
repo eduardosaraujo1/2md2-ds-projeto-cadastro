@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelCampos = new System.Windows.Forms.Panel();
+            this.panelCamposContainer = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.inputSenha = new System.Windows.Forms.TextBox();
@@ -49,46 +49,41 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelCampos.SuspendLayout();
+            this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
+            this.panelCamposContainer.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panelCampos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelCampos
+            // panelCamposContainer
             // 
-            this.panelCampos.Controls.Add(this.label14);
-            this.panelCampos.Controls.Add(this.lblSenha);
-            this.panelCampos.Controls.Add(this.inputSenha);
-            this.panelCampos.Controls.Add(this.lblLogin);
-            this.panelCampos.Controls.Add(this.inputLogin);
-            this.panelCampos.Controls.Add(this.lblNome);
-            this.panelCampos.Controls.Add(this.inputNome);
-            this.panelCampos.Controls.Add(this.lblCodigo);
-            this.panelCampos.Controls.Add(this.inputCodigo);
-            this.panelCampos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCampos.Location = new System.Drawing.Point(0, 0);
-            this.panelCampos.Margin = new System.Windows.Forms.Padding(4);
-            this.panelCampos.Name = "panelCampos";
-            this.panelCampos.Size = new System.Drawing.Size(804, 455);
-            this.panelCampos.TabIndex = 3;
+            this.panelCamposContainer.Controls.Add(this.panelCampos);
+            this.panelCamposContainer.Controls.Add(this.label14);
+            this.panelCamposContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCamposContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCamposContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelCamposContainer.Name = "panelCamposContainer";
+            this.panelCamposContainer.Size = new System.Drawing.Size(603, 370);
+            this.panelCamposContainer.TabIndex = 3;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(2, 9);
+            this.label14.Location = new System.Drawing.Point(8, 7);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(212, 31);
+            this.label14.Size = new System.Drawing.Size(176, 26);
             this.label14.TabIndex = 8;
             this.label14.Text = "Cadastro Usuário";
             // 
             // lblSenha
             // 
+            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(11, 156);
-            this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSenha.Location = new System.Drawing.Point(6, 83);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(56, 20);
+            this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 7;
             this.lblSenha.Text = "Senha";
             // 
@@ -96,20 +91,20 @@
             // 
             this.inputSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputSenha.Location = new System.Drawing.Point(80, 152);
-            this.inputSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.inputSenha.Location = new System.Drawing.Point(61, 81);
+            this.inputSenha.Margin = new System.Windows.Forms.Padding(3, 3, 120, 3);
             this.inputSenha.Name = "inputSenha";
-            this.inputSenha.Size = new System.Drawing.Size(468, 27);
+            this.inputSenha.Size = new System.Drawing.Size(133, 23);
             this.inputSenha.TabIndex = 4;
             this.inputSenha.UseSystemPasswordChar = true;
             // 
             // lblLogin
             // 
+            this.lblLogin.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(19, 121);
-            this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLogin.Location = new System.Drawing.Point(12, 56);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(50, 20);
+            this.lblLogin.Size = new System.Drawing.Size(43, 17);
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Login";
             // 
@@ -117,19 +112,19 @@
             // 
             this.inputLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputLogin.Location = new System.Drawing.Point(80, 118);
-            this.inputLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.inputLogin.Location = new System.Drawing.Point(61, 55);
+            this.inputLogin.Margin = new System.Windows.Forms.Padding(3, 3, 160, 3);
             this.inputLogin.Name = "inputLogin";
-            this.inputLogin.Size = new System.Drawing.Size(468, 27);
+            this.inputLogin.Size = new System.Drawing.Size(93, 23);
             this.inputLogin.TabIndex = 3;
             // 
             // lblNome
             // 
+            this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(13, 87);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNome.Location = new System.Drawing.Point(10, 30);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(53, 20);
+            this.lblNome.Size = new System.Drawing.Size(45, 17);
             this.lblNome.TabIndex = 3;
             this.lblNome.Text = "Nome";
             // 
@@ -137,40 +132,35 @@
             // 
             this.inputNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputNome.Location = new System.Drawing.Point(80, 83);
-            this.inputNome.Margin = new System.Windows.Forms.Padding(4);
+            this.inputNome.Location = new System.Drawing.Point(61, 29);
             this.inputNome.Name = "inputNome";
-            this.inputNome.Size = new System.Drawing.Size(680, 27);
+            this.inputNome.Size = new System.Drawing.Size(250, 23);
             this.inputNome.TabIndex = 2;
             // 
             // lblCodigo
             // 
+            this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(4, 53);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(3, 4);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(61, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(52, 17);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código";
             // 
             // inputCodigo
             // 
-            this.inputCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputCodigo.Enabled = false;
-            this.inputCodigo.Location = new System.Drawing.Point(80, 49);
-            this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.inputCodigo.Location = new System.Drawing.Point(61, 3);
             this.inputCodigo.Name = "inputCodigo";
-            this.inputCodigo.Size = new System.Drawing.Size(258, 27);
+            this.inputCodigo.Size = new System.Drawing.Size(90, 23);
             this.inputCodigo.TabIndex = 1;
             // 
             // btnAnterior
             // 
             this.btnAnterior.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAnterior.Location = new System.Drawing.Point(44, 4);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnterior.Location = new System.Drawing.Point(33, 3);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(136, 53);
+            this.btnAnterior.Size = new System.Drawing.Size(102, 44);
             this.btnAnterior.TabIndex = 5;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
@@ -179,10 +169,9 @@
             // btnSalvar
             // 
             this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSalvar.Location = new System.Drawing.Point(188, 4);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalvar.Location = new System.Drawing.Point(141, 3);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(136, 53);
+            this.btnSalvar.Size = new System.Drawing.Size(102, 44);
             this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -191,10 +180,9 @@
             // btnProximo
             // 
             this.btnProximo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProximo.Location = new System.Drawing.Point(44, 65);
-            this.btnProximo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProximo.Location = new System.Drawing.Point(33, 53);
             this.btnProximo.Name = "btnProximo";
-            this.btnProximo.Size = new System.Drawing.Size(136, 54);
+            this.btnProximo.Size = new System.Drawing.Size(102, 44);
             this.btnProximo.TabIndex = 6;
             this.btnProximo.Text = "Proximo";
             this.btnProximo.UseVisualStyleBackColor = true;
@@ -203,10 +191,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancelar.Location = new System.Drawing.Point(188, 65);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(141, 53);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(136, 54);
+            this.btnCancelar.Size = new System.Drawing.Size(102, 44);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -215,10 +202,9 @@
             // btnSair
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSair.Location = new System.Drawing.Point(620, 65);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Location = new System.Drawing.Point(465, 53);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(140, 54);
+            this.btnSair.Size = new System.Drawing.Size(105, 44);
             this.btnSair.TabIndex = 14;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -228,10 +214,9 @@
             // 
             this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnImprimir.Enabled = false;
-            this.btnImprimir.Location = new System.Drawing.Point(476, 65);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnImprimir.Location = new System.Drawing.Point(357, 53);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(136, 54);
+            this.btnImprimir.Size = new System.Drawing.Size(102, 44);
             this.btnImprimir.TabIndex = 12;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
@@ -240,10 +225,9 @@
             // 
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPesquisar.Enabled = false;
-            this.btnPesquisar.Location = new System.Drawing.Point(332, 65);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPesquisar.Location = new System.Drawing.Point(249, 53);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(136, 54);
+            this.btnPesquisar.Size = new System.Drawing.Size(102, 44);
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -251,10 +235,9 @@
             // btnExcluir
             // 
             this.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExcluir.Location = new System.Drawing.Point(620, 4);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Location = new System.Drawing.Point(465, 3);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(140, 53);
+            this.btnExcluir.Size = new System.Drawing.Size(105, 44);
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -263,10 +246,9 @@
             // btnAlterar
             // 
             this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAlterar.Location = new System.Drawing.Point(476, 4);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterar.Location = new System.Drawing.Point(357, 3);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(136, 53);
+            this.btnAlterar.Size = new System.Drawing.Size(102, 44);
             this.btnAlterar.TabIndex = 11;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -275,10 +257,9 @@
             // btnNovo
             // 
             this.btnNovo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNovo.Location = new System.Drawing.Point(332, 4);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNovo.Location = new System.Drawing.Point(249, 3);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(136, 53);
+            this.btnNovo.Size = new System.Drawing.Size(102, 44);
             this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -304,36 +285,64 @@
             this.tableLayoutPanel1.Controls.Add(this.btnAlterar, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 332);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 270);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 123);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(603, 100);
             this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // panelCampos
+            // 
+            this.panelCampos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCampos.ColumnCount = 2;
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.panelCampos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelCampos.Controls.Add(this.inputCodigo, 1, 0);
+            this.panelCampos.Controls.Add(this.inputSenha, 1, 3);
+            this.panelCampos.Controls.Add(this.lblCodigo, 0, 0);
+            this.panelCampos.Controls.Add(this.inputLogin, 1, 2);
+            this.panelCampos.Controls.Add(this.lblSenha, 0, 3);
+            this.panelCampos.Controls.Add(this.lblNome, 0, 1);
+            this.panelCampos.Controls.Add(this.inputNome, 1, 1);
+            this.panelCampos.Controls.Add(this.lblLogin, 0, 2);
+            this.panelCampos.Location = new System.Drawing.Point(7, 36);
+            this.panelCampos.MinimumSize = new System.Drawing.Size(314, 106);
+            this.panelCampos.Name = "panelCampos";
+            this.panelCampos.RowCount = 4;
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panelCampos.Size = new System.Drawing.Size(314, 106);
+            this.panelCampos.TabIndex = 9;
             // 
             // frmUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 455);
+            this.ClientSize = new System.Drawing.Size(603, 370);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panelCampos);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(625, 365);
+            this.Controls.Add(this.panelCamposContainer);
+            this.MinimumSize = new System.Drawing.Size(473, 304);
             this.Name = "frmUser";
             this.Text = "Cadastro Usuário";
             this.Load += new System.EventHandler(this.frmUser_Load);
+            this.panelCamposContainer.ResumeLayout(false);
+            this.panelCamposContainer.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.panelCampos.ResumeLayout(false);
             this.panelCampos.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelCampos;
+        private System.Windows.Forms.Panel panelCamposContainer;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox inputSenha;
         private System.Windows.Forms.Label lblLogin;
@@ -354,5 +363,6 @@
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TableLayoutPanel panelCampos;
     }
 }
