@@ -141,6 +141,7 @@ namespace projetoCadastro
             inputRG.Text = cliente.rg ?? "";
         }
 
+        // TODO: Ver se não é possivel passar esse método para a interface IEntidade
         public bool ValidarCamposEntidade(IEntidade entidade)
         {
             Cliente cliente = entidade as Cliente;
@@ -149,13 +150,6 @@ namespace projetoCadastro
             return true;
 
             bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
-        }
-
-        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
-        {
-            Cliente usuario = entidade as Cliente;
-            string nmUsuario = usuario.nome.ToLower();
-            return nmUsuario.Contains(searchQuery);
         }
     }
 }

@@ -31,7 +31,9 @@ namespace projetoCadastro
             {
                 return;
             }
-            caller.PesquisarEntidadeEExibir(searchQuery);
+
+            int? pointerEntidadePesquisada = caller.PesquisarEntidadePorNome(searchQuery);
+            caller.DefinirPointerEExibirDados(pointerEntidadePesquisada);
             this.Close();
         }
     }

@@ -127,6 +127,7 @@ namespace projetoCadastro
             inputSenha.Text = usuario.senha ?? "";
         }
 
+        // TODO: Ver se não é possivel passar esse método para a interface IEntidade
         public bool ValidarCamposEntidade(IEntidade entidade)
         {
             Usuario usuario = entidade as Usuario;
@@ -135,13 +136,6 @@ namespace projetoCadastro
             return true;
 
             bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
-        }
-
-        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
-        {
-            Usuario usuario = entidade as Usuario;
-            string nmUsuario = usuario.nome.ToLower();
-            return nmUsuario.Contains(searchQuery);
         }
     }
 }

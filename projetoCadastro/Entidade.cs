@@ -10,6 +10,7 @@ namespace projetoCadastro
     {
         int? codigo { get; set; }
         void LimparDados(bool removerCodigo);
+        bool NomeMatchEntidade(string nome);
     }
 
     public class Usuario : IEntidade
@@ -29,6 +30,12 @@ namespace projetoCadastro
             {
                 codigo = null;
             }
+        }
+
+        public bool NomeMatchEntidade(string nomePesquisa)
+        {
+            string nmUsuario = this.nome.ToLower();
+            return nmUsuario.Contains(nomePesquisa);
         }
     }
 
@@ -62,6 +69,11 @@ namespace projetoCadastro
             {
                 codigo = null;
             }
+        }
+        public bool NomeMatchEntidade(string nomePesquisa)
+        {
+            string nmCliente = this.nome.ToLower();
+            return nmCliente.Contains(nomePesquisa);
         }
     }
 
@@ -99,6 +111,11 @@ namespace projetoCadastro
             {
                 codigo = null;
             }
+        }
+        public bool NomeMatchEntidade(string nomePesquisa)
+        {
+            string nmFornecedor = this.nomeFantasia.ToLower();
+            return nmFornecedor.Contains(nomePesquisa);
         }
     }
 }

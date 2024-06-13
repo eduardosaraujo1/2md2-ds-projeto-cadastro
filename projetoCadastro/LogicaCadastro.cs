@@ -14,7 +14,6 @@ namespace projetoCadastro
         IEntidade FormGerarEntidade();
         void RenderizarDados();
         bool ValidarCamposEntidade(IEntidade entidade);
-        bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade);
 
         Panel GetPanelCampos();
         LogicaCadastro.BotoesForm GetBotoesForm();
@@ -98,6 +97,7 @@ namespace projetoCadastro
             botoes.btnExcluir.Enabled = true;
             botoes.btnPesquisar.Enabled = true;
             botoes.btnSair.Enabled = true;
+            botoes.btnImprimir.Enabled = true;
         }
 
         private void PermitirDigitacao() {
@@ -114,6 +114,7 @@ namespace projetoCadastro
             botoes.btnExcluir.Enabled = false;
             botoes.btnSair.Enabled = false;
             botoes.btnPesquisar.Enabled = false;
+            botoes.btnImprimir.Enabled = false;
         }
 
         public void DefinirModoForm(ModoForm modo)
@@ -143,29 +144,35 @@ namespace projetoCadastro
             }
         }
 
-        public int? PesquisarEntidadePorNome(string nome)
+        public int? PesquisarEntidadePorNome(string nomePesquisa)
         {
             int arrayLength = formulario.cadastros.Length;
             for (int pointer = 0; pointer < arrayLength; pointer++)
             {
-                if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
+                //if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
+                IEntidade entidade = formulario.cadastros[pointer];
+                bool pesquisaMatch = !(entidade is null) && entidade.NomeMatchEntidade(nomePesquisa);
+                if (pesquisaMatch)
                 {
                     return pointer;
                 }
             }
             return null;
         }
-
-        public void PesquisarEntidadeEExibir(string searchQuery)
+        public void DefinirPointerEExibirDados(int? pointerEntidadePesquisada)
         {
-            int? pointerCadastro = PesquisarEntidadePorNome(searchQuery);
-            if (pointerCadastro is null)
+            if (pointerEntidadePesquisada is null)
             {
-                MessageBox.Show("Cadastro não encontrado.");
-            }
+                MessageBox.Show(
+                    "Cadastro não encontrado.",
+                    "Cadastro nao encontrado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+            } 
             else
             {
-                pointerEntidade = (int)pointerCadastro;
+                pointerEntidade = (int)pointerEntidadePesquisada;
                 ExibirDados();
             }
         }
@@ -237,13 +244,6 @@ namespace projetoCadastro
             }
         }
 
-        private bool ValidarEntidade(IEntidade entidade)
-        {
-            if (entidade == null) return false;
-            if (!formulario.ValidarCamposEntidade(entidade)) return false;
-            return true;
-        }
-
         public void SalvarCadastro()
         {
             IEntidade cadastro = formulario.FormGerarEntidade();
@@ -295,6 +295,7 @@ namespace projetoCadastro
             frmPesquisa searchBox = new frmPesquisa(this);
             searchBox.ShowDialog();
         }
+
 
         public enum ModoForm
         {

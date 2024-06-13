@@ -146,6 +146,7 @@ namespace projetoCadastro
             inputTelefone.Text = fornecedor.telefone ?? "";
         }
 
+        // TODO: Ver se não é possivel passar esse método para a interface IEntidade
         public bool ValidarCamposEntidade(IEntidade entidade)
         {
             Fornecedor fornecedor = entidade as Fornecedor;
@@ -154,13 +155,6 @@ namespace projetoCadastro
             return true;
 
             bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
-        }
-
-        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
-        {
-            Fornecedor usuario = entidade as Fornecedor;
-            string nmUsuario = usuario.nomeFantasia.ToLower();
-            return nmUsuario.Contains(searchQuery);
         }
     }
 }
