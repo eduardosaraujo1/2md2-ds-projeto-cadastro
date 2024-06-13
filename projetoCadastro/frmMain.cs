@@ -28,7 +28,7 @@ namespace projetoCadastro
             Application.Exit();
         }
 
-        private void InitNewCadastroForm<T>(string inicioMensagem, string finalMensagem) where T : Form, new()
+        private void InitNewDialog<T>(string inicioMensagem, string finalMensagem) where T : Form, new()
         {
             SetarMensagemSistema(inicioMensagem);
             T frm = new T();
@@ -39,17 +39,17 @@ namespace projetoCadastro
 
         private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitNewCadastroForm<frmUser>("Iniciado cadastro de usuários", "Finalizado cadastro de usuários");
+            InitNewDialog<frmUser>("Visualizar cadastro de usuários", "Finalizar cadastro de usuários");
         }
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitNewCadastroForm<frmCliente>("Iniciado cadastro de clientes", "Finalizado cadastro de clientes");
+            InitNewDialog<frmCliente>("Visualizar cadastro de clientes", "Finalizar cadastro de clientes");
         }
 
         private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InitNewCadastroForm<frmFornecedor>("Iniciado cadastro de fornecedores", "Finalizado cadastro de fornecedores");
+            InitNewDialog<frmFornecedor>("Visualizar cadastro de fornecedores", "Finalizar cadastro de fornecedores");
         }
 
         private void TimerSegundo_Tick(object sender, EventArgs e)
@@ -115,6 +115,21 @@ namespace projetoCadastro
         {
             UpdateDateTime();
             UpdateTabelaForms();
+        }
+
+        private void usuárioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InitNewDialog<frmRelUsuario>("Visualizar relatório usuários", "Fechar relatório usuários");
+        }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InitNewDialog<frmRelCliente>("Visualizar relatório cliente", "Fechar relatório cliente");
+        }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            InitNewDialog<frmRelFornecedor>("Visualizar relatório fornecedor", "Fechar relatório fornecedor");
         }
     }
 }

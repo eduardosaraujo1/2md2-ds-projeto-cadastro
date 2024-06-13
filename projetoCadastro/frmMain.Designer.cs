@@ -126,20 +126,23 @@
             // usuárioToolStripMenuItem1
             // 
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
+            this.usuárioToolStripMenuItem1.Click += new System.EventHandler(this.usuárioToolStripMenuItem1_Click);
             // 
             // clienteToolStripMenuItem1
             // 
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.clienteToolStripMenuItem1.Text = "Cliente";
+            this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
+            this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
