@@ -34,12 +34,12 @@ namespace projetoCadastro
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Anterior);
+            logica.NavegarCadastros(-1);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Proximo);
+            logica.NavegarCadastros(1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -67,6 +67,17 @@ namespace projetoCadastro
             logica.SalvarCadastro();
         }
 
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            logica.PesquisarUsuarioClick();
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // getters
         public LogicaCadastro.BotoesForm GetBotoesForm()
         {
             return new LogicaCadastro.BotoesForm
@@ -94,6 +105,7 @@ namespace projetoCadastro
             return inputCodigo;
         }
 
+        // unique logic
         public IEntidade FormGerarEntidade()
         {
             Fornecedor fornecedor = new Fornecedor
@@ -133,24 +145,22 @@ namespace projetoCadastro
             inputCEP.Text = fornecedor.cep ?? "";
             inputTelefone.Text = fornecedor.telefone ?? "";
         }
+
         public bool ValidarCamposEntidade(IEntidade entidade)
         {
             Fornecedor fornecedor = entidade as Fornecedor;
+            if (IsNullOrEmpty(fornecedor.codigo.ToString())) return false;
             if (IsNullOrEmpty(fornecedor.nomeFantasia)) return false;
-            if (IsNullOrEmpty(fornecedor.razaoSocial)) return false;
-            if (IsNullOrEmpty(fornecedor.contato)) return false;
-            if (IsNullOrEmpty(fornecedor.email)) return false;
-            if (IsNullOrEmpty(fornecedor.cnpj)) return false;
-            if (IsNullOrEmpty(fornecedor.inscrEstadual)) return false;
-            if (IsNullOrEmpty(fornecedor.endereco)) return false;
-            if (IsNullOrEmpty(fornecedor.cidade)) return false;
-            if (IsNullOrEmpty(fornecedor.bairro)) return false;
-            if (IsNullOrEmpty(fornecedor.estado)) return false;
-            if (IsNullOrEmpty(fornecedor.cep)) return false;
-            if (IsNullOrEmpty(fornecedor.telefone)) return false;
             return true;
 
-            bool IsNullOrEmpty(string s) => String.IsNullOrEmpty(s.Trim());
+            bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
+        }
+
+        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
+        {
+            Fornecedor usuario = entidade as Fornecedor;
+            string nmUsuario = usuario.nomeFantasia.ToLower();
+            return nmUsuario.Contains(searchQuery);
         }
     }
 }

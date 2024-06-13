@@ -35,12 +35,12 @@ namespace projetoCadastro
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Anterior);
+            logica.NavegarCadastros(-1);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Proximo);
+            logica.NavegarCadastros(1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -64,6 +64,16 @@ namespace projetoCadastro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             logica.SalvarCadastro();
+        }
+
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            logica.PesquisarUsuarioClick();
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
 
         // getters
@@ -94,7 +104,7 @@ namespace projetoCadastro
             return inputCodigo;
         }
 
-        // métodos especificos de form
+        // unique logic
         public IEntidade FormGerarEntidade()
         {
             Usuario usuario = new Usuario
@@ -120,12 +130,18 @@ namespace projetoCadastro
         public bool ValidarCamposEntidade(IEntidade entidade)
         {
             Usuario usuario = entidade as Usuario;
-            if (IsNullOrEmpty(usuario.login)) return false;
+            if (IsNullOrEmpty(usuario.codigo.ToString())) return false;
             if (IsNullOrEmpty(usuario.nome)) return false;
-            if (IsNullOrEmpty(usuario.senha)) return false;
             return true;
 
-            bool IsNullOrEmpty(string s) => String.IsNullOrEmpty(s.Trim());
+            bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
+        }
+
+        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
+        {
+            Usuario usuario = entidade as Usuario;
+            string nmUsuario = usuario.nome.ToLower();
+            return nmUsuario.Contains(searchQuery);
         }
     }
 }

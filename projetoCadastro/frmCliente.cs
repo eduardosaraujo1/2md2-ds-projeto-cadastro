@@ -35,12 +35,12 @@ namespace projetoCadastro
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Anterior);
+            logica.NavegarCadastros(-1);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros((int)LogicaCadastro.DirecaoNavegacao.Proximo);
+            logica.NavegarCadastros(1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -66,6 +66,17 @@ namespace projetoCadastro
             logica.SalvarCadastro();
         }
 
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            logica.PesquisarUsuarioClick();
+        }
+
+        private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
+
+        // getters
         public LogicaCadastro.BotoesForm GetBotoesForm()
         {
             return new LogicaCadastro.BotoesForm
@@ -93,6 +104,7 @@ namespace projetoCadastro
             return inputCodigo;
         }
 
+        // unique logic
         public IEntidade FormGerarEntidade()
         {
             Cliente cliente = new Cliente
@@ -132,19 +144,18 @@ namespace projetoCadastro
         public bool ValidarCamposEntidade(IEntidade entidade)
         {
             Cliente cliente = entidade as Cliente;
+            if (IsNullOrEmpty(cliente.codigo.ToString())) return false;
             if (IsNullOrEmpty(cliente.nome)) return false;
-            if (IsNullOrEmpty(cliente.endereco)) return false;
-            if (IsNullOrEmpty(cliente.bairro)) return false;
-            if (IsNullOrEmpty(cliente.cidade)) return false;
-            if (IsNullOrEmpty(cliente.estado)) return false;
-            if (IsNullOrEmpty(cliente.cep)) return false;
-            if (IsNullOrEmpty(cliente.telefone)) return false;
-            if (IsNullOrEmpty(cliente.email)) return false;
-            if (IsNullOrEmpty(cliente.cpf)) return false;
-            if (IsNullOrEmpty(cliente.rg)) return false;
             return true;
 
-            bool IsNullOrEmpty(string s) => String.IsNullOrEmpty(s.Trim());
+            bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
+        }
+
+        public bool VerificarNomeMatchEntidade(string searchQuery, IEntidade entidade)
+        {
+            Cliente usuario = entidade as Cliente;
+            string nmUsuario = usuario.nome.ToLower();
+            return nmUsuario.Contains(searchQuery);
         }
     }
 }
