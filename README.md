@@ -109,6 +109,7 @@ g.DrawString(page, fonte, color, posicao);
 
 # Roadmap
 
+- É possivel utilizar Modifiers para não precisar de métodos Getters, é possível mudar os membros para public
 - Altere os campos do frmPesquisa dependendo de quem chamou seu .ShowDialog()
 - Os métodos que ainda tem repetição de código são assim porque é necessário relacionar os campos do form (TextBoxes) às suas respectivas posições no cadastro (Atributo da interface IUsuario). Para resolver isso, as soluções incluem:
   1. fazer um método de obter os campos a partir da classe IEntidade (retorno Dictonary por exemplo), e adaptar as convenções de nomes para que um laço FOR possa fazer esse trabalho dentro da classe LogicaCadastro
