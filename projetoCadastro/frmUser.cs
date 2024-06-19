@@ -73,7 +73,17 @@ namespace projetoCadastro
 
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
-
+            // No futuro, mover essa implementação para LogicaCadastro
+            if (string.IsNullOrEmpty(inputCodigo.Text) || string.IsNullOrEmpty(inputNome.Text))
+            {
+                MessageBox.Show(
+                    "Erro: nenhum cadastro está selecionado",
+                    "Cadastro nulo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            printPreviewDialog.ShowDialog();
         }
 
         // getters
@@ -136,6 +146,21 @@ namespace projetoCadastro
             return true;
 
             bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // Verifique se é possível mover essa implementação para LogicaCadastro (requer melhorias mencionadas em README.md)
+            // "implementar uma forma de localizar determinado elemento a partir de seu Name como uma string"
+            string conteudoPrint = 
+$@"FICHA DE USUÁRIO
+
+Código: {inputCodigo.Text}
+Nome: {inputNome.Text}
+Login: {inputLogin.Text}
+";
+
+            logica.GerarDocumentoPrint(conteudoPrint, e);
         }
     }
 }

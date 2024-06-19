@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace projetoCadastro
@@ -177,6 +179,16 @@ namespace projetoCadastro
             }
         }
 
+        public void GerarDocumentoPrint(string content, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Font fonte = new Font("Arial", 12, FontStyle.Bold);
+            Brush color = Brushes.Black;
+            PointF posicao = new PointF(50, 50);
+            g.DrawString(content, fonte, color, posicao);
+        }
+
+        // form direct methods
         public void OnFormLoad()
         {
             pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);

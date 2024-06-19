@@ -82,7 +82,7 @@
             // 
             this.btnSair.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSair.Location = new System.Drawing.Point(624, 65);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(137, 54);
             this.btnSair.TabIndex = 23;
@@ -95,7 +95,7 @@
             this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnImprimir.Enabled = false;
             this.btnImprimir.Location = new System.Drawing.Point(479, 65);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(137, 54);
             this.btnImprimir.TabIndex = 21;
@@ -108,7 +108,7 @@
             this.btnPesquisar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPesquisar.Enabled = false;
             this.btnPesquisar.Location = new System.Drawing.Point(334, 65);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(137, 54);
             this.btnPesquisar.TabIndex = 19;
@@ -120,7 +120,7 @@
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancelar.Location = new System.Drawing.Point(189, 65);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(137, 54);
             this.btnCancelar.TabIndex = 17;
@@ -132,7 +132,7 @@
             // 
             this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSalvar.Location = new System.Drawing.Point(189, 4);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(137, 53);
             this.btnSalvar.TabIndex = 15;
@@ -144,7 +144,7 @@
             // 
             this.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExcluir.Location = new System.Drawing.Point(624, 4);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(137, 53);
             this.btnExcluir.TabIndex = 22;
@@ -156,7 +156,7 @@
             // 
             this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAlterar.Location = new System.Drawing.Point(479, 4);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(137, 53);
             this.btnAlterar.TabIndex = 20;
@@ -168,7 +168,7 @@
             // 
             this.btnNovo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNovo.Location = new System.Drawing.Point(334, 4);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(137, 53);
             this.btnNovo.TabIndex = 18;
@@ -180,7 +180,7 @@
             // 
             this.btnProximo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProximo.Location = new System.Drawing.Point(44, 65);
-            this.btnProximo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProximo.Margin = new System.Windows.Forms.Padding(4);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(137, 54);
             this.btnProximo.TabIndex = 16;
@@ -192,7 +192,7 @@
             // 
             this.btnAnterior.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAnterior.Location = new System.Drawing.Point(44, 4);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(137, 53);
             this.btnAnterior.TabIndex = 14;
@@ -205,7 +205,7 @@
             this.panelFrmCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFrmCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelFrmCliente.Location = new System.Drawing.Point(0, 0);
-            this.panelFrmCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFrmCliente.Margin = new System.Windows.Forms.Padding(4);
             this.panelFrmCliente.Name = "panelFrmCliente";
             this.panelFrmCliente.Size = new System.Drawing.Size(805, 463);
             this.panelFrmCliente.TabIndex = 8;
@@ -320,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputInscrEstadual, 2);
             this.inputInscrEstadual.Location = new System.Drawing.Point(421, 159);
-            this.inputInscrEstadual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputInscrEstadual.Margin = new System.Windows.Forms.Padding(4);
             this.inputInscrEstadual.Name = "inputInscrEstadual";
             this.inputInscrEstadual.Size = new System.Drawing.Size(220, 26);
             this.inputInscrEstadual.TabIndex = 7;
@@ -353,7 +353,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputEmail, 4);
             this.inputEmail.Location = new System.Drawing.Point(134, 128);
-            this.inputEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputEmail.Margin = new System.Windows.Forms.Padding(4);
             this.inputEmail.Name = "inputEmail";
             this.inputEmail.Size = new System.Drawing.Size(507, 26);
             this.inputEmail.TabIndex = 5;
@@ -363,7 +363,7 @@
             this.inputCNPJ.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputCNPJ.Location = new System.Drawing.Point(134, 159);
-            this.inputCNPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputCNPJ.Margin = new System.Windows.Forms.Padding(4);
             this.inputCNPJ.Name = "inputCNPJ";
             this.inputCNPJ.Size = new System.Drawing.Size(151, 26);
             this.inputCNPJ.TabIndex = 6;
@@ -374,7 +374,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputRazaoSocial, 2);
             this.inputRazaoSocial.Location = new System.Drawing.Point(134, 66);
-            this.inputRazaoSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputRazaoSocial.Margin = new System.Windows.Forms.Padding(4);
             this.inputRazaoSocial.Name = "inputRazaoSocial";
             this.inputRazaoSocial.Size = new System.Drawing.Size(279, 26);
             this.inputRazaoSocial.TabIndex = 3;
@@ -385,7 +385,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputCodigo.Enabled = false;
             this.inputCodigo.Location = new System.Drawing.Point(134, 4);
-            this.inputCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.inputCodigo.Name = "inputCodigo";
             this.inputCodigo.Size = new System.Drawing.Size(151, 26);
             this.inputCodigo.TabIndex = 1;
@@ -396,7 +396,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputNomeFantasia, 3);
             this.inputNomeFantasia.Location = new System.Drawing.Point(134, 35);
-            this.inputNomeFantasia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputNomeFantasia.Margin = new System.Windows.Forms.Padding(4);
             this.inputNomeFantasia.Name = "inputNomeFantasia";
             this.inputNomeFantasia.Size = new System.Drawing.Size(438, 26);
             this.inputNomeFantasia.TabIndex = 2;
@@ -474,7 +474,7 @@
             this.inputEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputEstado.Location = new System.Drawing.Point(649, 221);
-            this.inputEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputEstado.Margin = new System.Windows.Forms.Padding(4);
             this.inputEstado.Name = "inputEstado";
             this.inputEstado.Size = new System.Drawing.Size(151, 26);
             this.inputEstado.TabIndex = 11;
@@ -485,7 +485,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputEndereco, 5);
             this.inputEndereco.Location = new System.Drawing.Point(134, 190);
-            this.inputEndereco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.inputEndereco.Name = "inputEndereco";
             this.inputEndereco.Size = new System.Drawing.Size(666, 26);
             this.inputEndereco.TabIndex = 8;
@@ -519,7 +519,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCampos.SetColumnSpan(this.inputTelefone, 2);
             this.inputTelefone.Location = new System.Drawing.Point(421, 252);
-            this.inputTelefone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputTelefone.Margin = new System.Windows.Forms.Padding(4);
             this.inputTelefone.Name = "inputTelefone";
             this.inputTelefone.Size = new System.Drawing.Size(220, 26);
             this.inputTelefone.TabIndex = 13;
@@ -552,7 +552,7 @@
             this.inputBairro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputBairro.Location = new System.Drawing.Point(134, 221);
-            this.inputBairro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputBairro.Margin = new System.Windows.Forms.Padding(4);
             this.inputBairro.Name = "inputBairro";
             this.inputBairro.Size = new System.Drawing.Size(151, 26);
             this.inputBairro.TabIndex = 9;
@@ -574,7 +574,7 @@
             this.inputCidade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputCidade.Location = new System.Drawing.Point(421, 221);
-            this.inputCidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputCidade.Margin = new System.Windows.Forms.Padding(4);
             this.inputCidade.Name = "inputCidade";
             this.inputCidade.Size = new System.Drawing.Size(151, 26);
             this.inputCidade.TabIndex = 10;
@@ -584,7 +584,7 @@
             this.inputCEP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputCEP.Location = new System.Drawing.Point(134, 252);
-            this.inputCEP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputCEP.Margin = new System.Windows.Forms.Padding(4);
             this.inputCEP.Name = "inputCEP";
             this.inputCEP.Size = new System.Drawing.Size(151, 26);
             this.inputCEP.TabIndex = 12;
@@ -600,6 +600,10 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Cidade";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
             // printPreviewDialog
             // 
@@ -618,7 +622,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 463);
             this.Controls.Add(this.panelFrmCliente);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(821, 500);
             this.Name = "frmFornecedor";
             this.Text = "Cadastro Fornecedor";

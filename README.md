@@ -69,6 +69,12 @@ impressao.DrawString(page, fonte, color, posicao);
 
 # Ideias de implementação
 
+-   Altere os campos do frmPesquisa dependendo de quem chamou seu .ShowDialog()
 -   Os métodos que ainda tem repetição de código são assim porque é necessário relacionar os campos do form (TextBoxes) às suas respectivas posições no cadastro (Atributo da interface IUsuario). Para resolver isso, as soluções incluem:
     1. fazer um método de obter os campos a partir da classe IEntidade (retorno Dictonary por exemplo), e adaptar as convenções de nomes para que um laço FOR possa fazer esse trabalho dentro da classe LogicaCadastro
     2. Fazer a propriedade Name das Textboxes igual ao seu nome no cadastro, e utilizar essa nomenclatura consistente para relacionar TextBoxes a IEntidades
+-   Adicionar um aviso em vermelho afirmando qual campo obrigatório estava nulo
+    -   Para isso, implementar uma forma de localizar determinado elemento a partir de seu Name como uma string
+    -   Essa implementação além de facilitar a interação entre a classe LogicaCadastro e frmCadastro, reduz a quantidade de propriedades arbitrarias na interface IFormCadastro
+-   Mover implementação Imprimir para a classe genérica (requer as melhorias mencionadas previamente)
+-   FIX: Quando um cadastro é apagado, a tabela na tela inicial não é atualizada. Posso remover essa tabela e colocar uma imagem placeholder, ou corrigir o erro
