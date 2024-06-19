@@ -1,8 +1,8 @@
 # Sobre o projeto
 
-Esse é um dos projetos feitos durante o curso de Desenvolvimento de Sistemas da ETEC Adolpho Berezin (Novo MTec)
-Compomente Currícular: Desenvolvimento de Sistemas
-Bimestre: 2º Bimestre
+Esse é um dos projetos feitos durante o curso de Desenvolvimento de Sistemas da ETEC Adolpho Berezin (Novo MTec) <br>
+Componente Currícular: Desenvolvimento de Sistemas <br>
+Bimestre: 2º Bimestre<br>
 Orientadores: Oswaldo Luiz e Joelma Lucia Sartori
 
 # Descrição Geral
@@ -117,5 +117,4 @@ g.DrawString(page, fonte, color, posicao);
   - Para isso, implementar uma forma de localizar determinado elemento a partir de seu Name como uma string
   - Essa implementação além de facilitar a interação entre a classe LogicaCadastro e frmCadastro, reduz a quantidade de propriedades arbitrarias na interface IFormCadastro
 - Mover implementação Imprimir para a classe genérica (requer as melhorias mencionadas previamente)
-- FIX: Quando um cadastro é apagado, a tabela na tela inicial não é atualizada. Posso remover essa tabela e colocar uma imagem placeholder, ou corrigir o erro
 - Implementar impressão de relatório
