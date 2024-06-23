@@ -168,7 +168,7 @@ namespace projetoCadastro
             // Verifique se é possível mover essa implementação para LogicaCadastro (requer melhorias mencionadas em README.md)
             // "implementar uma forma de localizar determinado elemento a partir de seu Name como uma string"
             string conteudoPrint = 
-$@"FICHA DE FORNECEDOR
+$@"FICHA DE CLIENTE
 
 Código: {inputCodigo.Text}
 Nome: {inputNome.Text}
