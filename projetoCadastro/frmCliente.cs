@@ -17,7 +17,7 @@ namespace projetoCadastro
     {
         // grande parte dos comentários de cada funcionalidade está em frmUser, veja a implementação lá para detalhes
         public IEntidade[] cadastros { get; set; } = Storage.clientes;
-        private LogicaCadastro logica;
+        private GenericCadastro logica;
 
         public frmCliente()
         {
@@ -25,7 +25,7 @@ namespace projetoCadastro
         }
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            logica = new LogicaCadastro(this);
+            logica = new GenericCadastro(this);
             logica.OnFormLoad();
         }
         private void btnSair_Click(object sender, EventArgs e)
@@ -87,9 +87,9 @@ namespace projetoCadastro
         }
 
         // getters
-        public LogicaCadastro.BotoesForm GetBotoesForm()
+        public GenericCadastro.BotoesForm GetBotoesForm()
         {
-            return new LogicaCadastro.BotoesForm
+            return new GenericCadastro.BotoesForm
             {
                 btnAnterior = btnAnterior,
                 btnProximo = btnProximo,
@@ -134,6 +134,7 @@ namespace projetoCadastro
             return cliente;
         }
 
+        // TODO: Ver se é possível relacionar as TextBoxes aos cadastros e assim não precisar colocar codigo na classe frm
         public void RenderizarDados()
         {
             int pointer = logica.pointerEntidade;

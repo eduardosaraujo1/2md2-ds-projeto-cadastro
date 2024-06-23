@@ -17,7 +17,7 @@ namespace projetoCadastro
     public partial class frmUser : Form, IFormCadastro
     {
         public IEntidade[] cadastros { get; set; } = Storage.usuarios;
-        private LogicaCadastro logica;
+        private GenericCadastro logica;
 
         public frmUser()
         {
@@ -25,7 +25,7 @@ namespace projetoCadastro
         }
         private void frmUser_Load(object sender, EventArgs e)
         {
-            logica = new LogicaCadastro(this);
+            logica = new GenericCadastro(this);
             logica.OnFormLoad();
         }
         private void btnSair_Click(object sender, EventArgs e)
@@ -87,9 +87,9 @@ namespace projetoCadastro
         }
 
         // getters
-        public LogicaCadastro.BotoesForm GetBotoesForm()
+        public GenericCadastro.BotoesForm GetBotoesForm()
         {
-            return new LogicaCadastro.BotoesForm
+            return new GenericCadastro.BotoesForm
             {
                 btnAnterior = btnAnterior,
                 btnProximo = btnProximo,

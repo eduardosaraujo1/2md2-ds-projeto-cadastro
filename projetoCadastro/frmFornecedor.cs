@@ -14,7 +14,7 @@ namespace projetoCadastro
     public partial class frmFornecedor : Form, IFormCadastro
     {
         public IEntidade[] cadastros { get; set; } = Storage.fornecedores;
-        private LogicaCadastro logica;
+        private GenericCadastro logica;
 
         public frmFornecedor()
         {
@@ -28,7 +28,7 @@ namespace projetoCadastro
 
         private void frmFornecedor_Load(object sender, EventArgs e)
         {
-            logica = new LogicaCadastro(this);
+            logica = new GenericCadastro(this);
             logica.OnFormLoad();
         }
 
@@ -88,9 +88,9 @@ namespace projetoCadastro
         }
 
         // getters
-        public LogicaCadastro.BotoesForm GetBotoesForm()
+        public GenericCadastro.BotoesForm GetBotoesForm()
         {
-            return new LogicaCadastro.BotoesForm
+            return new GenericCadastro.BotoesForm
             {
                 btnAnterior = btnAnterior,
                 btnProximo = btnProximo,
@@ -121,7 +121,7 @@ namespace projetoCadastro
             Fornecedor fornecedor = new Fornecedor
             {
                 codigo = logica.pointerEntidade + 1,
-                nomeFantasia = inputNomeFantasia.Text,
+                nome = inputNomeFantasia.Text,
                 razaoSocial = inputRazaoSocial.Text,
                 contato = inputContato.Text,
                 email = inputEmail.Text,
@@ -142,7 +142,7 @@ namespace projetoCadastro
             int pointer = logica.pointerEntidade;
             Fornecedor fornecedor = cadastros[pointer] as Fornecedor;
             inputCodigo.Text = (pointer + 1).ToString();
-            inputNomeFantasia.Text = fornecedor.nomeFantasia ?? "";
+            inputNomeFantasia.Text = fornecedor.nome ?? "";
             inputRazaoSocial.Text = fornecedor.razaoSocial ?? "";
             inputContato.Text = fornecedor.contato ?? "";
             inputEmail.Text = fornecedor.email ?? "";
@@ -161,7 +161,7 @@ namespace projetoCadastro
         {
             Fornecedor fornecedor = entidade as Fornecedor;
             if (IsNullOrEmpty(fornecedor.codigo.ToString())) return false;
-            if (IsNullOrEmpty(fornecedor.nomeFantasia)) return false;
+            if (IsNullOrEmpty(fornecedor.nome)) return false;
             return true;
 
             bool IsNullOrEmpty(string s) => string.IsNullOrEmpty(s.Trim());

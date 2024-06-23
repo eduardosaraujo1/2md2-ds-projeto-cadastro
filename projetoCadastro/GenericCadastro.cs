@@ -18,10 +18,10 @@ namespace projetoCadastro
         bool ValidarCamposEntidade(IEntidade entidade);
 
         Panel GetPanelCampos();
-        LogicaCadastro.BotoesForm GetBotoesForm();
+        GenericCadastro.BotoesForm GetBotoesForm();
         TextBox GetInputCodigo();
     }
-    public class LogicaCadastro
+    public class GenericCadastro
     {
         // note: "pointer" significa o index da posição descrita no nome
         // exemplo: pointerUsuario é o index da posição do usuário sendo visualizado atualmente
@@ -33,7 +33,7 @@ namespace projetoCadastro
         public int pointerEntidade = -1;
         public int pointerPosicaoVaziaArray = -1;
         
-        public LogicaCadastro(IFormCadastro formulario) 
+        public GenericCadastro(IFormCadastro formulario) 
         {
             this.formulario = formulario;
         }
@@ -41,19 +41,20 @@ namespace projetoCadastro
         private int EncontrarPosicaoVaziaArray(IEntidade[] array)
         {
             int arrayLength = array.Length;
-            for (int pos = 0; pos < arrayLength; pos++)
+            int pos;
+            for (pos = 0; pos < arrayLength; pos++)
             {
                 if (array[pos]?.codigo is null)
                 {
-                    return pos;
+                    break;
                 }
             }
-            return arrayLength; // Se o array está cheio, a posição "vazia" está fora do array
+            return pos;
         }
 
-        private bool PointerDentroArray(int pointer)
+        private bool IsPointerDentroArray(int pointer)
         {
-            // método determina se o valor do pointer é um index valido para o array
+            // determina se o valor do pointer é um index valido para o array
             IEntidade[] array = formulario.cadastros;
             return pointer >= 0 && pointer < array.Length;
         }
@@ -62,12 +63,12 @@ namespace projetoCadastro
         {
             // método determina se o cliente apontado pelo pointer está cadastrado
             IEntidade[] array = formulario.cadastros;
-            return PointerDentroArray(pointer) && !(array[pointer] is null);
+            return IsPointerDentroArray(pointer) && !(array[pointer] is null);
         }
         
-        public void LimparForm()
+        public void LimparTextboxesForm()
         {
-            // Limpa todas as textboxes do form
+            // Define as textboxes do form para vazias, sem que o cadastro seja alterado
             foreach(Control control in formulario.GetPanelCampos().Controls) {
                 if (control is TextBox)
                 {
@@ -121,7 +122,6 @@ namespace projetoCadastro
 
         public void DefinirModoForm(ModoForm modo)
         {
-            modoForm = modo;
             switch (modo)
             {
                 case ModoForm.Visualizacao:
@@ -134,36 +134,36 @@ namespace projetoCadastro
                     PermitirDigitacao();
                     break;
             }
+            this.modoForm = modo;
         }
         private void ExibirDados()
         {
-            if (PointerDentroArray(pointerEntidade))
+            if (IsPointerDentroArray(pointerEntidade))
             {
                 formulario.RenderizarDados();
-            } else
+            }
+            else
             {
-                LimparForm();
+                LimparTextboxesForm();
             }
         }
 
-        public int? PesquisarEntidadePorNome(string nomePesquisa)
+        public int? EncontrarEntidadePorNomeParcial(string nomePesquisa)
         {
             int arrayLength = formulario.cadastros.Length;
             for (int pointer = 0; pointer < arrayLength; pointer++)
             {
                 //if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
-                IEntidade entidade = formulario.cadastros[pointer];
-                bool pesquisaMatch = !(entidade is null) && entidade.NomeMatchEntidade(nomePesquisa);
-                if (pesquisaMatch)
-                {
-                    return pointer;
-                }
+                string nmEntidade = formulario.cadastros[pointer]?.nome;
+                bool match = !(string.IsNullOrEmpty(nmEntidade)) && nmEntidade.Contains(nomePesquisa);
+                if (match) return pointer;
             }
             return null;
         }
-        public void DefinirPointerEExibirDados(int? pointerEntidadePesquisada)
+        public void PointEntidadePorNomeParcial(string nomeParcial)
         {
-            if (pointerEntidadePesquisada is null)
+            int? entidadeEncontrada = EncontrarEntidadePorNomeParcial(nomeParcial);
+            if (entidadeEncontrada is null)
             {
                 MessageBox.Show(
                     "Cadastro não encontrado.",
@@ -174,7 +174,7 @@ namespace projetoCadastro
             } 
             else
             {
-                pointerEntidade = (int)pointerEntidadePesquisada;
+                pointerEntidade = (int)entidadeEncontrada;
                 ExibirDados();
             }
         }
@@ -188,7 +188,7 @@ namespace projetoCadastro
             g.DrawString(content, fonte, color, posicao);
         }
 
-        // form direct methods
+        // form generic methods
         public void OnFormLoad()
         {
             pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
@@ -231,7 +231,7 @@ namespace projetoCadastro
                 return;
             }
 
-            LimparForm();
+            LimparTextboxesForm();
             TextBox inputCodigo = formulario.GetInputCodigo();
             inputCodigo.Text = (pointerPosicaoVaziaArray + 1).ToString();
 

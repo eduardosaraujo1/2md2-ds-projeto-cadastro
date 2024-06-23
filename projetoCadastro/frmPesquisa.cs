@@ -12,8 +12,8 @@ namespace projetoCadastro
 {
     public partial class frmPesquisa : Form
     {
-        public LogicaCadastro caller;
-        public frmPesquisa(LogicaCadastro caller)
+        public GenericCadastro caller;
+        public frmPesquisa(GenericCadastro caller)
         {
             this.caller = caller;
             InitializeComponent();
@@ -32,8 +32,7 @@ namespace projetoCadastro
                 return;
             }
 
-            int? pointerEntidadePesquisada = caller.PesquisarEntidadePorNome(searchQuery);
-            caller.DefinirPointerEExibirDados(pointerEntidadePesquisada);
+            caller.PointEntidadePorNomeParcial(searchQuery);
             this.Close();
         }
     }

@@ -106,7 +106,7 @@ namespace projetoCadastro
             Cliente recenteCliente = ObterEntidadeRecemCadastrada(Storage.clientes) as Cliente;
             clienteRecente.Text = recenteCliente?.nome ?? "N/A";
             Fornecedor recenteFornecedor = ObterEntidadeRecemCadastrada(Storage.fornecedores) as Fornecedor;
-            fornecedorRecente.Text = recenteFornecedor?.nomeFantasia ?? "N/A";
+            fornecedorRecente.Text = recenteFornecedor?.nome ?? "N/A";
             Usuario recenteUsuario = ObterEntidadeRecemCadastrada(Storage.usuarios) as Usuario;
             userRecente.Text = recenteUsuario?.nome ?? "N/A";
         }

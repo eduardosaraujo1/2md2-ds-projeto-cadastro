@@ -9,40 +9,34 @@ namespace projetoCadastro
     public interface IEntidade
     {
         int? codigo { get; set; }
+        string nome { get; set; }
         void LimparDados(bool removerCodigo);
-        bool NomeMatchEntidade(string nome);
     }
 
     public class Usuario : IEntidade
     {
         public int? codigo { get; set; }
-        public string nome;
+        public string nome { get; set; }
         public string login;
         public string senha;
 
         public void LimparDados(bool removerCodigo)
         {
-            nome = String.Empty;
-            login = String.Empty;
-            senha = String.Empty;
+            nome = string.Empty;
+            login = string.Empty;
+            senha = string.Empty;
 
             if (removerCodigo)
             {
                 codigo = null;
             }
         }
-
-        public bool NomeMatchEntidade(string nomePesquisa)
-        {
-            string nmUsuario = this.nome.ToLower();
-            return nmUsuario.Contains(nomePesquisa);
-        }
     }
 
     public class Cliente : IEntidade
     {
         public int? codigo { get; set; }
-        public string nome;
+        public string nome { get; set; }
         public string endereco;
         public string bairro;
         public string cidade;
@@ -54,33 +48,28 @@ namespace projetoCadastro
         public string rg;
         public void LimparDados(bool removerCodigo)
         {
-            nome = String.Empty;
-            endereco = String.Empty;
-            bairro = String.Empty;
-            cidade = String.Empty;
-            estado = String.Empty;
-            cep = String.Empty;
-            telefone = String.Empty;
-            email = String.Empty;
-            cpf = String.Empty;
-            rg = String.Empty;
+            nome = string.Empty;
+            endereco = string.Empty;
+            bairro = string.Empty;
+            cidade = string.Empty;
+            estado = string.Empty;
+            cep = string.Empty;
+            telefone = string.Empty;
+            email = string.Empty;
+            cpf = string.Empty;
+            rg = string.Empty;
 
             if (removerCodigo)
             {
                 codigo = null;
             }
         }
-        public bool NomeMatchEntidade(string nomePesquisa)
-        {
-            string nmCliente = this.nome.ToLower();
-            return nmCliente.Contains(nomePesquisa);
-        }
     }
 
     public class Fornecedor : IEntidade
     {
         public int? codigo { get; set; }
-        public string nomeFantasia;
+        public string nome { get; set; }
         public string razaoSocial;
         public string contato;
         public string email;
@@ -94,28 +83,23 @@ namespace projetoCadastro
         public string telefone;
         public void LimparDados(bool removerCodigo)
         {
-            nomeFantasia = String.Empty;
-            razaoSocial = String.Empty;
-            contato = String.Empty;
-            email = String.Empty;
-            cnpj = String.Empty;
-            inscrEstadual = String.Empty;
-            endereco = String.Empty;
-            cidade = String.Empty;
-            bairro = String.Empty;
-            estado = String.Empty;
-            cep = String.Empty;
-            telefone = String.Empty;
+            nome = string.Empty;
+            razaoSocial = string.Empty;
+            contato = string.Empty;
+            email = string.Empty;
+            cnpj = string.Empty;
+            inscrEstadual = string.Empty;
+            endereco = string.Empty;
+            cidade = string.Empty;
+            bairro = string.Empty;
+            estado = string.Empty;
+            cep = string.Empty;
+            telefone = string.Empty;
 
             if (removerCodigo)
             {
                 codigo = null;
             }
-        }
-        public bool NomeMatchEntidade(string nomePesquisa)
-        {
-            string nmFornecedor = this.nomeFantasia.ToLower();
-            return nmFornecedor.Contains(nomePesquisa);
         }
     }
 }
