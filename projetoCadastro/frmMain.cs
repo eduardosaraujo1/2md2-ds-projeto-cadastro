@@ -18,9 +18,82 @@ namespace projetoCadastro
             InitializeComponent();
         }
 
-        private void SetarMensagemSistema(string mensagem)
+        private void DefinirMsgSistema(string mensagem)
         {
             displayMessage.Text = mensagem;
+        }
+
+        private void UpdateDateTime(object sender, EventArgs e)
+        {
+            var now = DateTime.Now;
+            displayHora.Text = now.ToString("HH:mm:ss");
+            displayData.Text = now.ToString("yyy-MM-dd");
+        }
+
+        private void MostrarTelaCadastroGeneric<T>(string inicioMensagem, string finalMensagem) where T : Form, new()
+        {
+            DefinirMsgSistema(inicioMensagem);
+            T frm = new T();
+            frm.ShowDialog();
+            DefinirMsgSistema(finalMensagem);
+        }
+
+        private void PrintPageGeneric(IEntidade[] cadastros, Graphics g)
+        {
+            Relatorio r = new Relatorio(cadastros);
+            string relatorioString = Relatorio.GetTestPrintString();
+            r.DesenharString(relatorioString, g);
+        }
+
+        private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string msgAberto = "Iniciado cadastro de usuários";
+            string msgFechado = "Finalizado cadastro de usuários";
+            MostrarTelaCadastroGeneric<frmUser>(msgAberto, msgFechado);
+        }
+
+        private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string msgAberto = "Iniciado cadastro de clientes";
+            string msgFechado = "Finalizado cadastro de clientes";
+            MostrarTelaCadastroGeneric<frmCliente>(msgAberto, msgFechado);
+        }
+
+        private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string msgAberto = "Iniciado cadastro de fornecedores";
+            string msgFechado = "Finalizado cadastro de fornecedores";
+            MostrarTelaCadastroGeneric<frmFornecedor>(msgAberto, msgFechado);
+        }
+
+        private void usuárioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ppDialogUsuario.ShowDialog();
+        }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ppDialogCliente.ShowDialog();
+        }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ppDialogFornecedor.ShowDialog();
+        }
+
+        private void pdocUsuario_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            PrintPageGeneric(Storage.usuarios, e.Graphics);
+        }
+
+        private void pdocFornecedor_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            PrintPageGeneric(Storage.fornecedores, e.Graphics);
+        }
+
+        private void ppdocCliente_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            PrintPageGeneric(Storage.clientes, e.Graphics);
         }
 
         private void SairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,75 +101,37 @@ namespace projetoCadastro
             Application.Exit();
         }
 
-        private void InitNewCadastroForm<T>(string inicioMensagem, string finalMensagem) where T : Form, new()
-        {
-            SetarMensagemSistema(inicioMensagem);
-            T frm = new T();
-            frm.ShowDialog();
-            SetarMensagemSistema(finalMensagem);
-        }
+        //private void pdocUsuario_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        //{
+        //    string strDados = "";
+        //    Graphics objImpressao = e.Graphics;
+        //    int pag = 1, pos = 0, linha;
+        //    bool cabecalho = true, itens;
 
-        private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitNewCadastroForm<frmUser>("Iniciado cadastro de usuários", "Finalizado cadastro de usuários");
-        }
-
-        private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitNewCadastroForm<frmCliente>("Iniciado cadastro de clientes", "Finalizado cadastro de clientes");
-        }
-
-        private void FornecedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitNewCadastroForm<frmFornecedor>("Iniciado cadastro de fornecedores", "Finalizado cadastro de fornecedores");
-        }
-
-        private void TimerSegundo_Tick(object sender, EventArgs e)
-        {
-            UpdateDateTime();
-        }
-
-        private void UpdateDateTime()
-        {
-            var now = DateTime.Now;
-            displayHora.Text = now.ToString("HH:mm:ss");
-            displayData.Text = now.ToString("yyy-MM-dd");
-        }
-
-        private int ContarEntidadesArray(IEntidade[] array)
-        {
-            int count = 0;
-            foreach (IEntidade entidade in array)
-            {
-                if (entidade != null)
-                {
-                    count++;
-                }
-            }
-            return count;
-        }
-
-        private IEntidade ObterEntidadeRecemCadastrada(IEntidade[] array)
-        {
-            // if isNullOrEmpty
-            if (array == null || array.Length == 0)
-            {
-                return null;
-            }
-
-            for (int i = array.Length - 1; i >= 0; i--)
-            {
-                if (array[i] != null)
-                {
-                    return array[i];
-                }
-            }
-            return null;
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            UpdateDateTime();
-        }
+        //    while (cabecalho)
+        //    {
+        //        strDados = "ETEC ADOLPHO BEREZIN" + (char)10;
+        //        strDados += ("Relatório de Usuários").PadRight(73) + "Pág: " + pag.ToString("00") + (char)10;
+        //        strDados += "--------------------------------------------------------------------------------" + (char)10;
+        //        strDados += "Código Nome                                               Login" + (char)10;
+        //        strDados += "--------------------------------------------------------------------------------" + (char)10;
+        //        linha = 5;
+        //        pag++;
+        //        itens = true;
+        //        while (itens)
+        //        {
+        //            strDados += new string('0', 80) + (char)10;
+        //            pos++;
+        //            linha++;
+        //            if (linha >= 63)
+        //            {
+        //                itens = false;
+        //                cabecalho = false;
+        //            }
+        //        }
+        //        strDados += (char)12;
+        //    }
+        //    objImpressao.DrawString(strDados, new Font("Courier New", 10, FontStyle.Regular), Brushes.Black, 50, 50);
+        //}
     }
 }

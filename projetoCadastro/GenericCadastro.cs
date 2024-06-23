@@ -44,7 +44,7 @@ namespace projetoCadastro
             int pos;
             for (pos = 0; pos < arrayLength; pos++)
             {
-                if (array[pos]?.codigo is null)
+                if (array[pos] is null)
                 {
                     break;
                 }
@@ -154,7 +154,7 @@ namespace projetoCadastro
             for (int pointer = 0; pointer < arrayLength; pointer++)
             {
                 //if (formulario.VerificarNomeMatchEntidade(nome, formulario.cadastros[pointer]))
-                string nmEntidade = formulario.cadastros[pointer]?.nome;
+                string nmEntidade = formulario.cadastros[pointer]?.nome.ToLower();
                 bool match = !(string.IsNullOrEmpty(nmEntidade)) && nmEntidade.Contains(nomePesquisa);
                 if (match) return pointer;
             }
@@ -182,7 +182,7 @@ namespace projetoCadastro
         public void GerarDocumentoPrint(string content, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            Font fonte = new Font("Arial", 12, FontStyle.Bold);
+            Font fonte = new Font("Courier New", 12, FontStyle.Bold);
             Brush color = Brushes.Black;
             PointF posicao = new PointF(50, 50);
             g.DrawString(content, fonte, color, posicao);
@@ -307,7 +307,6 @@ namespace projetoCadastro
             frmPesquisa searchBox = new frmPesquisa(this);
             searchBox.ShowDialog();
         }
-
 
         public enum ModoForm
         {
