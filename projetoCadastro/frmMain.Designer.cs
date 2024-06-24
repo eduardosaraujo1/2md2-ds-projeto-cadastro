@@ -117,21 +117,21 @@
             // usuarioTSMenuItem
             // 
             this.usuarioTSMenuItem.Name = "usuarioTSMenuItem";
-            this.usuarioTSMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usuarioTSMenuItem.Size = new System.Drawing.Size(167, 26);
             this.usuarioTSMenuItem.Text = "Usuário";
             this.usuarioTSMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem1_Click);
             // 
             // clienteTSMenuItem
             // 
             this.clienteTSMenuItem.Name = "clienteTSMenuItem";
-            this.clienteTSMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clienteTSMenuItem.Size = new System.Drawing.Size(167, 26);
             this.clienteTSMenuItem.Text = "Cliente";
             this.clienteTSMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
             // fornecedorTSMenuItem
             // 
             this.fornecedorTSMenuItem.Name = "fornecedorTSMenuItem";
-            this.fornecedorTSMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fornecedorTSMenuItem.Size = new System.Drawing.Size(167, 26);
             this.fornecedorTSMenuItem.Text = "Fornecedor";
             this.fornecedorTSMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
@@ -274,7 +274,7 @@
             this.MinimumSize = new System.Drawing.Size(295, 299);
             this.Name = "frmMain";
             this.Text = "Tela Principal";
-            this.Load += new System.EventHandler(this.UpdateDateTime);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

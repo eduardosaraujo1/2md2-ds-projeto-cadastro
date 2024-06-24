@@ -38,11 +38,13 @@ namespace projetoCadastro
             DefinirMsgSistema(finalMensagem);
         }
 
-        private void PrintPageGeneric(IEntidade[] cadastros, Graphics g)
+        private void PrintPageGeneric<T>(IEntidade[] cadastros, Graphics g) where T : Relatorio, new()
         {
-            Relatorio r = new Relatorio(cadastros);
-            string relatorioString = Relatorio.GetTestPrintString();
-            r.DesenharString(relatorioString, g);
+            //string printString = RelatorioPrinter.GetTestPrintString();
+            T r = new T();
+            string printString = r.ObterRelatorioString();
+            RelatorioPrinter rp = new RelatorioPrinter(printString);
+            rp.Print(g);
         }
 
         private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,17 +85,17 @@ namespace projetoCadastro
 
         private void pdocUsuario_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            PrintPageGeneric(Storage.usuarios, e.Graphics);
+            PrintPageGeneric<RelatorioUsuario>(Storage.usuarios, e.Graphics);
         }
 
         private void pdocFornecedor_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            PrintPageGeneric(Storage.fornecedores, e.Graphics);
+            PrintPageGeneric<RelatorioUsuario>(Storage.fornecedores, e.Graphics); // TODO: Criar classe RelatorioFornecedor
         }
 
         private void ppdocCliente_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            PrintPageGeneric(Storage.clientes, e.Graphics);
+            PrintPageGeneric<RelatorioUsuario>(Storage.clientes, e.Graphics); // TODO: Criar classe RelatorioCliente
         }
 
         private void SairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,37 +103,38 @@ namespace projetoCadastro
             Application.Exit();
         }
 
-        //private void pdocUsuario_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        //{
-        //    string strDados = "";
-        //    Graphics objImpressao = e.Graphics;
-        //    int pag = 1, pos = 0, linha;
-        //    bool cabecalho = true, itens;
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            UpdateDateTime(sender, e);
+            //GerarCemUsuariosAleatorios();
+        }
 
-        //    while (cabecalho)
-        //    {
-        //        strDados = "ETEC ADOLPHO BEREZIN" + (char)10;
-        //        strDados += ("Relatório de Usuários").PadRight(73) + "Pág: " + pag.ToString("00") + (char)10;
-        //        strDados += "--------------------------------------------------------------------------------" + (char)10;
-        //        strDados += "Código Nome                                               Login" + (char)10;
-        //        strDados += "--------------------------------------------------------------------------------" + (char)10;
-        //        linha = 5;
-        //        pag++;
-        //        itens = true;
-        //        while (itens)
-        //        {
-        //            strDados += new string('0', 80) + (char)10;
-        //            pos++;
-        //            linha++;
-        //            if (linha >= 63)
-        //            {
-        //                itens = false;
-        //                cabecalho = false;
-        //            }
-        //        }
-        //        strDados += (char)12;
-        //    }
-        //    objImpressao.DrawString(strDados, new Font("Courier New", 10, FontStyle.Regular), Brushes.Black, 50, 50);
-        //}
+        private void GerarCemUsuariosAleatorios()
+        {
+            Random random = new Random();
+            for (int i = 0; i < 100; i++)
+            {
+                Storage.usuarios[i] = new Usuario
+                {
+                    codigo = i + 1,
+                    nome = GerarStringAleatoria(),
+                    login = GerarStringAleatoria()
+                };
+            }
+            string GerarStringAleatoria()
+            {
+                const string caracteresPermitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                int tamanho = random.Next(4, 24);
+                StringBuilder resultado = new StringBuilder(tamanho);
+
+                for (int i = 0; i < tamanho; i++)
+                {
+                    int indice = random.Next(caracteresPermitidos.Length);
+                    resultado.Append(caracteresPermitidos[indice]);
+                }
+
+                return resultado.ToString();
+            }
+        }
     }
 }
