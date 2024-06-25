@@ -13,11 +13,11 @@ namespace projetoCadastro
         {
             random = new Random();
         }
-        public void CadastrarTudo()
+        public void CadastrarTudo(int qtUsuarios)
         {
-            GerarCadastrosAleatorios<Usuario>(100);
-            GerarCadastrosAleatorios<Cliente>(100);
-            GerarCadastrosAleatorios<Fornecedor>(100);
+            GerarCadastrosAleatorios<Usuario>(qtUsuarios);
+            GerarCadastrosAleatorios<Cliente>(qtUsuarios);
+            GerarCadastrosAleatorios<Fornecedor>(qtUsuarios);
         }
         private void GerarCadastrosAleatorios<T>(int quantidade) where T : IEntidade, new()
         {

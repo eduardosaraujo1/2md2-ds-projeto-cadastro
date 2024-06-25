@@ -40,16 +40,14 @@ namespace projetoCadastro
 
         private int EncontrarPosicaoVaziaArray(IEntidade[] array)
         {
-            int arrayLength = array.Length;
-            int pos;
-            for (pos = 0; pos < arrayLength; pos++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[pos] is null)
+                if (array[i] == null)
                 {
-                    break;
+                    return i;
                 }
             }
-            return pos;
+            return array.Length;
         }
 
         private bool IsPointerDentroArray(int pointer)

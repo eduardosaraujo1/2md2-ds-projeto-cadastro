@@ -13,6 +13,8 @@ namespace projetoCadastro
 {
     public partial class frmMain : Form
     {
+        public const bool GERAR_USUARIOS_AUTOMATICAMENTE = true;
+        public const int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = 100;
         public frmMain()
         {
             InitializeComponent();
@@ -42,9 +44,9 @@ namespace projetoCadastro
         {
             //string printString = RelatorioPrinter.GetTestPrintString();
             T r = new T();
-            string printString = r.ObterRelatorioString();
-            RelatorioPrinter rp = new RelatorioPrinter(printString);
-            rp.Print(g);
+            string printString = r.GerarRelatorio();
+            RelatorioPrinter rp = new RelatorioPrinter();
+            rp.Print(printString, g);
         }
 
         private void UsuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,12 +92,12 @@ namespace projetoCadastro
 
         private void pdocFornecedor_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            PrintPageGeneric<RelatorioUsuario>(Storage.fornecedores, e.Graphics); // TODO: Criar classe RelatorioFornecedor
+            PrintPageGeneric<RelatorioFornecedor>(Storage.fornecedores, e.Graphics);
         }
 
         private void ppdocCliente_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            PrintPageGeneric<RelatorioUsuario>(Storage.clientes, e.Graphics); // TODO: Criar classe RelatorioCliente
+            PrintPageGeneric<RelatorioCliente>(Storage.clientes, e.Graphics);
         }
 
         private void SairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,7 +109,10 @@ namespace projetoCadastro
         {
             UpdateDateTime(sender, e);
             AutoCadastro c = new AutoCadastro();
-            c.CadastrarTudo();
+            if (GERAR_USUARIOS_AUTOMATICAMENTE)
+            {
+                c.CadastrarTudo(QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE);
+            }
         }
 
     }
