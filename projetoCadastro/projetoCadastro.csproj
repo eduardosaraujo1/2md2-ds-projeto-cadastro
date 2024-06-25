@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCadastro.cs" />
     <Compile Include="Entidade.cs" />
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>

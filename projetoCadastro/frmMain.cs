@@ -106,35 +106,9 @@ namespace projetoCadastro
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateDateTime(sender, e);
-            //GerarCemUsuariosAleatorios();
+            AutoCadastro c = new AutoCadastro();
+            c.CadastrarTudo();
         }
 
-        private void GerarCemUsuariosAleatorios()
-        {
-            Random random = new Random();
-            for (int i = 0; i < 100; i++)
-            {
-                Storage.usuarios[i] = new Usuario
-                {
-                    codigo = i + 1,
-                    nome = GerarStringAleatoria(),
-                    login = GerarStringAleatoria()
-                };
-            }
-            string GerarStringAleatoria()
-            {
-                const string caracteresPermitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-                int tamanho = random.Next(4, 24);
-                StringBuilder resultado = new StringBuilder(tamanho);
-
-                for (int i = 0; i < tamanho; i++)
-                {
-                    int indice = random.Next(caracteresPermitidos.Length);
-                    resultado.Append(caracteresPermitidos[indice]);
-                }
-
-                return resultado.ToString();
-            }
-        }
     }
 }
