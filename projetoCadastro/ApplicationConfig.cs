@@ -8,13 +8,18 @@ using System.Drawing;
 
 namespace projetoCadastro
 {
-    public static class RelatorioConfig
+    public static class ApplicationConfig
     {
+        // Impressão e Relatório
         public static Font PrintFont = new Font("Courier New", 10);
         public static Brush PrintColor = Brushes.Black;
         public static PointF PrintMargin = new PointF(50, 50);
         public static int PageWidth = 84; // unidade em largura do caractere
         public static int PageHeight = 68; // unidade em largura do caractere 
-        public static bool SinglePage = true;
+        public static bool SinglePage = false;
+
+        // Geração de dados
+        public static bool GERAR_USUARIOS_AUTOMATICAMENTE = true;
+        public static int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = 100;
     }
 }

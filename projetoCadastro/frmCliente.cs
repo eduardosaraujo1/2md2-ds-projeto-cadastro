@@ -15,7 +15,7 @@ namespace projetoCadastro
 {
     public partial class frmCliente : Form, IFormCadastro
     {
-        // grande parte dos comentários de cada funcionalidade está em frmUser, veja a implementação lá para detalhes
+        public string TIPO_FORM { get; set; } = "Cliente";
         public IEntidade[] cadastros { get; set; } = Storage.clientes;
         private GenericCadastro logica;
 
@@ -26,7 +26,7 @@ namespace projetoCadastro
         private void frmCliente_Load(object sender, EventArgs e)
         {
             logica = new GenericCadastro(this);
-            logica.OnFormLoad();
+            logica.Form_Load();
         }
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -35,12 +35,12 @@ namespace projetoCadastro
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros(-1);
+            logica.NavBtn_Click(-1);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros(1);
+            logica.NavBtn_Click(1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace projetoCadastro
 
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            logica.PesquisarUsuarioClick();
+            logica.Pesquisar_Click();
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -165,8 +165,6 @@ namespace projetoCadastro
 
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            // Verifique se é possível mover essa implementação para LogicaCadastro (requer melhorias mencionadas em README.md)
-            // "implementar uma forma de localizar determinado elemento a partir de seu Name como uma string"
             string conteudoPrint = 
 $@"FICHA DE CLIENTE
 

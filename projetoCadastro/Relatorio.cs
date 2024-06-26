@@ -12,9 +12,9 @@ namespace projetoCadastro
     public abstract class Relatorio
     {
         // Parametros
-        protected bool SinglePage = RelatorioConfig.SinglePage;
-        protected int PageWidth = RelatorioConfig.PageWidth;
-        protected int PageHeight = RelatorioConfig.PageHeight;
+        protected bool SinglePage = ApplicationConfig.SinglePage;
+        protected int PageWidth = ApplicationConfig.PageWidth;
+        protected int PageHeight = ApplicationConfig.PageHeight;
         protected int LengthCadastros { get; set; }
         protected int AlturaCabecalho { get; set; }
         protected int AlturaRegistro { get; set; } // quantidade de linhas que cada "item" no relatório ocupa
@@ -80,6 +80,7 @@ namespace projetoCadastro
         protected string GerarPaginaRelatorio()
         {
             string pagina = GerarCabecalho();
+            bool adicionarQuebraDePagina = true;
             while (!AlcancouUltimaLinha())
             {
                 pagina += GerarLinhaRelatorio(PointerCadastroAtual);
@@ -88,17 +89,18 @@ namespace projetoCadastro
 
                 if (AlcancouUltimoCadastro())
                 {
+                    adicionarQuebraDePagina = false;
                     break;
                 }
             }
 
+            if (adicionarQuebraDePagina) {
+                LinhaAtual = 1;
+                PaginaAtual++;
+                pagina += (char)12;
+            }
+
             return pagina;
-        }
-        protected char IrParaProximaPagina()
-        {
-            LinhaAtual = 1;
-            PaginaAtual++;
-            return (char)12;
         }
         public string GerarRelatorio()
         {
@@ -106,7 +108,6 @@ namespace projetoCadastro
             while (!AlcancouUltimoCadastro())
             {
                 relatorio += GerarPaginaRelatorio();
-                relatorio += IrParaProximaPagina();
                 if (SinglePage) break; // Não gerar mais páginas depois de uma, aqui pois o (char)12 não funcionava
             }
             return relatorio;
@@ -294,9 +295,9 @@ namespace projetoCadastro
             // new line
             widthCEP = 12;
             widthCnpj = 22;
-            widthInscrEstadual = PageWidth - (widthCEP + widthCnpj + 3);
-            // new line
             widthTelefone = 20;
+            widthInscrEstadual = PageWidth - (widthCEP + widthCnpj + widthTelefone + 4);
+            // new line
             widthContato = 20;
             widthEmail = PageWidth - (3 + widthTelefone + widthContato);
 
@@ -314,11 +315,10 @@ namespace projetoCadastro
             cabecalho += NormalizarTamanhoColuna("Estado", widthEstado);
             cabecalho += '\n';
             cabecalho += NormalizarTamanhoColuna("CEP", widthCEP);
-            cabecalho += NormalizarTamanhoColuna("CEP", widthCEP);
             cabecalho += NormalizarTamanhoColuna("Cnpj", widthCnpj);
+            cabecalho += NormalizarTamanhoColuna("Telefone", widthTelefone);
             cabecalho += NormalizarTamanhoColuna("InscrEstadual", widthInscrEstadual);
             cabecalho += '\n';
-            cabecalho += NormalizarTamanhoColuna("Telefone", widthTelefone);
             cabecalho += NormalizarTamanhoColuna("Contato", widthContato);
             cabecalho += NormalizarTamanhoColuna("Email", widthEmail);
             cabecalho += '\n';
@@ -340,9 +340,9 @@ namespace projetoCadastro
             linha += '\n';
             linha += NormalizarTamanhoColuna(f.cep, widthCEP);
             linha += NormalizarTamanhoColuna(f.cnpj, widthCnpj);
+            linha += NormalizarTamanhoColuna(f.telefone, widthTelefone);
             linha += NormalizarTamanhoColuna(f.inscrEstadual, widthInscrEstadual);
             linha += '\n';
-            linha += NormalizarTamanhoColuna(f.telefone, widthTelefone);
             linha += NormalizarTamanhoColuna(f.contato, widthContato);
             linha += NormalizarTamanhoColuna(f.email, widthEmail);
             linha += '\n';
@@ -354,16 +354,16 @@ namespace projetoCadastro
     public class RelatorioPrinter
     {
         //parametros para impressao
-        private readonly Font PrintFont = RelatorioConfig.PrintFont;
-        private readonly Brush PrintColor = RelatorioConfig.PrintColor;
-        private readonly PointF PrintMargin = RelatorioConfig.PrintMargin;
+        private readonly Font PrintFont = ApplicationConfig.PrintFont;
+        private readonly Brush PrintColor = ApplicationConfig.PrintColor;
+        private readonly PointF PrintMargin = ApplicationConfig.PrintMargin;
 
         // Método utilizado para testar o tamanho das folhas.
         // Mantido pois é possível que esse tamanho mude dependendo do computador
         public static string GetTestPrintString()
         {
-            int PageWidth = RelatorioConfig.PageWidth;
-            int PageHeight = RelatorioConfig.PageHeight;
+            int PageWidth = ApplicationConfig.PageWidth;
+            int PageHeight = ApplicationConfig.PageHeight;
             string s = "";
             string linha = new string('0', PageWidth);
             for (int _ = 0; _ < PageHeight; _++)

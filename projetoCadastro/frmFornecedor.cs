@@ -13,6 +13,7 @@ namespace projetoCadastro
 {
     public partial class frmFornecedor : Form, IFormCadastro
     {
+        public string TIPO_FORM { get; set; } = "Fornecedor";
         public IEntidade[] cadastros { get; set; } = Storage.fornecedores;
         private GenericCadastro logica;
 
@@ -29,17 +30,17 @@ namespace projetoCadastro
         private void frmFornecedor_Load(object sender, EventArgs e)
         {
             logica = new GenericCadastro(this);
-            logica.OnFormLoad();
+            logica.Form_Load();
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros(-1);
+            logica.NavBtn_Click(-1);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            logica.NavegarCadastros(1);
+            logica.NavBtn_Click(1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace projetoCadastro
 
         private void BtnPesquisar_Click(object sender, EventArgs e)
         {
-            logica.PesquisarUsuarioClick();
+            logica.Pesquisar_Click();
         }
 
         private void BtnImprimir_Click(object sender, EventArgs e)

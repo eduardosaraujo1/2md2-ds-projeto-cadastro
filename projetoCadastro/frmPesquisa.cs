@@ -12,11 +12,13 @@ namespace projetoCadastro
 {
     public partial class frmPesquisa : Form
     {
+        private string TipoParentForm { get; set; }
         public GenericCadastro caller;
-        public frmPesquisa(GenericCadastro caller)
+        public frmPesquisa(GenericCadastro caller, string TipoParentForm)
         {
             this.caller = caller;
             InitializeComponent();
+            this.TipoParentForm = TipoParentForm;
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -34,6 +36,12 @@ namespace projetoCadastro
 
             caller.PointEntidadePorNomeParcial(searchQuery);
             this.Close();
+        }
+
+        private void frmPesquisa_Load(object sender, EventArgs e)
+        {
+            header.Text = $"Pesquisa {TipoParentForm}";
+            this.Text = $"Pesquisa {TipoParentForm}";
         }
     }
 }

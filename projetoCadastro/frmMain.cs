@@ -13,8 +13,8 @@ namespace projetoCadastro
 {
     public partial class frmMain : Form
     {
-        public const bool GERAR_USUARIOS_AUTOMATICAMENTE = true;
-        public const int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = 100;
+        public bool GERAR_USUARIOS_AUTOMATICAMENTE = ApplicationConfig.GERAR_USUARIOS_AUTOMATICAMENTE;
+        public int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = ApplicationConfig.QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE;
         public frmMain()
         {
             InitializeComponent();
@@ -108,6 +108,7 @@ namespace projetoCadastro
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateDateTime(sender, e);
+
             AutoCadastro c = new AutoCadastro();
             if (GERAR_USUARIOS_AUTOMATICAMENTE)
             {

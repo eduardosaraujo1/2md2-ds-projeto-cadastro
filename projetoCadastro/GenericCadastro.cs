@@ -12,6 +12,7 @@ namespace projetoCadastro
     public interface IFormCadastro
     {
         IEntidade[] cadastros { get; set; }
+        string TIPO_FORM { get; set; }
 
         IEntidade FormGerarEntidade();
         void RenderizarDados();
@@ -187,7 +188,7 @@ namespace projetoCadastro
         }
 
         // form generic methods
-        public void OnFormLoad()
+        public void Form_Load()
         {
             pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
             pointerEntidade = pointerPosicaoVaziaArray - 1;
@@ -195,7 +196,7 @@ namespace projetoCadastro
             ExibirDados();
         }
 
-        public void NavegarCadastros(int navIncrement)
+        public void NavBtn_Click(int navIncrement)
         {
             // para funcionalidade btnAnterior, indexDiff = -1
             // para funcionalidade btnProximo, indexDiff = 1
@@ -300,9 +301,9 @@ namespace projetoCadastro
             ExibirDados();
         }
 
-        public void PesquisarUsuarioClick()
+        public void Pesquisar_Click()
         {
-            frmPesquisa searchBox = new frmPesquisa(this);
+            frmPesquisa searchBox = new frmPesquisa(this, formulario.TIPO_FORM);
             searchBox.ShowDialog();
         }
 
