@@ -104,12 +104,18 @@ namespace projetoCadastro
         }
         public string GerarRelatorio()
         {
+            if (LengthCadastros <= 0)
+            {
+                return GerarCabecalho();
+            }
             string relatorio = "";
+
             while (!AlcancouUltimoCadastro())
             {
                 relatorio += GerarPaginaRelatorio();
                 if (SinglePage) break; // Não gerar mais páginas depois de uma, aqui pois o (char)12 não funcionava
             }
+
             return relatorio;
         }
 

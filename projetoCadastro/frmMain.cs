@@ -13,8 +13,7 @@ namespace projetoCadastro
 {
     public partial class frmMain : Form
     {
-        public bool GERAR_USUARIOS_AUTOMATICAMENTE = ApplicationConfig.GERAR_USUARIOS_AUTOMATICAMENTE;
-        public int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = ApplicationConfig.QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE;
+
         public frmMain()
         {
             InitializeComponent();
@@ -110,9 +109,9 @@ namespace projetoCadastro
             UpdateDateTime(sender, e);
 
             AutoCadastro c = new AutoCadastro();
-            if (GERAR_USUARIOS_AUTOMATICAMENTE)
+            if (ApplicationConfig.GERAR_USUARIOS_AUTOMATICAMENTE)
             {
-                c.CadastrarTudo(QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE);
+                c.CadastrarTudo(ApplicationConfig.QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE);
             }
         }
 
