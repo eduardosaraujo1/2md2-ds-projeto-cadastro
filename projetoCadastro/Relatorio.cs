@@ -169,6 +169,7 @@ namespace projetoCadastro
             string linha = "";
 
             Usuario u = cadastros[pointer];
+            if (u.nome == "") return "";
             atributo = ((int)u.codigo).ToString("D6");
             linha += NormalizarTamanhoColuna(atributo, widthColCodigo);
             atributo = u.nome.ToString();
@@ -245,6 +246,7 @@ namespace projetoCadastro
 
             // TODO: IMPLEMENTAR CADA COLUNA AQUI COM TAMANHOS E NOMES CERTOS
             Cliente c = cadastros[pointer];
+            if (c.nome == "") return "";
             atributo = ((int)c.codigo).ToString("D6");
             linha += NormalizarTamanhoColuna(atributo, widthCodigo);
             atributo = c.nome;
@@ -338,6 +340,7 @@ namespace projetoCadastro
             string linha = "";
 
             Fornecedor f = cadastros[pointer];
+            if (f.nome == "") return "";
             atributo = ((int)f.codigo).ToString("D6");
             linha += NormalizarTamanhoColuna(atributo, widthCodigo);
             linha += NormalizarTamanhoColuna(f.nome, widthNmFantasia);

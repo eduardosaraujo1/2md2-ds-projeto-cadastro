@@ -19,7 +19,7 @@ namespace projetoCadastro
         public static bool SinglePage = false;
 
         // Geração de dados
-        public static bool GERAR_USUARIOS_AUTOMATICAMENTE = false;
-        public static int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = 100;
+        public static bool GERAR_USUARIOS_AUTOMATICAMENTE = true;
+        public static int QUANTIDADE_USUARIOS_GERADOS_AUTOMATICAMENTE = 50;
     }
 }
