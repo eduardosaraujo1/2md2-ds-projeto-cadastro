@@ -15,7 +15,6 @@ namespace projetoCadastro
 {
     public partial class frmCliente : Form, IFormCadastro
     {
-        public string TIPO_FORM { get; set; } = "Cliente";
         public IEntidade[] cadastros { get; set; } = Storage.clientes;
         private GenericCadastro logica;
 
@@ -23,95 +22,11 @@ namespace projetoCadastro
         {
             InitializeComponent();
         }
+
         private void frmCliente_Load(object sender, EventArgs e)
         {
             logica = new GenericCadastro(this);
             logica.Form_Load();
-        }
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            logica.NavBtn_Click(-1);
-        }
-
-        private void btnProximo_Click(object sender, EventArgs e)
-        {
-            logica.NavBtn_Click(1);
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            logica.CancelarCadastroAlteracao();
-        }
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            logica.AlteracaoCadastro();
-        }
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            logica.NovoCadastro();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            logica.ExcluirCadastro();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            logica.SalvarCadastro();
-        }
-
-        private void BtnPesquisar_Click(object sender, EventArgs e)
-        {
-            logica.Pesquisar_Click();
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            // No futuro, mover essa implementação para LogicaCadastro
-            if (string.IsNullOrEmpty(inputCodigo.Text) || string.IsNullOrEmpty(inputNome.Text))
-            {
-                MessageBox.Show(
-                    "Erro: nenhum cadastro está selecionado",
-                    "Cadastro nulo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
-            printPreviewDialog.ShowDialog();
-        }
-
-        // getters
-        public GenericCadastro.BotoesForm GetBotoesForm()
-        {
-            return new GenericCadastro.BotoesForm
-            {
-                btnAnterior = btnAnterior,
-                btnProximo = btnProximo,
-                btnSalvar = btnSalvar,
-                btnCancelar = btnCancelar,
-                btnNovo = btnNovo,
-                btnPesquisar = btnPesquisar,
-                btnAlterar = btnAlterar,
-                btnImprimir = btnImprimir,
-                btnExcluir = btnExcluir,
-                btnSair = btnSair
-            };
-        }
-
-        public Panel GetPanelCampos()
-        {
-            return panelCampos;
-        }
-
-        public TextBox GetInputCodigo()
-        {
-            return inputCodigo;
         }
 
         // unique logic
@@ -119,7 +34,7 @@ namespace projetoCadastro
         {
             Cliente cliente = new Cliente
             {
-                codigo = logica.pointerEntidade + 1,
+                codigo = logica.indexCadAtual + 1,
                 nome = inputNome.Text,
                 endereco = inputEndereco.Text,
                 bairro = inputBairro.Text,
@@ -137,7 +52,7 @@ namespace projetoCadastro
         // TODO: Ver se é possível relacionar as TextBoxes aos cadastros e assim não precisar colocar codigo na classe frm
         public void RenderizarDados()
         {
-            int pointer = logica.pointerEntidade;
+            int pointer = logica.indexCadAtual;
             Cliente cliente = cadastros[pointer] as Cliente;
             inputCodigo.Text = (pointer + 1).ToString();
             inputNome.Text = cliente.nome ?? "";

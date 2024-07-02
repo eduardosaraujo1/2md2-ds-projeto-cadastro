@@ -6,33 +6,139 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Messaging;
 
 namespace projetoCadastro
 {
     public interface IFormCadastro
     {
         IEntidade[] cadastros { get; set; }
-        string TIPO_FORM { get; set; }
 
         IEntidade FormGerarEntidade();
         void RenderizarDados();
         bool ValidarCamposEntidade(IEntidade entidade);
 
-        Panel GetPanelCampos();
-        GenericCadastro.BotoesForm GetBotoesForm();
-        TextBox GetInputCodigo();
+        BotoesForm GetBotoesForm();
+        TextBox InputCodigo { get; }
+        TextBox InputNome { get; }
+        Panel PanelCampos { get; }
+        PrintPreviewDialog PrintPreviewDialog { get; }
     }
+
+    public partial class frmUsuario : Form
+    {
+        private void btnSair_Click(object sender, EventArgs e) => this.Close();
+        private void btnAnterior_Click(object sender, EventArgs e) => logica.NavBtn_Click(-1);
+        private void btnProximo_Click(object sender, EventArgs e) => logica.NavBtn_Click(1);
+        private void btnCancelar_Click(object sender, EventArgs e) => logica.CancelarCadastroAlteracao();
+        private void btnAlterar_Click(object sender, EventArgs e) => logica.AlteracaoCadastro();
+        private void btnNovo_Click(object sender, EventArgs e) => logica.NovoCadastro();
+        private void btnExcluir_Click(object sender, EventArgs e) => logica.ExcluirCadastro();
+        private void btnSalvar_Click(object sender, EventArgs e) => logica.SalvarCadastro();
+        private void BtnPesquisar_Click(object sender, EventArgs e) => logica.Pesquisar_Click();
+        private void BtnImprimir_Click(object sender, EventArgs e) => logica.Imprimir_Click();
+
+        // getters
+        public Panel PanelCampos { get => panelCampos; }
+        public TextBox InputCodigo { get => inputCodigo; }
+        public TextBox InputNome { get => inputNome; }
+        public PrintPreviewDialog PrintPreviewDialog { get => printPreviewDialog; }
+        public BotoesForm GetBotoesForm()
+        {
+            return new BotoesForm
+            {
+                btnAnterior = btnAnterior,
+                btnProximo = btnProximo,
+                btnSalvar = btnSalvar,
+                btnCancelar = btnCancelar,
+                btnNovo = btnNovo,
+                btnPesquisar = btnPesquisar,
+                btnAlterar = btnAlterar,
+                btnImprimir = btnImprimir,
+                btnExcluir = btnExcluir,
+                btnSair = btnSair
+            };
+        }
+    }
+
+    public partial class frmCliente : Form
+    {
+        private void btnSair_Click(object sender, EventArgs e) => Close();
+        private void btnAnterior_Click(object sender, EventArgs e) => logica.NavBtn_Click(-1);
+        private void btnProximo_Click(object sender, EventArgs e) => logica.NavBtn_Click(1);
+        private void btnCancelar_Click(object sender, EventArgs e) => logica.CancelarCadastroAlteracao();
+        private void btnAlterar_Click(object sender, EventArgs e) => logica.AlteracaoCadastro();
+        private void btnNovo_Click(object sender, EventArgs e) => logica.NovoCadastro();
+        private void btnExcluir_Click(object sender, EventArgs e) => logica.ExcluirCadastro();
+        private void btnSalvar_Click(object sender, EventArgs e) => logica.SalvarCadastro();
+        private void BtnPesquisar_Click(object sender, EventArgs e) => logica.Pesquisar_Click();
+        private void btnImprimir_Click(object sender, EventArgs e) => logica.Imprimir_Click();
+
+        // getters
+        public Panel PanelCampos { get => panelCampos; }
+        public TextBox InputCodigo { get => inputCodigo; }
+        public TextBox InputNome { get => inputNome; }
+        public PrintPreviewDialog PrintPreviewDialog { get => printPreviewDialog; }
+        public BotoesForm GetBotoesForm()
+        {
+            return new BotoesForm
+            {
+                btnAnterior = btnAnterior,
+                btnProximo = btnProximo,
+                btnSalvar = btnSalvar,
+                btnCancelar = btnCancelar,
+                btnNovo = btnNovo,
+                btnPesquisar = btnPesquisar,
+                btnAlterar = btnAlterar,
+                btnImprimir = btnImprimir,
+                btnExcluir = btnExcluir,
+                btnSair = btnSair
+            };
+        }
+    }
+
+    public partial class frmFornecedor : Form
+    {
+        private void btnSair_Click(object sender, EventArgs e) => this.Close();
+        private void btnAnterior_Click(object sender, EventArgs e) => logica.NavBtn_Click(-1);
+        private void btnProximo_Click(object sender, EventArgs e) => logica.NavBtn_Click(1);
+        private void btnCancelar_Click(object sender, EventArgs e) => logica.CancelarCadastroAlteracao();
+        private void btnAlterar_Click(object sender, EventArgs e) => logica.AlteracaoCadastro();
+        private void btnNovo_Click(object sender, EventArgs e) => logica.NovoCadastro();
+        private void btnExcluir_Click(object sender, EventArgs e) => logica.ExcluirCadastro();
+        private void btnSalvar_Click(object sender, EventArgs e) => logica.SalvarCadastro();
+        private void BtnPesquisar_Click(object sender, EventArgs e) => logica.Pesquisar_Click();
+        private void BtnImprimir_Click(object sender, EventArgs e) => logica.Imprimir_Click();
+
+        // getters
+        public Panel PanelCampos { get => panelCampos; }
+        public TextBox InputCodigo { get => inputCodigo; }
+        public TextBox InputNome { get => inputNomeFantasia; }
+        public PrintPreviewDialog PrintPreviewDialog { get => printPreviewDialog; }
+        public BotoesForm GetBotoesForm()
+        {
+            return new BotoesForm
+            {
+                btnAnterior = btnAnterior,
+                btnProximo = btnProximo,
+                btnSalvar = btnSalvar,
+                btnCancelar = btnCancelar,
+                btnNovo = btnNovo,
+                btnPesquisar = btnPesquisar,
+                btnAlterar = btnAlterar,
+                btnImprimir = btnImprimir,
+                btnExcluir = btnExcluir,
+                btnSair = btnSair
+            };
+        }
+    }
+
     public class GenericCadastro
     {
-        // note: "pointer" significa o index da posição descrita no nome
-        // exemplo: pointerUsuario é o index da posição do usuário sendo visualizado atualmente
-        // exemplo: pointerPosicaoVaziaArray é o index da posição onde se encontra o primeiro espaço vazio no array
-        // o termo vem da ideia de apontar (point) para a posição do array desejada
-        // o termo é usado em C para apontar uma posição na memória
         private readonly IFormCadastro formulario;
         public ModoForm modoForm { get; set; }
-        public int pointerEntidade = -1;
-        public int pointerPosicaoVaziaArray = -1;
+        public int indexCadAtual = -1;
+        public int indexPosicaoVaziaArray = -1;
         
         public GenericCadastro(IFormCadastro formulario) 
         {
@@ -68,7 +174,7 @@ namespace projetoCadastro
         public void LimparTextboxesForm()
         {
             // Define as textboxes do form para vazias, sem que o cadastro seja alterado
-            foreach(Control control in formulario.GetPanelCampos().Controls) {
+            foreach(Control control in formulario.PanelCampos.Controls) {
                 if (control is TextBox)
                 {
                     control.Text = "";
@@ -78,7 +184,7 @@ namespace projetoCadastro
 
         public void DefinirModoTextBoxes(bool enabled)
         {
-            foreach(Control control in formulario.GetPanelCampos().Controls) {
+            foreach(Control control in formulario.PanelCampos.Controls) {
                 if (control is TextBox)
                 {
                     control.Enabled = enabled;
@@ -87,7 +193,7 @@ namespace projetoCadastro
         }
         private void BloquearDigitacao() {
             DefinirModoTextBoxes(false);
-            formulario.GetInputCodigo().Enabled = false;
+            formulario.InputCodigo.Enabled = false;
 
             BotoesForm botoes = formulario.GetBotoesForm();
             botoes.btnAnterior.Enabled = true;
@@ -104,7 +210,7 @@ namespace projetoCadastro
 
         private void PermitirDigitacao() {
             DefinirModoTextBoxes(true);
-            formulario.GetInputCodigo().Enabled = false;
+            formulario.InputCodigo.Enabled = false;
 
             BotoesForm botoes = formulario.GetBotoesForm();
             botoes.btnAnterior.Enabled = false;
@@ -137,7 +243,7 @@ namespace projetoCadastro
         }
         private void ExibirDados()
         {
-            if (IsPointerDentroArray(pointerEntidade))
+            if (IsPointerDentroArray(indexCadAtual))
             {
                 formulario.RenderizarDados();
             }
@@ -173,7 +279,7 @@ namespace projetoCadastro
             } 
             else
             {
-                pointerEntidade = (int)entidadeEncontrada;
+                indexCadAtual = (int)entidadeEncontrada;
                 ExibirDados();
             }
         }
@@ -190,8 +296,8 @@ namespace projetoCadastro
         // form generic methods
         public void Form_Load()
         {
-            pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
-            pointerEntidade = pointerPosicaoVaziaArray - 1;
+            indexPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
+            indexCadAtual = indexPosicaoVaziaArray - 1;
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
         }
@@ -200,19 +306,19 @@ namespace projetoCadastro
         {
             // para funcionalidade btnAnterior, indexDiff = -1
             // para funcionalidade btnProximo, indexDiff = 1
-            int novoPointer = pointerEntidade + navIncrement;
+            int novoPointer = indexCadAtual + navIncrement;
             if (PointerApontaClienteCadastrado(novoPointer))
             {
-                pointerEntidade = novoPointer;
+                indexCadAtual = novoPointer;
             }
             ExibirDados();
         }
 
-       public void CancelarCadastroAlteracao()
+        public void CancelarCadastroAlteracao()
         {
             if (modoForm == ModoForm.Cadastro)
             {
-                pointerEntidade--;
+                indexCadAtual--;
             }
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
@@ -220,7 +326,7 @@ namespace projetoCadastro
 
         public void NovoCadastro()
         {
-            if (pointerPosicaoVaziaArray >= formulario.cadastros.Length) 
+            if (indexPosicaoVaziaArray >= formulario.cadastros.Length) 
             {
                 MessageBox.Show(
                     "Não há espaço suficiente para um novo cliente.\nContate o administrador do sistema",
@@ -231,16 +337,16 @@ namespace projetoCadastro
             }
 
             LimparTextboxesForm();
-            TextBox inputCodigo = formulario.GetInputCodigo();
-            inputCodigo.Text = (pointerPosicaoVaziaArray + 1).ToString();
+            TextBox inputCodigo = formulario.InputCodigo;
+            inputCodigo.Text = (indexPosicaoVaziaArray + 1).ToString();
 
-            pointerEntidade = pointerPosicaoVaziaArray;
+            indexCadAtual = indexPosicaoVaziaArray;
             DefinirModoForm(ModoForm.Cadastro);
         }
 
         public void AlteracaoCadastro()
         {
-            if (PointerApontaClienteCadastrado(pointerEntidade))
+            if (PointerApontaClienteCadastrado(indexCadAtual))
             {
                 ExibirDados();
                 DefinirModoForm(ModoForm.Alteracao);
@@ -269,8 +375,8 @@ namespace projetoCadastro
                 return;
             }
 
-            formulario.cadastros[pointerEntidade] = cadastro;
-            pointerPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
+            formulario.cadastros[indexCadAtual] = cadastro;
+            indexPosicaoVaziaArray = EncontrarPosicaoVaziaArray(formulario.cadastros);
 
             DefinirModoForm(ModoForm.Visualizacao);
             ExibirDados();
@@ -279,12 +385,12 @@ namespace projetoCadastro
         public void ExcluirCadastro()
         {
             // nao pode excluir o que nao existe
-            if (!PointerApontaClienteCadastrado(pointerEntidade))
+            if (!PointerApontaClienteCadastrado(indexCadAtual))
             {
                 return;
             }
 
-            IEntidade cadastro = formulario.cadastros[pointerEntidade];
+            IEntidade cadastro = formulario.cadastros[indexCadAtual];
             DialogResult confirm = MessageBox.Show(
                 $"Tem certeza de que deseja apagar o cadastro de código {cadastro.codigo}? Essa ação não pode ser desfeita.'",
                 "Confirmar exclusão",
@@ -303,8 +409,22 @@ namespace projetoCadastro
 
         public void Pesquisar_Click()
         {
-            frmPesquisa searchBox = new frmPesquisa(this, formulario.TIPO_FORM);
+            frmPesquisa searchBox = new frmPesquisa(this, formulario);
             searchBox.ShowDialog();
+        }
+
+        public void Imprimir_Click()
+        {
+            if (string.IsNullOrEmpty(formulario.InputCodigo.Text) || string.IsNullOrEmpty(formulario.InputNome.Text))
+            {
+                MessageBox.Show(
+                    "Erro: nenhum cadastro está selecionado",
+                    "Cadastro nulo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            formulario.PrintPreviewDialog.ShowDialog();
         }
 
         public enum ModoForm
@@ -315,18 +435,18 @@ namespace projetoCadastro
             Pesquisa = 3
         }
 
-        public struct BotoesForm
-        {
-            public Button btnAnterior;
-            public Button btnProximo;
-            public Button btnSalvar;
-            public Button btnCancelar;
-            public Button btnNovo;
-            public Button btnPesquisar;
-            public Button btnAlterar;
-            public Button btnImprimir;
-            public Button btnExcluir;
-            public Button btnSair;
-        }
+    }
+    public class BotoesForm
+    {
+        public Button btnAnterior;
+        public Button btnProximo;
+        public Button btnSalvar;
+        public Button btnCancelar;
+        public Button btnNovo;
+        public Button btnPesquisar;
+        public Button btnAlterar;
+        public Button btnImprimir;
+        public Button btnExcluir;
+        public Button btnSair;
     }
 }

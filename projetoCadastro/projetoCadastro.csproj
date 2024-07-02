@@ -72,18 +72,20 @@
     <Compile Include="frmPesquisa.Designer.cs">
       <DependentUpon>frmPesquisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUser.cs">
+    <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUser.Designer.cs">
-      <DependentUpon>frmUser.cs</DependentUpon>
+    <Compile Include="frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relatorio.cs" />
     <Compile Include="ApplicationConfig.cs" />
     <Compile Include="Storage.cs" />
-    <Compile Include="GenericCadastro.cs" />
+    <Compile Include="GenericCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,8 +98,8 @@
     <EmbeddedResource Include="frmPesquisa.resx">
       <DependentUpon>frmPesquisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUser.resx">
-      <DependentUpon>frmUser.cs</DependentUpon>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

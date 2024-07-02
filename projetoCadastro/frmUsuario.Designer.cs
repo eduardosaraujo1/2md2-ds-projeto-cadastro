@@ -1,6 +1,6 @@
 ﻿namespace projetoCadastro
 {
-    partial class frmUser
+    partial class frmUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.panelCamposContainer = new System.Windows.Forms.Panel();
             this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
             this.inputCodigo = new System.Windows.Forms.TextBox();
@@ -388,7 +388,6 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox inputNome;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox inputCodigo;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnImprimir;
@@ -404,5 +403,6 @@
         private System.Windows.Forms.TableLayoutPanel panelCampos;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
         private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.TextBox inputCodigo;
     }
 }

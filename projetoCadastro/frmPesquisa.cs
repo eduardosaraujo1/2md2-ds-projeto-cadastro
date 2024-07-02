@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,13 +13,13 @@ namespace projetoCadastro
 {
     public partial class frmPesquisa : Form
     {
-        private string TipoParentForm { get; set; }
-        public GenericCadastro caller;
-        public frmPesquisa(GenericCadastro caller, string TipoParentForm)
+        private GenericCadastro caller;
+        private IFormCadastro formulario;
+        public frmPesquisa(GenericCadastro caller, IFormCadastro formulario)
         {
             this.caller = caller;
+            this.formulario = formulario;
             InitializeComponent();
-            this.TipoParentForm = TipoParentForm;
         }
 
         private void BtnSair_Click(object sender, EventArgs e)
@@ -38,10 +39,31 @@ namespace projetoCadastro
             this.Close();
         }
 
+        private string DeterminarTipoFormulario()
+        {
+            if (formulario is frmUsuario)
+            {
+                return "Usuario";
+            }
+            else if (formulario is frmCliente)
+            {
+                return "Cliente";
+            }
+            else if (formulario is frmFornecedor)
+            {
+                return "Fornecedor";
+            }
+            else
+            {
+                return "Cadastro";
+            }
+        }
+
         private void frmPesquisa_Load(object sender, EventArgs e)
         {
-            header.Text = $"Pesquisa {TipoParentForm}";
-            this.Text = $"Pesquisa {TipoParentForm}";
+            string tipoFormulario = DeterminarTipoFormulario();
+            header.Text = $"Pesquisa {tipoFormulario}";
+            this.Text = $"Pesquisa {tipoFormulario}";
         }
     }
 }

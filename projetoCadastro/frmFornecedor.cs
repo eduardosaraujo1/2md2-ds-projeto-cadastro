@@ -13,7 +13,6 @@ namespace projetoCadastro
 {
     public partial class frmFornecedor : Form, IFormCadastro
     {
-        public string TIPO_FORM { get; set; } = "Fornecedor";
         public IEntidade[] cadastros { get; set; } = Storage.fornecedores;
         private GenericCadastro logica;
 
@@ -22,106 +21,20 @@ namespace projetoCadastro
             InitializeComponent();
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmFornecedor_Load(object sender, EventArgs e)
         {
             logica = new GenericCadastro(this);
             logica.Form_Load();
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
-        {
-            logica.NavBtn_Click(-1);
-        }
-
-        private void btnProximo_Click(object sender, EventArgs e)
-        {
-            logica.NavBtn_Click(1);
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            logica.CancelarCadastroAlteracao();
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            logica.AlteracaoCadastro();
-        }
-
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            logica.NovoCadastro();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            logica.ExcluirCadastro();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            logica.SalvarCadastro();
-        }
-
-        private void BtnPesquisar_Click(object sender, EventArgs e)
-        {
-            logica.Pesquisar_Click();
-        }
-
-        private void BtnImprimir_Click(object sender, EventArgs e)
-        {
-            // No futuro, mover essa implementação para LogicaCadastro
-            if (string.IsNullOrEmpty(inputCodigo.Text) || string.IsNullOrEmpty(inputNomeFantasia.Text))
-            {
-                MessageBox.Show(
-                    "Erro: nenhum cadastro está selecionado",
-                    "Cadastro nulo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
-            printPreviewDialog.ShowDialog();
-        }
-
         // getters
-        public GenericCadastro.BotoesForm GetBotoesForm()
-        {
-            return new GenericCadastro.BotoesForm
-            {
-                btnAnterior = btnAnterior,
-                btnProximo = btnProximo,
-                btnSalvar = btnSalvar,
-                btnCancelar = btnCancelar,
-                btnNovo = btnNovo,
-                btnPesquisar = btnPesquisar,
-                btnAlterar = btnAlterar,
-                btnImprimir = btnImprimir,
-                btnExcluir = btnExcluir,
-                btnSair = btnSair
-            };
-        }
-
-        public Panel GetPanelCampos()
-        {
-            return panelCampos;
-        }
-
-        public TextBox GetInputCodigo()
-        {
-            return inputCodigo;
-        }
 
         // unique logic
         public IEntidade FormGerarEntidade()
         {
             Fornecedor fornecedor = new Fornecedor
             {
-                codigo = logica.pointerEntidade + 1,
+                codigo = logica.indexCadAtual + 1,
                 nome = inputNomeFantasia.Text,
                 razaoSocial = inputRazaoSocial.Text,
                 contato = inputContato.Text,
@@ -140,7 +53,7 @@ namespace projetoCadastro
 
         public void RenderizarDados()
         {
-            int pointer = logica.pointerEntidade;
+            int pointer = logica.indexCadAtual;
             Fornecedor fornecedor = cadastros[pointer] as Fornecedor;
             inputCodigo.Text = (pointer + 1).ToString();
             inputNomeFantasia.Text = fornecedor.nome ?? "";

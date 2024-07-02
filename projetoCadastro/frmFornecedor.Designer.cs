@@ -44,8 +44,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
             this.panelCampos = new System.Windows.Forms.TableLayoutPanel();
-            this.inputInscrEstadual = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.inputContato = new System.Windows.Forms.TextBox();
             this.inputEmail = new System.Windows.Forms.TextBox();
             this.inputCNPJ = new System.Windows.Forms.TextBox();
@@ -58,7 +56,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.inputEstado = new System.Windows.Forms.TextBox();
             this.inputEndereco = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,6 +67,9 @@
             this.inputCidade = new System.Windows.Forms.TextBox();
             this.inputCEP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.inputEstado = new System.Windows.Forms.TextBox();
+            this.inputInscrEstadual = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.panelFrmCliente.SuspendLayout();
@@ -314,28 +314,6 @@
             this.panelCampos.Size = new System.Drawing.Size(804, 283);
             this.panelCampos.TabIndex = 1;
             // 
-            // inputInscrEstadual
-            // 
-            this.inputInscrEstadual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCampos.SetColumnSpan(this.inputInscrEstadual, 2);
-            this.inputInscrEstadual.Location = new System.Drawing.Point(563, 159);
-            this.inputInscrEstadual.Margin = new System.Windows.Forms.Padding(4);
-            this.inputInscrEstadual.Name = "inputInscrEstadual";
-            this.inputInscrEstadual.Size = new System.Drawing.Size(237, 26);
-            this.inputInscrEstadual.TabIndex = 7;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(435, 160);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 20);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Inscr. Estadual";
-            // 
             // inputContato
             // 
             this.inputContato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -470,14 +448,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Nome Fantasia";
             // 
-            // inputEstado
-            // 
-            this.inputEstado.Location = new System.Drawing.Point(632, 221);
-            this.inputEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.inputEstado.Name = "inputEstado";
-            this.inputEstado.Size = new System.Drawing.Size(39, 26);
-            this.inputEstado.TabIndex = 11;
-            // 
             // inputEndereco
             // 
             this.inputEndereco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -599,6 +569,36 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Cidade";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // inputEstado
+            // 
+            this.inputEstado.Location = new System.Drawing.Point(632, 221);
+            this.inputEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.inputEstado.Name = "inputEstado";
+            this.inputEstado.Size = new System.Drawing.Size(39, 26);
+            this.inputEstado.TabIndex = 11;
+            // 
+            // inputInscrEstadual
+            // 
+            this.inputInscrEstadual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCampos.SetColumnSpan(this.inputInscrEstadual, 2);
+            this.inputInscrEstadual.Location = new System.Drawing.Point(563, 159);
+            this.inputInscrEstadual.Margin = new System.Windows.Forms.Padding(4);
+            this.inputInscrEstadual.Name = "inputInscrEstadual";
+            this.inputInscrEstadual.Size = new System.Drawing.Size(237, 26);
+            this.inputInscrEstadual.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(435, 160);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 20);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Inscr. Estadual";
             // 
             // printDocument
             // 

@@ -52,7 +52,7 @@ namespace projetoCadastro
         {
             string msgAberto = "Iniciado cadastro de usuários";
             string msgFechado = "Finalizado cadastro de usuários";
-            MostrarTelaCadastroGeneric<frmUser>(msgAberto, msgFechado);
+            MostrarTelaCadastroGeneric<frmUsuario>(msgAberto, msgFechado);
         }
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
